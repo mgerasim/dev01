@@ -44,5 +44,26 @@ CREATE DATABASE "LERS"
 
 Миграция с использованием инструмента Migrate2Postgres 
 =============================================
-1. Подготовить скрипт ```migrate.sh```
+1. Установить ```Java Runtime Environment (JRE)``` и ```Java Development Kit (JDK)```
+* ```sudo apt-get install default-jre```
+* ```sudo apt-get install default-jdk```
+
+2. Выполнить вход пользователя ```dev```
+* ``` su - dev```
+
+3. Склонировать проект Migrate2Postgres 
+* ```git clone https://github.com/isapir/Migrate2Postgres.git```
+
+4. Выполнить переход в каталог ```Migrate2Postgres```
+* ```cd projects/Migrate2Postgres/```
+
+5. Установить Apache Maven
+* ```sudo apt-get install maven```
+
+6. Выполнить компиляцию проекта Migrate2Postgres
+* ```mvn package```
+* ```java -cp target/Migrate2Postgres-1.0.7.jar net.twentyonesolutions.m2pg.PgMigrator```
+
+7. 
+Подготовить скрипт ```migrate.sh```
 2. Подготовить конфигурационный файл ```MsSqlAWT2Postgres.conf```
