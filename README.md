@@ -37,7 +37,11 @@ CREATE DATABASE "LERS"
   LC_CTYPE = 'en_US.UTF-8';
 ```
 
-3. Импортировать скрипты
+3. Импортировать скрипты 
 * ```psql -f /home/dev/projects/dev01/pgsql_out_sqlserver2pgsql_01.sql```
 * ```psql -f /home/dev/projects/dev01/pgsql_out_sqlserver2pgsql_02.sql```
 * ```psql -f /home/dev/projects/dev01/pgsql_out_sqlserver2pgsql_03.sql```
+
+Миграция с использованием инструмента Migrate2Postgres 
+=============================================
+1. Подготовить скрипт ```migrate.sh```
