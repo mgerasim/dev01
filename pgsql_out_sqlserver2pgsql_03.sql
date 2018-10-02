@@ -1,0 +1,198 @@
+\set ON_ERROR_STOP
+BEGIN;
+CREATE UNIQUE INDEX "idx_account_windowssid" ON "public"."account" ("windowssid" ASC)
+WHERE ((windowssid IS NOT NULL));
+CREATE UNIQUE INDEX "uq_customer_vatid" ON "public"."customer" ("vatid" ASC)
+WHERE ((vatid<>''));
+COMMENT ON INDEX "public"."uq_customer_vatid" IS 'Обеспечивает уникальность ИНН';
+CREATE UNIQUE INDEX "ix_equipment_modemidentifier" ON "public"."equipment" ("equipmentmodelid" ASC,"modemidentifier" ASC)
+WHERE ((modemidentifier IS NOT NULL));
+CREATE UNIQUE INDEX "ix_equipment_pollportid" ON "public"."equipment" ("modempollportid" ASC)
+WHERE ((modempollportid IS NOT NULL));
+CREATE UNIQUE INDEX "ix_measurepoint_number" ON "public"."measurepoint" ("measurepoint_servicenumber" ASC)
+WHERE ((measurepoint_servicenumber IS NOT NULL));
+CREATE UNIQUE INDEX "ix_node_number" ON "public"."node" ("number" ASC)
+WHERE ((number IS NOT NULL));
+CREATE INDEX "ix_nodesupplier_supplierid" ON "public"."nodesupplier" ("supplierid" ASC)
+WHERE ((supplierid IS NOT NULL));
+CREATE UNIQUE INDEX "ix_personalaccount_personalaccountnumber" ON "public"."personalaccount" ("nodeid" ASC,"personalaccount_number" ASC)
+WHERE ((personalaccount_number<>''));
+CREATE UNIQUE INDEX "ix_pollconnection_dialnumber" ON "public"."pollconnection" ("dialnumber" ASC)
+WHERE ((((commlinktype IN ((2), (4))) AND commdeviceequipmentid IS NULL)));
+CREATE UNIQUE INDEX "ix_pollconnection_internethostport" ON "public"."pollconnection" ("internethost" ASC,"internetport" ASC)
+WHERE (((commlinktype=(16) AND commdeviceequipmentid IS NULL)));
+CREATE UNIQUE INDEX "ix_pollport_pollserviceid_gprslistenport" ON "public"."pollport" ("pollserviceid" ASC,"gprslistenport" ASC)
+WHERE ((pollport_communicationlinktype=(8)));
+CREATE UNIQUE INDEX "ix_pollport_pollservice_portnumber" ON "public"."pollport" ("pollserviceid" ASC,"pollport_portnumber" ASC)
+WHERE ((pollport_communicationlinktype IN ((1), (2), (4))));
+CREATE UNIQUE INDEX "ix_pollservice_token" ON "public"."pollservice" ("token" ASC)
+WHERE ((token IS NOT NULL));
+ALTER TABLE "public"."account" ADD CONSTRAINT "ck_account_reportcenterformmode" CHECK ((reportcenterformmode>=(0) AND reportcenterformmode<=(1)));
+ALTER TABLE "public"."accountlog" ADD CONSTRAINT "ck_accountlog_importance" CHECK ((importance=(16) OR (importance=(8) OR (importance=(4) OR (importance=(2) OR importance=(1))))));
+ALTER TABLE "public"."accountnode" ADD CONSTRAINT "ck_accountnode_measurepointcheckaccessmode" CHECK ((measurepointcheckaccessmode=(1) OR measurepointcheckaccessmode=(0)));
+ALTER TABLE "public"."adapter" ADD CONSTRAINT "ck_adapter" CHECK (len(title)>(0));
+ALTER TABLE "public"."cell" ADD CONSTRAINT "ck_cell_devicedatatype" CHECK ((devicedatatype=(128) OR (devicedatatype=(64) OR (devicedatatype=(32) OR (devicedatatype=(4) OR devicedatatype=(0))))));
+ALTER TABLE "public"."complex" ADD CONSTRAINT "ck_complex_adapter" CHECK ((adapterid IS NULL OR dbo].[issupportedadapter]([equipmentid],[adapterid)=(1)));
+ALTER TABLE "public"."contingency" ADD CONSTRAINT "ck_contingency_nodeid_measurepointid" CHECK ((NOT (nodeid IS NULL AND measurepointid IS NULL)));
+ALTER TABLE "public"."contingency" ADD CONSTRAINT "ck_contingency_startdateenddate" CHECK (startdate]<=[enddate);
+ALTER TABLE "public"."contractconsumption" ADD CONSTRAINT "ck_resourceload_year" CHECK (((1998)<year AND year<(2050)));
+ALTER TABLE "public"."contractconsumptionlimit" ADD CONSTRAINT "ck_consumptionlimit_year" CHECK (((1998)<year AND year<(2050)));
+ALTER TABLE "public"."contracttemperature" ADD CONSTRAINT "ck_contracttemperature_t_in" CHECK ((t_in>=(19) AND t_in<=(150)));
+ALTER TABLE "public"."contracttemperature" ADD CONSTRAINT "ck_contracttemperature_t_out" CHECK ((t_out>=(19) AND t_out<=(70)));
+ALTER TABLE "public"."contracttemperature" ADD CONSTRAINT "ck_contracttemperature_t_outdoor" CHECK ((t_outdoor>=(-60) AND t_outdoor<=(19)));
+ALTER TABLE "public"."customattribute" ADD CONSTRAINT "ck_customattribute_entities" CHECK ((entities=(1) OR (entities=(2) OR entities=(3))));
+ALTER TABLE "public"."customer" ADD CONSTRAINT "ck_customer_vatid" CHECK ((len(vatid)=(0) OR (isnaturalperson=(0) AND (len(vatid)=(10) OR (isnaturalperson=(1) AND len(vatid)=(12))))));
+ALTER TABLE "public"."datainterface" ADD CONSTRAINT "ck_datainterface_maxnetworksize" CHECK (maxnetworksize>=(0));
+ALTER TABLE "public"."datainterface" ADD CONSTRAINT "ck_datainterface_networkaddressrange" CHECK ((networkaddressrangemin=(0) AND (networkaddressrangemax=(0) OR networkaddressrangemin]<[networkaddressrangemax)));
+ALTER TABLE "public"."datainterface" ADD CONSTRAINT "ck_datainterface_networkaddressusage" CHECK ((networkaddressusage>=(0) AND networkaddressusage<=(4)));
+ALTER TABLE "public"."datainterface" ADD CONSTRAINT "ck_datainterface_supportedportspeeds" CHECK (supportedportspeeds>=(0));
+ALTER TABLE "public"."datastatus" ADD CONSTRAINT "ck_datastatus_datastatus" CHECK ((datastatus=(4) OR (datastatus=(3) OR (datastatus=(2) OR (datastatus=(1) OR datastatus=(0))))));
+ALTER TABLE "public"."datastatus" ADD CONSTRAINT "ck_datastatus_devicedatatype" CHECK ((devicedatatype=(128) OR (devicedatatype=(64) OR devicedatatype=(32))));
+ALTER TABLE "public"."datastatus" ADD CONSTRAINT "ck_datastatus_startdate_enddate" CHECK (startdate]<=[enddate);
+ALTER TABLE "public"."deviceaddress" ADD CONSTRAINT "ck_deviceaddress_archivedepth" CHECK ((archivedepth=(0) OR (devicedatatype&(128))=(128) AND ((archivedepth=(64) OR (archivedepth=(32) OR (archivedepth=(16)) OR (devicedatatype&(32))=(32) AND ((archivedepth=(48) OR archivedepth=(12))))))));
+ALTER TABLE "public"."deviceaddress" ADD CONSTRAINT "ck_deviceaddress_devicedatatype" CHECK ((devicedatatype=(128) OR (devicedatatype=(640) OR (devicedatatype=(64) OR (devicedatatype=(576) OR (devicedatatype=(32) OR (devicedatatype=(544) OR (devicedatatype=(4) OR (devicedatatype=(516) OR (devicedatatype=(512) OR devicedatatype=(0)))))))))));
+ALTER TABLE "public"."devicecell" ADD CONSTRAINT "ck_devicecell_pulseratio" CHECK (pulseratio>=(0));
+ALTER TABLE "public"."devicechannel" ADD CONSTRAINT "ck_devicechannel_channelnumber" CHECK (channelnumber<>(0));
+ALTER TABLE "public"."deviceevent" ADD CONSTRAINT "ck_deviceevent_startenddate" CHECK (startdatetime]<=[enddatetime);
+ALTER TABLE "public"."driverinterface" ADD CONSTRAINT "ck_driverinterface_channelcount" CHECK (channelcount>=(0));
+ALTER TABLE "public"."driverinterface" ADD CONSTRAINT "ck_driverinterface_drivername" CHECK (len(drivername)>(0));
+ALTER TABLE "public"."driverinterface" ADD CONSTRAINT "ck_driverinterface_driverstatus" CHECK ((driverstatus>=(0) AND driverstatus<=(2)));
+ALTER TABLE "public"."driverinterface" ADD CONSTRAINT "ck_driverinterface_features" CHECK (features>=(0));
+ALTER TABLE "public"."driverinterface" ADD CONSTRAINT "ck_driverinterface_memoryaddress" CHECK ((minmemoryaddress=(0) AND (maxmemoryaddress=(0) OR minmemoryaddress]<[maxmemoryaddress)));
+ALTER TABLE "public"."driverinterface" ADD CONSTRAINT "ck_driverinterface_supporteddatatypes" CHECK (supporteddatatypes>=(0));
+ALTER TABLE "public"."driverinterface" ADD CONSTRAINT "ck_driverinterface_totalsresetthreshold" CHECK ((totalsresetthresholdm>=(0) AND totalsresetthresholdq>=(0)));
+ALTER TABLE "public"."electricpower" ADD CONSTRAINT "ck_measurepointpower_interval" CHECK (interval>(0));
+ALTER TABLE "public"."equipment" ADD CONSTRAINT "ck_equipment_serialnumber" CHECK (len(serialnumber)>(0));
+ALTER TABLE "public"."equipmenthistory" ADD CONSTRAINT "ck_equipmenthistory_action" CHECK ((action=(1) OR (action=(2) OR (action=(3) OR (action=(4) OR action=(5))))));
+ALTER TABLE "public"."equipmentmodelmodification" ADD CONSTRAINT "ck_equipmentmodelmodification_flowsensor" CHECK ((flowsensormin=(0) AND (flowsensormax=(0) OR flowsensormin]<[flowsensormax)));
+ALTER TABLE "public"."equipmentmodelmodification" ADD CONSTRAINT "ck_equipmentmodelmodification_nominaldiameter" CHECK (nominaldiameter>=(0));
+ALTER TABLE "public"."equipmentmodelmodification" ADD CONSTRAINT "ck_equipmentmodelmodification_presssensor" CHECK ((presssensormin=(0) AND (presssensormax=(0) OR presssensormin]<[presssensormax)));
+ALTER TABLE "public"."equipmentmodelmodification" ADD CONSTRAINT "ck_equipmentmodelmodification_relativeerror" CHECK (relativeerror>=(0));
+ALTER TABLE "public"."equipmentmodelmodification" ADD CONSTRAINT "ck_equipmentmodelmodification_tempsensor" CHECK ((tempsensormin=(0) AND (tempsensormax=(0) OR tempsensormin]<[tempsensormax)));
+ALTER TABLE "public"."gprscontrollersession" ADD CONSTRAINT "ck_gprscontrollersessionendreason" CHECK ((endreason>=(0) AND endreason<=(8)));
+ALTER TABLE "public"."ipaddress" ADD CONSTRAINT "ck_ipaddress_rangeendip" CHECK ((rangeendip>=(0) AND rangeendip<=(4294967295.)));
+ALTER TABLE "public"."ipaddress" ADD CONSTRAINT "ck_ipaddress_startip" CHECK ((rangestartip>=(0) AND rangestartip<=(4294967295.)));
+ALTER TABLE "public"."mapobjectappearance" ADD CONSTRAINT "ck_mapobjectappearance_fontstyle" CHECK (((0)<=fontstyle AND fontstyle<=(15)));
+ALTER TABLE "public"."mapobjectappearance" ADD CONSTRAINT "ck_mapobjectappearance_textalignment" CHECK (((textvalignment=(2) OR (textvalignment=(1) OR textvalignment=(0)))) AND ((texthalignment=(2) OR (texthalignment=(1) OR texthalignment=(0)))));
+ALTER TABLE "public"."mapobjectappearance" ADD CONSTRAINT "ck_mapobjectappearance_type" CHECK ((appearancetype=(2) OR (appearancetype=(1) OR appearancetype=(0))));
+ALTER TABLE "public"."measurepoint" ADD CONSTRAINT "ck_measurepoint_calculatemissinghourconsumption" CHECK ((calculatemissinghourconsumption=(0) OR (calculatemissinghourconsumption=(2) OR (calculatemissinghourconsumption=(4) OR (calculatemissinghourconsumption=(3) AND measurepoint_systemtypeid=(32))))));
+ALTER TABLE "public"."measurepoint" ADD CONSTRAINT "ck_measurepoint_currentratio" CHECK ((currentratio>(0) AND currentratio<=(40000)));
+ALTER TABLE "public"."measurepoint" ADD CONSTRAINT "ck_measurepoint_devicepressuretype" CHECK ((devicepressuretype=(1) OR devicepressuretype=(2)));
+ALTER TABLE "public"."measurepoint" ADD CONSTRAINT "ck_measurepoint_nodepersonalaccount" CHECK ((measurepoint_type=(0) AND (measurepoint_nodeid IS NOT NULL AND (personalaccountid IS NULL OR (measurepoint_type=(1) AND (personalaccountid IS NOT NULL AND measurepoint_nodeid IS NULL))))));
+ALTER TABLE "public"."measurepoint" ADD CONSTRAINT "ck_measurepoint_reportingday" CHECK (((1)<=reportingday AND reportingday<=(28)));
+ALTER TABLE "public"."measurepoint" ADD CONSTRAINT "ck_measurepoint_reportinghour" CHECK (((0)<=reportinghour AND reportinghour<=(23)));
+ALTER TABLE "public"."measurepoint" ADD CONSTRAINT "ck_measurepoint_servicenumber" CHECK (measurepoint_servicenumber>(0));
+ALTER TABLE "public"."measurepoint" ADD CONSTRAINT "ck_measurepoint_state" CHECK ((measurepoint_state=(3) OR (measurepoint_state=(2) OR (measurepoint_state=(1) OR measurepoint_state=(0)))));
+ALTER TABLE "public"."measurepoint" ADD CONSTRAINT "ck_measurepoint_voltageratio" CHECK ((voltageratio>(0) AND voltageratio<=(11500)));
+ALTER TABLE "public"."measurepointdatacopysettings" ADD CONSTRAINT "ck_measurepointdatacopysettings" CHECK (targetmeasurepointid]<>[sourcemeasurepointid);
+ALTER TABLE "public"."measurepointexpression" ADD CONSTRAINT "ck_measurepointexpression_expression" CHECK (len(expression)<>(0));
+ALTER TABLE "public"."modemtype" ADD CONSTRAINT "ck_modemtype_communicationlinktype" CHECK ((modemtype_communicationlinktype=(16) OR (modemtype_communicationlinktype=(8) OR ((modemtype_communicationlinktype=(4) OR ((modemtype_communicationlinktype=(2) OR modemtype_communicationlinktype=(1))))))));
+ALTER TABLE "public"."node" ADD CONSTRAINT "ck_node" CHECK (licensecount>(0));
+ALTER TABLE "public"."node" ADD CONSTRAINT "ck_node_iscommunalpollenabled" CHECK ((iscommunalpollenabled=(0) OR (iscommunalpollenabled=(1) AND type=(2))));
+ALTER TABLE "public"."node" ADD CONSTRAINT "ck_node_norms" CHECK ((normcoldwater>=(0) AND (normhotwater>=(0) AND (normheat>=(0) AND (normelectricity>=(0) AND normgas>=(0))))));
+ALTER TABLE "public"."node" ADD CONSTRAINT "ck_node_number" CHECK (number>(0));
+ALTER TABLE "public"."node" ADD CONSTRAINT "ck_node_type" CHECK ((type=(2) OR type=(1)));
+ALTER TABLE "public"."node" ADD CONSTRAINT "ck_tempcompanalysistype" CHECK ((temperaturecomplianceanalysistype=(0) OR (temperaturecomplianceanalysistype=(1) OR temperaturecomplianceanalysistype=(2))));
+ALTER TABLE "public"."nodegeolocation" ADD CONSTRAINT "ck_nodegeolocation_latitude" CHECK (((-90)<=latitude AND latitude<=(90)));
+ALTER TABLE "public"."nodegeolocation" ADD CONSTRAINT "ck_nodegeolocation_longitude" CHECK (((-180)<=longitude AND longitude<=(180)));
+ALTER TABLE "public"."nodejob" ADD CONSTRAINT "ck_nodejob_factenddate" CHECK ((state=(0) AND (factenddate IS NULL OR (state=(1) AND factenddate<>NULL))));
+ALTER TABLE "public"."nodejob" ADD CONSTRAINT "ck_nodejob_startdate" CHECK ((startdate]<=[scheduledenddate AND ((factenddate IS NULL OR factenddate]>=[startdate))));
+ALTER TABLE "public"."nodejob" ADD CONSTRAINT "ck_nodejob_state" CHECK ((state>=(0) OR state<=(1)));
+ALTER TABLE "public"."nodejob" ADD CONSTRAINT "ck_nodejob_type" CHECK ((type>=(0) OR type<=(6)));
+ALTER TABLE "public"."nodeuserdiagparams" ADD CONSTRAINT "ck_nodeuserdiagparams_datatypes" CHECK ((datatypes&((((4)+(32))+(64))+(128)))<>(0) AND (datatypes&~((((4)+(32))+(64))+(128)))=(0));
+ALTER TABLE "public"."nodeuserdiagparams" ADD CONSTRAINT "ck_nodeuserdiagparams_expression" CHECK (len(expression)>(0));
+ALTER TABLE "public"."nodeuserdiagparams" ADD CONSTRAINT "ck_nodeuserdiagparams_importance" CHECK ((importance=(2) OR importance=(4)));
+ALTER TABLE "public"."nodeuserdiagparams" ADD CONSTRAINT "ck_nodeuserdiagparams_message" CHECK (len(message)>(0));
+ALTER TABLE "public"."nodeuserdiagparams" ADD CONSTRAINT "ck_nodeuserdiagparams_seasons" CHECK ((seasons=(1) OR (seasons=(2) OR seasons=(3))));
+ALTER TABLE "public"."nodeuserdiagparams" ADD CONSTRAINT "ck_nodeuserdiagparams_shortmessage" CHECK (len(shortmessage)>(0));
+ALTER TABLE "public"."notification" ADD CONSTRAINT "ck_notification_importance" CHECK ((importance=(4) OR (importance=(2) OR importance=(1))));
+ALTER TABLE "public"."pollconnection" ADD CONSTRAINT "ck_pollconnection_commdevice" CHECK ((commlinktype=(8) AND (commdeviceequipmentid IS NOT NULL OR commlinktype<>(8))));
+ALTER TABLE "public"."pollconnection" ADD CONSTRAINT "ck_pollconnection_commdeviceport" CHECK ((commdeviceportid IS NULL OR commdeviceequipmentid IS NOT NULL));
+ALTER TABLE "public"."pollconnection" ADD CONSTRAINT "ck_pollconnection_commdeviceportsettings" CHECK ((commdeviceportsettingsid IS NULL OR commdeviceportid IS NOT NULL));
+ALTER TABLE "public"."pollconnection" ADD CONSTRAINT "ck_pollconnection_commlinktype" CHECK ((commlinktype=(16) OR (commlinktype=(8) OR ((commlinktype=(4) OR ((commlinktype=(2) OR commlinktype=(1))))))));
+ALTER TABLE "public"."pollconnection" ADD CONSTRAINT "ck_pollconnection_commlinktype_protocol" CHECK ((commlinktype=(4) AND (commlinkprotocol=(0) OR (commlinktype=(4) AND (commlinkprotocol=(1) OR (commlinktype=(4) AND (commlinkprotocol=(2) OR (commlinktype=(4) AND (commlinkprotocol=(3) OR (commlinktype=(16) AND (commlinkprotocol=(0) OR (commlinktype=(16) AND (commlinkprotocol=(1) OR (commlinktype=(1) AND (commlinkprotocol=(0) OR (commlinktype=(2) AND (commlinkprotocol=(0) OR (commlinktype=(8) AND commlinkprotocol=(0)))))))))))))))))));
+ALTER TABLE "public"."pollconnection" ADD CONSTRAINT "ck_pollconnection_connectiontimeout" CHECK ((commlinktype=(1) AND (connectiontimeout=(0) OR (commlinktype<>(1) AND connectiontimeout>(0)))));
+ALTER TABLE "public"."pollconnection" ADD CONSTRAINT "ck_pollconnection_dialnumber" CHECK (((commlinktype=(4) OR (commlinktype=(2)) AND (len(dialnumber)>(0) OR (NOT (commlinktype=(4) OR commlinktype=(2)))))));
+ALTER TABLE "public"."pollconnection" ADD CONSTRAINT "ck_pollconnection_direct" CHECK ((commlinktype<>(1) OR (portspeed<>(0) AND flowcontrol<>(0))));
+ALTER TABLE "public"."pollconnection" ADD CONSTRAINT "ck_pollconnection_gprscalltype" CHECK ((gprscalltype=(4) OR (gprscalltype=(2) OR (gprscalltype=(1) OR gprscalltype=(0)))));
+ALTER TABLE "public"."pollconnection" ADD CONSTRAINT "ck_pollconnection_gprscalltype_dialnumber" CHECK ((gprscalltype=(0) OR len(dialnumber)>(0)));
+ALTER TABLE "public"."pollconnection" ADD CONSTRAINT "ck_pollconnection_internet" CHECK ((commlinktype<>(16) OR (commlinktype=(16) AND (len(internethost)>(0) AND (internetport>(0) AND internetport<(65536))))));
+ALTER TABLE "public"."pollconnection" ADD CONSTRAINT "ck_pollconnection_pollport" CHECK ((pollportid IS NULL OR pollportgroupid IS NULL));
+ALTER TABLE "public"."pollconnection" ADD CONSTRAINT "ck_pollconnection_portspeed" CHECK ((portspeed=(115200) OR (portspeed=(57600) OR ((portspeed=(38400) OR (portspeed=(28800) OR ((portspeed=(19200) OR (portspeed=(14400) OR ((portspeed=(9600) OR (portspeed=(4800) OR ((portspeed=(2400) OR (portspeed=(1200) OR ((portspeed=(600) OR ((portspeed=(300) OR portspeed=(0))))))))))))))))))));
+ALTER TABLE "public"."pollport" ADD CONSTRAINT "ck_pollport_billingmodel" CHECK ((billingmodel=(0) OR billingmodel=(1)));
+ALTER TABLE "public"."pollport" ADD CONSTRAINT "ck_pollport_communicationlinktype" CHECK ((pollport_communicationlinktype=(16) OR (pollport_communicationlinktype=(8) OR ((pollport_communicationlinktype=(4) OR ((pollport_communicationlinktype=(2) OR pollport_communicationlinktype=(1))))))));
+ALTER TABLE "public"."pollport" ADD CONSTRAINT "ck_pollport_tariffplanincludedminutes" CHECK (tariffplanincludedminutes>=(0));
+ALTER TABLE "public"."pollsession" ADD CONSTRAINT "ck_pollsession_polltasktype" CHECK ((polltasktype=(3) OR (polltasktype=(2) OR (polltasktype=(1) OR polltasktype=(0)))));
+ALTER TABLE "public"."pollsession" ADD CONSTRAINT "ck_pollsession_resultcode" CHECK ((pollsession_resultcode=(255) OR (pollsession_resultcode=(254) OR (pollsession_resultcode=(253) OR (pollsession_resultcode=(28) OR (pollsession_resultcode=(27) OR (pollsession_resultcode=(26) OR (pollsession_resultcode=(25) OR (pollsession_resultcode=(24) OR (pollsession_resultcode=(23) OR (pollsession_resultcode=(22) OR (pollsession_resultcode=(21) OR (pollsession_resultcode=(20) OR (pollsession_resultcode=(18) OR (pollsession_resultcode=(17) OR (pollsession_resultcode=(16) OR (pollsession_resultcode=(15) OR (pollsession_resultcode=(14) OR (pollsession_resultcode=(13) OR (pollsession_resultcode=(12) OR (pollsession_resultcode=(11) OR (pollsession_resultcode=(10) OR (pollsession_resultcode=(9) OR (pollsession_resultcode=(8) OR (pollsession_resultcode=(7) OR (pollsession_resultcode=(6) OR (pollsession_resultcode=(5) OR (pollsession_resultcode=(4) OR (pollsession_resultcode=(2) OR (pollsession_resultcode=(1) OR pollsession_resultcode=(0)))))))))))))))))))))))))))))));
+ALTER TABLE "public"."polltask" ADD CONSTRAINT "ck_polltask_executionstate" CHECK ((executionstate=(0) OR (executionstate=(1) OR executionstate=(2))));
+ALTER TABLE "public"."polltask" ADD CONSTRAINT "ck_polltask_freqinterval" CHECK ((freqtype=(4) AND ((freqinterval>(0) AND (freqinterval<=(31)) OR freqtype=(8))) AND ((freqinterval>(0) AND (freqinterval<(128)) OR (freqtype=(16) AND ((freqinterval>(0) AND (freqinterval<=(31)) OR freqtype=(32))))))));
+ALTER TABLE "public"."polltask" ADD CONSTRAINT "ck_polltask_lastattemptresultcode" CHECK ((lastattemptresultcode=(0) OR (lastattemptresultcode=(2) OR lastattemptresultcode=(5))));
+ALTER TABLE "public"."polltask" ADD CONSTRAINT "ck_polltask_priority" CHECK ((priority=(5) OR (priority=(4) OR (priority=(3) OR (priority=(2) OR (priority=(1) OR priority=(0)))))));
+ALTER TABLE "public"."polltask" ADD CONSTRAINT "ck_polltask_startenddatetime" CHECK (enddatetime]>[startdatetime);
+ALTER TABLE "public"."polltask" ADD CONSTRAINT "ck_polltask_type" CHECK ((type=(3) OR (type=(2) OR (type=(1) OR type=(0)))));
+ALTER TABLE "public"."report" ADD CONSTRAINT "ck_report_periodday" CHECK ((periodstartmonth]=[periodendmonth AND (periodstartday]<=[periodendday OR periodstartmonth]<[periodendmonth)));
+ALTER TABLE "public"."report" ADD CONSTRAINT "ck_report_periodendday" CHECK (periodendday<=(31));
+ALTER TABLE "public"."report" ADD CONSTRAINT "ck_report_periodendmonth" CHECK ((periodendmonth=(1) OR periodendmonth=(0)));
+ALTER TABLE "public"."report" ADD CONSTRAINT "ck_report_periodmonth" CHECK (periodstartmonth]<=[periodendmonth);
+ALTER TABLE "public"."report" ADD CONSTRAINT "ck_report_periodstartday" CHECK (periodstartday<=(31));
+ALTER TABLE "public"."report" ADD CONSTRAINT "ck_report_periodstartmonth" CHECK ((periodstartmonth=(1) OR periodstartmonth=(0)));
+ALTER TABLE "public"."report" ADD CONSTRAINT "ck_report_reporttype" CHECK ((reporttype>=(1) AND reporttype<=(33)));
+ALTER TABLE "public"."reportparameterproperty" ADD CONSTRAINT "ck_valuetype" CHECK ((valuetype>=(1) AND valuetype<=(5)));
+ALTER TABLE "public"."reporttemplate" ADD CONSTRAINT "ck_reporttemplate_estimationalgorithm" CHECK ((estimationalgorithm>=(0) AND estimationalgorithm<=(2)));
+ALTER TABLE "public"."reporttemplate" ADD CONSTRAINT "ck_reporttemplate_isuser" CHECK ((isuser=(1) AND (text IS NOT NULL OR (isuser=(0) AND text IS NULL))));
+ALTER TABLE "public"."reporttemplate" ADD CONSTRAINT "ck_reporttemplate_reporttype" CHECK ((reporttype>=(1) AND reporttype<=(33)));
+ALTER TABLE "public"."roomcontractconsumption" ADD CONSTRAINT "ck_roomcontractconsumption_monthnumber" CHECK ((monthnumber>=(1) AND monthnumber<=(12)));
+ALTER TABLE "public"."serviceman" ADD CONSTRAINT "ck_serviceman_name" CHECK (len(name)>(0));
+ALTER TABLE "public"."supplier" ADD CONSTRAINT "ck_supplier_systemtypemask" CHECK ((systemtypemask>(0) AND systemtypemask<(128)));
+ALTER TABLE "public"."systemparameters" ADD CONSTRAINT "ck_systemparameters_accountlogstoragetime" CHECK (((1)<=accountlogstoragetime AND accountlogstoragetime<=(10000)));
+ALTER TABLE "public"."systemparameters" ADD CONSTRAINT "ck_systemparameters_defaultcoldwatertemp" CHECK ((defaultcoldwatertemp<=(20) AND defaultcoldwatertemp>=(0)));
+ALTER TABLE "public"."systemparameters" ADD CONSTRAINT "ck_systemparameters_defaultreturnpressure" CHECK (((1)<=defaultreturnpressure AND defaultreturnpressure<=(20)));
+ALTER TABLE "public"."systemparameters" ADD CONSTRAINT "ck_systemparameters_defaultsupplypressure" CHECK (((1)<=defaultsupplypressure AND defaultsupplypressure<=(20)));
+ALTER TABLE "public"."systemparameters" ADD CONSTRAINT "ck_systemparameters_devicerequestretrycount" CHECK (((1)<=devicerequestretrycount AND devicerequestretrycount<=(99)));
+ALTER TABLE "public"."systemparameters" ADD CONSTRAINT "ck_systemparameters_emaillogstoragetime" CHECK (((1)<=emaillogstoragetime AND emaillogstoragetime<=(10000)));
+ALTER TABLE "public"."systemparameters" ADD CONSTRAINT "ck_systemparameters_gsmmodembaudrate" CHECK ((gsmmodembaudrate=(115200) OR (gsmmodembaudrate=(57600) OR (gsmmodembaudrate=(38400) OR (gsmmodembaudrate=(28800) OR (gsmmodembaudrate=(19200) OR (gsmmodembaudrate=(14400) OR (gsmmodembaudrate=(9600) OR (gsmmodembaudrate=(4800) OR (gsmmodembaudrate=(2400) OR gsmmodembaudrate=(1200)))))))))));
+ALTER TABLE "public"."systemparameters" ADD CONSTRAINT "ck_systemparameters_gsmmodemcomportnumber" CHECK (gsmmodemcomportnumber>(0));
+ALTER TABLE "public"."systemparameters" ADD CONSTRAINT "ck_systemparameters_gsmmodemflowcontrol" CHECK ((gsmmodemflowcontrol=(4) OR (gsmmodemflowcontrol=(2) OR gsmmodemflowcontrol=(1))));
+ALTER TABLE "public"."systemparameters" ADD CONSTRAINT "ck_systemparameters_maxmultipartsmspartcount" CHECK (((1)<=maxpartcountinmultipartsms AND maxpartcountinmultipartsms<=(10)));
+ALTER TABLE "public"."systemparameters" ADD CONSTRAINT "ck_systemparameters_minimumpasswordlength" CHECK (((1)<=minimumpasswordlength AND minimumpasswordlength<=(30)));
+ALTER TABLE "public"."systemparameters" ADD CONSTRAINT "ck_systemparameters_notification_admissiondatenotifydaycount" CHECK ((notification_admissiondatenotifydaycount>(0) AND notification_admissiondatenotifydaycount<=(360)));
+ALTER TABLE "public"."systemparameters" ADD CONSTRAINT "ck_systemparameters_pollloglevel" CHECK ((pollloglevel=(16) OR (pollloglevel=(8) OR (pollloglevel=(4) OR (pollloglevel=(2) OR pollloglevel=(1))))));
+ALTER TABLE "public"."systemparameters" ADD CONSTRAINT "ck_systemparameters_polllogstoragetime" CHECK (((1)<=polllogstoragetime AND polllogstoragetime<=(10000)));
+ALTER TABLE "public"."systemparameters" ADD CONSTRAINT "ck_systemparameters_pollmaxduration" CHECK (((1)<=pollmaxduration AND pollmaxduration<=(180)));
+ALTER TABLE "public"."systemparameters" ADD CONSTRAINT "ck_systemparameters_pollmaxtimediff" CHECK (((0)<=pollmaxtimediff AND pollmaxtimediff<=(86400)));
+ALTER TABLE "public"."systemparameters" ADD CONSTRAINT "ck_systemparameters_pollportblockerrorcount" CHECK (((1)<=pollportblockerrorcount AND pollportblockerrorcount<=(50)));
+ALTER TABLE "public"."systemparameters" ADD CONSTRAINT "ck_systemparameters_pollportblocktimeout" CHECK (((1)<=pollportblocktimeout AND pollportblocktimeout<=(120)));
+ALTER TABLE "public"."systemparameters" ADD CONSTRAINT "ck_systemparameters_pressuredisplaytype" CHECK ((pressuredisplaytype=(1) OR pressuredisplaytype=(0)));
+ALTER TABLE "public"."systemparameters" ADD CONSTRAINT "ck_systemparameters_smtpport" CHECK ((smtpport>=(0) AND smtpport<=(65535)));
+ALTER TABLE "public"."systemparameters" ADD CONSTRAINT "ck_systemparameters_systemlogstoragetime" CHECK (((1)<=systemlogstoragetime AND systemlogstoragetime<=(10000)));
+ALTER TABLE "public"."systemparameters" ADD CONSTRAINT "ck_systemparameters_updaterdatabasebackupmode" CHECK ((updaterdatabasebackupmode=(2) OR (updaterdatabasebackupmode=(1) OR updaterdatabasebackupmode=(0))));
+ALTER TABLE "public"."systemparameters" ADD CONSTRAINT "ck_systemparameters_usersessionlogstoragetime" CHECK (((1)<=usersessionlogstoragetime AND usersessionlogstoragetime<=(10000)));
+ALTER TABLE "public"."task" ADD CONSTRAINT "ck_task_freqinterval" CHECK ((freqtype=(4) AND ((freqinterval>(0) AND (freqinterval<=(31)) OR freqtype=(8))) AND ((freqinterval>(0) AND (freqinterval<(128)) OR (freqtype=(16) AND ((freqinterval>(0) AND (freqinterval<=(31)) OR freqtype=(32))))))));
+ALTER TABLE "public"."task" ADD CONSTRAINT "ck_task_startendtime" CHECK ((starttime]<=[endtime AND (starttime>=(0) AND (endtime>=(0) AND (starttime<=(1439) AND endtime<=(1439))))));
+ALTER TABLE "public"."task" ADD CONSTRAINT "ck_task_type" CHECK ((type=(13) OR (type=(12) OR (type=(11) OR (type=(10) OR (type=(9) OR (type=(8) OR (type=(7) OR (type=(6) OR (type=(5) OR (type=(4) OR (type=(3) OR (type=(2) OR type=(1))))))))))))));
+ALTER TABLE "public"."territory" ADD CONSTRAINT "ck_territory_name" CHECK (len(name)>(0));
+ALTER TABLE "public"."unit" ADD CONSTRAINT "ck_unit" CHECK (unit_id>(0));
+ALTER TABLE "public"."usersessionlog" ADD CONSTRAINT "ck_usersessionlog_exitcode" CHECK ((exitcode>=(0) AND exitcode<=(9)));
+ALTER TABLE "public"."version" ADD CONSTRAINT "ck_version_build" CHECK (build>(0));
+ALTER TABLE "public"."version" ADD CONSTRAINT "ck_version_version" CHECK (len(version)>(0));
+ALTER TABLE "public"."waterestimatedconsumption" ADD CONSTRAINT "ck_waterestimatedconsumption" CHECK ((estimationalgorithm>=(1) AND estimationalgorithm<=(2)));
+COMMENT ON CONSTRAINT "fk_complex_protocoltype" ON "public"."complex" IS 'Протокол обмена с устройством (для устройств, поддерживающих более одного протокола обмена)';
+COMMENT ON CONSTRAINT "ck_contingency_nodeid_measurepointid" ON "public"."contingency" IS 'Нештатная ситуация всегда должна быть связана либо с объектом учета, либо с точкой учета.';
+COMMENT ON CONSTRAINT "ck_customer_vatid" ON "public"."customer" IS 'Проверяет длину ИНН (10 символов для юридических лиц и 12 символов для физических лиц)';
+COMMENT ON CONSTRAINT "fk_datastatus_measurepoint" ON "public"."datastatus" IS 'Точка учета, по которой хранится состояние месячных данных';
+COMMENT ON CONSTRAINT "pk_devicemeasurepoint" ON "public"."devicemeasurepoint" IS 'Обеспечивает выполнение условия, что одна точка учета может быть подключена только к одному устройству';
+COMMENT ON CONSTRAINT "fk_measurepoint_node" ON "public"."measurepoint" IS 'Точка учета должна входить в объект учета (за исключением квартирных ТУР)';
+COMMENT ON CONSTRAINT "ck_measurepoint_currentratio" ON "public"."measurepoint" IS 'Первичные номинальные токи по ГОСТ 7746-2001: 1; 5; 10; 15; 20; 30; 40; 50; 75; 80; 100; 150; 200; 300; 400; 500; 600; 750; 800; 1000;  1200; 500;  2000;  3000;  4000; 5000;  6000;  8000;  10000;  12000; 14000;  16000; 18000;  20000;  25000; 28000; 30000; 32000; 35000; 40000 А.
+Вторичные токи выбираются из ряда 1; 2 и 5 А.';
+COMMENT ON CONSTRAINT "ck_measurepoint_voltageratio" ON "public"."measurepoint" IS 'Первичные номинальные токи по ГОСТ 7746-2001: 0,1; 0,4; 0,66; 3; 6; 10; 15; 20; 24; 27; 35; 110; 150; 220; 330; 500; 750; 1150 кВ.
+Вторичные токи выбираются из ряда 100; 110; 127; 220 и 400 В.';
+ALTER TABLE "public"."node" ALTER COLUMN "minoutdoortemp" SET DEFAULT (-31);
+ALTER TABLE "public"."task" ALTER COLUMN "startdatetime" SET DEFAULT CURRENT_TIMESTAMP;
+CREATE FUNCTION "public".trig_func_ins_or_upd() RETURNS trigger LANGUAGE plpgsql AS $def$
+begin
+  NEW.Length=datalength(NEW.Content);
+  RETURN NEW;
+end;
+$def$;
+CREATE TRIGGER trig_ins_or_upd before insert or update ON public.NodeFile for each row execute procedure public.trig_func_ins_or_upd();
+COMMIT;
