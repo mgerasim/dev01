@@ -18,3 +18,4 @@
 Описание проекта по миграции SQL Server на Postgres (dev01)
 =============================================
 * ```SQLSERVER.dump``` Дамп базы данных на SQL Server
+* ```sqlserver2pgsql.sh``` Скрипт конвертации с помощью инструмента sqlserver2pgsql
