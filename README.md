@@ -23,3 +23,18 @@
 Скрипт ```sqlserver2pgsql.sh```
 =============================================
 * Запуск ```sh sqlserver2pgsql.sh```
+
+Импорт базы данных в Postgres
+=============================================
+1. Выполнить под пользователем ```postgres``` команду ```psql```
+
+2. Создать базу данных 
+```
+CREATE DATABASE "LERS"
+  WITH OWNER "postgres"
+  ENCODING 'UTF8'
+  LC_COLLATE = 'en_US.UTF-8'
+  LC_CTYPE = 'en_US.UTF-8';
+```
+
+3. Импортировать скрипты
