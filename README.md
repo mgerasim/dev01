@@ -72,3 +72,7 @@ CREATE DATABASE "LERS"
 
 10. Выполнить запуск миграции 
 ``` sh migrate.sh DDL```
+
+Postgres
+=============================================
+* ```sudo service postgresql restart``` Перезагрузка СУБД
