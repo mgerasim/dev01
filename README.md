@@ -64,6 +64,9 @@ CREATE DATABASE "LERS"
 * ```mvn package```
 * ```java -cp target/Migrate2Postgres-1.0.7.jar net.twentyonesolutions.m2pg.PgMigrator```
 
-7. 
-Подготовить скрипт ```migrate.sh```
-2. Подготовить конфигурационный файл ```MsSqlAWT2Postgres.conf```
+7. Подготовить скрипт ```migrate.sh```
+
+8. Подготовить конфигурационный файл ```MsSqlAWT2Postgres.conf```
+
+9. Выполнить запуск миграции 
+``` sh migrate.sh DDL```
