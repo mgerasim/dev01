@@ -48,25 +48,27 @@ CREATE DATABASE "LERS"
 * ```sudo apt-get install default-jre```
 * ```sudo apt-get install default-jdk```
 
-2. Выполнить вход пользователя ```dev```
+2. Установить ```sqljdbc```
+
+3. Выполнить вход пользователя ```dev```
 * ``` su - dev```
 
-3. Склонировать проект Migrate2Postgres 
+4. Склонировать проект Migrate2Postgres 
 * ```git clone https://github.com/isapir/Migrate2Postgres.git```
 
-4. Выполнить переход в каталог ```Migrate2Postgres```
+5. Выполнить переход в каталог ```Migrate2Postgres```
 * ```cd projects/Migrate2Postgres/```
 
-5. Установить Apache Maven
+6. Установить Apache Maven
 * ```sudo apt-get install maven```
 
-6. Выполнить компиляцию проекта Migrate2Postgres
+7. Выполнить компиляцию проекта Migrate2Postgres
 * ```mvn package```
 * ```java -cp target/Migrate2Postgres-1.0.7.jar net.twentyonesolutions.m2pg.PgMigrator```
 
-7. Подготовить скрипт ```migrate.sh```
+8. Подготовить скрипт ```migrate.sh```
 
-8. Подготовить конфигурационный файл ```MsSqlAWT2Postgres.conf```
+9. Подготовить конфигурационный файл ```MsSqlAWT2Postgres.conf```
 
-9. Выполнить запуск миграции 
+10. Выполнить запуск миграции 
 ``` sh migrate.sh DDL```
