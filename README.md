@@ -78,3 +78,4 @@ Postgres
 * ```sudo service postgresql restart``` Перезагрузка СУБД
 * ```CREATE USER youruser WITH ENCRYPTED PASSWORD 'yourpass';``` Создание пользователя
 * ```GRANT ALL PRIVILEGES ON DATABASE yourdbname TO youruser;``` Назначение прав к БД
+* ```vi /etc/postgresql/10/main/pg_hba.conf``` Редактирование конфигурационного файла подключений
