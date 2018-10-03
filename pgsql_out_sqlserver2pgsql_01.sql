@@ -1,72 +1,72 @@
 \set ON_ERROR_STOP
 \set ECHO all
 BEGIN;
-CREATE TYPE "public"."accountnode" AS (
-"nodeid" int,
-"measurepointcheckaccessmode" smallint,
-"allowedsystemtypes" int
+CREATE TYPE "public"."account_node" AS (
+"node_id" int,
+"measure_point_check_access_mode" smallint,
+"allowed_system_types" int
 );
-CREATE TYPE "public"."actreportlist" AS (
-"acttypeid" smallint,
-"reportid" int
+CREATE TYPE "public"."act_report_list" AS (
+"act_type_id" smallint,
+"report_id" int
 );
-CREATE TYPE "public"."attributevalue" AS (
-"customattributeid" int,
+CREATE TYPE "public"."attribute_value" AS (
+"custom_attribute_id" int,
 "value" varchar(200)
 );
-CREATE TYPE "public"."balancegroupmeasurepoint" AS (
-"measurepointid" int,
-"ishead" boolean
+CREATE TYPE "public"."balance_group_measure_point" AS (
+"measure_point_id" int,
+"is_head" boolean
 );
-CREATE TYPE "public"."contracttemperature" AS (
+CREATE TYPE "public"."contract_temperature" AS (
 "t_outdoor" smallint,
 "t_in" real,
 "t_out" real
 );
-CREATE TYPE "public"."dataparametercell" AS (
-"datatype" smallint,
-"dataparameterid" smallint,
-"cellid" int,
-"pulseratio" real,
-"unitid" smallint
+CREATE TYPE "public"."data_parameter_cell" AS (
+"data_type" smallint,
+"data_parameter_id" smallint,
+"cell_id" int,
+"pulse_ratio" real,
+"unit_id" smallint
 );
-CREATE TYPE "public"."datetimeintervallist" AS (
-"startdatetime" timestamp(7),
-"enddatetime" timestamp(7)
+CREATE TYPE "public"."date_time_interval_list" AS (
+"start_date_time" timestamp(7),
+"end_date_time" timestamp(7)
 );
-CREATE TYPE "public"."datetimelist" AS (
-"datetime" timestamp
+CREATE TYPE "public"."date_time_list" AS (
+"date_time" timestamp
 );
-CREATE TYPE "public"."deviceerror" AS (
-"archivetype" smallint,
-"channelnumber" int,
-"datetime" timestamp,
-"eventcode" int,
+CREATE TYPE "public"."device_error" AS (
+"archive_type" smallint,
+"channel_number" int,
+"date_time" timestamp,
+"event_code" int,
 "description" varchar(200),
 "duration" int
 );
-CREATE TYPE "public"."diagparameters" AS (
-"incidenttypeid" int,
-"isenabled" boolean,
+CREATE TYPE "public"."diag_parameters" AS (
+"incident_type_id" int,
+"is_enabled" boolean,
 "value1" real,
 "value2" real
 );
-CREATE TYPE "public"."eavlastparametervalue" AS (
-"dataparameterid" smallint,
+CREATE TYPE "public"."eav_last_parameter_value" AS (
+"data_parameter_id" smallint,
 "value" double precision,
-"isbad" boolean,
-"iscalc" boolean
+"is_bad" boolean,
+"is_calc" boolean
 );
-CREATE TYPE "public"."eavparametervalue" AS (
-"datetime" timestamp,
-"dataparameterid" smallint,
+CREATE TYPE "public"."eav_parameter_value" AS (
+"date_time" timestamp,
+"data_parameter_id" smallint,
 "value" double precision,
-"isbad" boolean,
-"iscalc" boolean,
-"isinterpolated" boolean
+"is_bad" boolean,
+"is_calc" boolean,
+"is_interpolated" boolean
 );
-CREATE TYPE "public"."electricconsumption" AS (
-"datetime" timestamp,
+CREATE TYPE "public"."electric_consumption" AS (
+"date_time" timestamp,
 "ap1" double precision,
 "an1" double precision,
 "rp1" double precision,
@@ -87,24 +87,24 @@ CREATE TYPE "public"."electricconsumption" AS (
 "an" double precision,
 "rp" double precision,
 "rn" double precision,
-"normaloperationduration" double precision,
+"normal_operation_duration" double precision,
 "attributes" smallint,
-"calculatedvalues" int,
-"badvalues" int,
-"interpolatedvalues" int
+"calculated_values" int,
+"bad_values" int,
+"interpolated_values" int
 );
-CREATE TYPE "public"."electricpower" AS (
-"datetime" timestamp,
+CREATE TYPE "public"."electric_power" AS (
+"date_time" timestamp,
 "flags" smallint,
 "interval" smallint,
 "pp" double precision,
 "pn" double precision,
 "qp" double precision,
 "qn" double precision,
-"badvalues" int
+"bad_values" int
 );
-CREATE TYPE "public"."electrictotals" AS (
-"datetime" timestamp,
+CREATE TYPE "public"."electric_totals" AS (
+"date_time" timestamp,
 "ap1" double precision,
 "an1" double precision,
 "rp1" double precision,
@@ -125,15 +125,15 @@ CREATE TYPE "public"."electrictotals" AS (
 "an" double precision,
 "rp" double precision,
 "rn" double precision,
-"normaloperationduration" double precision,
+"normal_operation_duration" double precision,
 "attributes" smallint,
-"calculatedvalues" int,
-"badvalues" int,
-"resettedvalues" int,
-"interpolatedvalues" int
+"calculated_values" int,
+"bad_values" int,
+"resetted_values" int,
+"interpolated_values" int
 );
-CREATE TYPE "public"."gasconsumption" AS (
-"datetime" timestamp,
+CREATE TYPE "public"."gas_consumption" AS (
+"date_time" timestamp,
 "t" real,
 "t_outdoor" real,
 "p" real,
@@ -141,25 +141,25 @@ CREATE TYPE "public"."gasconsumption" AS (
 "v" real,
 "v_std" real,
 "m" real,
-"normaloperationduration" real,
+"normal_operation_duration" real,
 "attributes" smallint,
-"calculatedvalues" int,
-"badvalues" int,
-"interpolatedvalues" int
+"calculated_values" int,
+"bad_values" int,
+"interpolated_values" int
 );
-CREATE TYPE "public"."gastotals" AS (
-"datetime" timestamp,
+CREATE TYPE "public"."gas_totals" AS (
+"date_time" timestamp,
 "v" double precision,
 "v_std" double precision,
 "m" double precision,
-"normaloperationduration" double precision,
+"normal_operation_duration" double precision,
 "attributes" smallint,
-"calculatedvalues" int,
-"badvalues" int,
-"resettedvalues" int,
-"interpolatedvalues" int
+"calculated_values" int,
+"bad_values" int,
+"resetted_values" int,
+"interpolated_values" int
 );
-CREATE TYPE "public"."heatloss" AS (
+CREATE TYPE "public"."heat_loss" AS (
 "year" int,
 "jan" real,
 "feb" real,
@@ -176,35 +176,35 @@ CREATE TYPE "public"."heatloss" AS (
 "percent" real,
 "hour" real
 );
-CREATE TYPE "public"."idlist" AS (
+CREATE TYPE "public"."id_list" AS (
 "id" int
 );
-CREATE TYPE "public"."mapobjectappearance" AS (
-"mapobjectid" int,
-"appearancetype" smallint,
-"bordercolor" int,
-"borderwidth" smallint,
-"fillcolor" int,
-"fontcolor" int,
-"fontsize" real,
-"fontfamily" varchar(50),
-"fontstyle" smallint,
-"textvalignment" smallint,
-"texthalignment" smallint,
+CREATE TYPE "public"."map_object_appearance" AS (
+"map_object_id" int,
+"appearance_type" smallint,
+"border_color" int,
+"border_width" smallint,
+"fill_color" int,
+"font_color" int,
+"font_size" real,
+"font_family" varchar(50),
+"font_style" smallint,
+"text_valignment" smallint,
+"text_halignment" smallint,
 "visible" boolean
 );
-CREATE TYPE "public"."measurepointexpression" AS (
-"dataparameter" smallint,
+CREATE TYPE "public"."measure_point_expression" AS (
+"data_parameter" smallint,
 "expression" varchar(500)
 );
-CREATE TYPE "public"."measurepointpollsettings" AS (
-"measurepointid" int,
-"performtimecorrection" boolean,
-"requesteddatamask" smallint,
-"autopollstartdate" timestamp
+CREATE TYPE "public"."measure_point_poll_settings" AS (
+"measure_point_id" int,
+"perform_time_correction" boolean,
+"requested_data_mask" smallint,
+"auto_poll_start_date" timestamp
 );
-CREATE TYPE "public"."monthcontractconsumption" AS (
-"measuredparameterid" smallint,
+CREATE TYPE "public"."month_contract_consumption" AS (
+"measured_parameter_id" smallint,
 "year" int,
 "jan" real,
 "feb" real,
@@ -218,90 +218,90 @@ CREATE TYPE "public"."monthcontractconsumption" AS (
 "oct" real,
 "nov" real,
 "dec" real,
-"contractconsumptiontype" smallint
+"contract_consumption_type" smallint
 );
-CREATE TYPE "public"."nodecustomattribute" AS (
+CREATE TYPE "public"."node_custom_attribute" AS (
 "code" varchar(36),
 "attribute" varchar(200)
 );
-CREATE TYPE "public"."nodesignaling" AS (
+CREATE TYPE "public"."node_signaling" AS (
 "id" int,
-"signaltitle" varchar(50),
-"controllerid" int,
-"drycontactnumber" smallint,
-"incidentimportanceset" smallint,
-"incidentmessageset" varchar(100),
-"incidentimportanceunset" smallint,
-"incidentmessageunset" varchar(100)
+"signal_title" varchar(50),
+"controller_id" int,
+"dry_contact_number" smallint,
+"incident_importance_set" smallint,
+"incident_message_set" varchar(100),
+"incident_importance_unset" smallint,
+"incident_message_unset" varchar(100)
 );
-CREATE TYPE "public"."nodesupplier" AS (
-"systemtype" smallint,
-"supplierid" int,
-"contractnumber" varchar(20),
-"contractdate" timestamp,
-"inspectorid" int
+CREATE TYPE "public"."node_supplier" AS (
+"system_type" smallint,
+"supplier_id" int,
+"contract_number" varchar(20),
+"contract_date" timestamp,
+"inspector_id" int
 );
-CREATE TYPE "public"."notificationincident" AS (
-"incidenttypeid" int
+CREATE TYPE "public"."notification_incident" AS (
+"incident_type_id" int
 );
-CREATE TYPE "public"."notificationjobtype" AS (
-"nodejobtype" smallint
+CREATE TYPE "public"."notification_job_type" AS (
+"node_job_type" smallint
 );
-CREATE TYPE "public"."notificationmethod" AS (
-"notificationtypeid" int,
-"notificationmethodmask" smallint
+CREATE TYPE "public"."notification_method" AS (
+"notification_type_id" int,
+"notification_method_mask" smallint
 );
-CREATE TYPE "public"."notificationnode" AS (
-"nodeid" int
+CREATE TYPE "public"."notification_node" AS (
+"node_id" int
 );
-CREATE TYPE "public"."outdoortemperature" AS (
+CREATE TYPE "public"."outdoor_temperature" AS (
 "date" timestamp,
 "value" real
 );
 CREATE TYPE "public"."permission" AS (
-"operationid" int,
-"isdisabled" boolean
+"operation_id" int,
+"is_disabled" boolean
 );
-CREATE TYPE "public"."permissionex" AS (
-"accessrightid" int,
-"isdenied" boolean
+CREATE TYPE "public"."permission_ex" AS (
+"access_right_id" int,
+"is_denied" boolean
 );
-CREATE TYPE "public"."pollsessionlogmessage" AS (
-"pollsessionid" int,
+CREATE TYPE "public"."poll_session_log_message" AS (
+"poll_session_id" int,
 "importance" smallint,
 "message" varchar(1999),
-"datetime" timestamp
+"date_time" timestamp
 );
-CREATE TYPE "public"."polltaskstate" AS (
-"taskid" int,
-"starttime" timestamp,
-"endtime" timestamp,
-"executionstate" smallint,
+CREATE TYPE "public"."poll_task_state" AS (
+"task_id" int,
+"start_time" timestamp,
+"end_time" timestamp,
+"execution_state" smallint,
 "attempt" smallint,
-"lastattempttime" timestamp,
-"lastattemptendtime" timestamp,
-"lastattemptresultcode" int
+"last_attempt_time" timestamp,
+"last_attempt_end_time" timestamp,
+"last_attempt_result_code" int
 );
-CREATE TYPE "public"."roomcontractconsumption" AS (
-"monthnumber" smallint,
-"heatvalue" real,
-"hotwatervalue" real,
-"coldwatervalue" real,
-"electricityvalue" real
+CREATE TYPE "public"."room_contract_consumption" AS (
+"month_number" smallint,
+"heat_value" real,
+"hot_water_value" real,
+"cold_water_value" real,
+"electricity_value" real
 );
-CREATE TYPE "public"."roomcounter" AS (
-"roomid" int,
-"equipmentid" int,
-"installlocation" varchar(100),
-"totalsvalue1" double precision,
-"totalsvalue2" double precision,
-"measurepointid" int
+CREATE TYPE "public"."room_counter" AS (
+"room_id" int,
+"equipment_id" int,
+"install_location" varchar(100),
+"totals_value1" double precision,
+"totals_value2" double precision,
+"measure_point_id" int
 );
-CREATE TYPE "public"."scmmeasurepoints" AS (
-"measurepointid" int
+CREATE TYPE "public"."scm_measure_points" AS (
+"measure_point_id" int
 );
-CREATE TYPE "public"."waterconsumption" AS (
-"datetime" timestamp,
+CREATE TYPE "public"."water_consumption" AS (
+"date_time" timestamp,
 "t_in" real,
 "t_out" real,
 "t_cw" real,
@@ -318,21 +318,21 @@ CREATE TYPE "public"."waterconsumption" AS (
 "q_in" real,
 "q_out" real,
 "q_delta" real,
-"normaloperationduration" real,
-"stopduration" real,
-"flowunderrunduration" real,
-"flowoverrunduration" real,
-"tempdifflowduration" real,
-"nopowerduration" real,
-"incidentduration" real,
-"saturatedsteamduration" real,
+"normal_operation_duration" real,
+"stop_duration" real,
+"flow_underrun_duration" real,
+"flow_overrun_duration" real,
+"temp_diff_low_duration" real,
+"no_power_duration" real,
+"incident_duration" real,
+"saturated_steam_duration" real,
 "attributes" smallint,
-"calculatedvalues" int,
-"badvalues" int,
-"interpolatedvalues" int
+"calculated_values" int,
+"bad_values" int,
+"interpolated_values" int
 );
-CREATE TYPE "public"."watertotals" AS (
-"datetime" timestamp,
+CREATE TYPE "public"."water_totals" AS (
+"date_time" timestamp,
 "m_in" double precision,
 "m_out" double precision,
 "m_delta" double precision,
@@ -342,203 +342,203 @@ CREATE TYPE "public"."watertotals" AS (
 "q_in" double precision,
 "q_out" double precision,
 "q_delta" double precision,
-"normaloperationduration" double precision,
-"stopduration" double precision,
-"flowunderrunduration" double precision,
-"flowoverrunduration" double precision,
-"tempdifflowduration" double precision,
-"nopowerduration" double precision,
-"incidentduration" double precision,
-"saturatedsteamduration" double precision,
+"normal_operation_duration" double precision,
+"stop_duration" double precision,
+"flow_underrun_duration" double precision,
+"flow_overrun_duration" double precision,
+"temp_diff_low_duration" double precision,
+"no_power_duration" double precision,
+"incident_duration" double precision,
+"saturated_steam_duration" double precision,
 "attributes" smallint,
-"calculatedvalues" int,
-"badvalues" int,
-"resettedvalues" int,
-"interpolatedvalues" int
+"calculated_values" int,
+"bad_values" int,
+"resetted_values" int,
+"interpolated_values" int
 );
 
 
-CREATE TABLE "public"."accessright"( 
+CREATE TABLE "public"."access_right"( 
 	"id" int NOT NULL,
 	"title" varchar(100) NOT NULL,
-	"constname" varchar(50) NOT NULL,
-	"grouptitle" varchar(100) NOT NULL);
+	"const_name" varchar(50) NOT NULL,
+	"group_title" varchar(100) NOT NULL);
 
 CREATE TABLE "public"."account"( 
 	"account_id" int NOT NULL,
 	"account_login" varchar(30) NOT NULL,
-	"account_displayname" varchar(50) NOT NULL,
+	"account_display_name" varchar(50) NOT NULL,
 	"account_disabled" boolean NOT NULL,
 	"account_description" varchar(100) NOT NULL,
-	"account_passwordsetdate" timestamp NOT NULL,
-	"account_disableddate" timestamp,
-	"account_expirationdate" timestamp,
-	"account_sessiontimeout" int NOT NULL,
-	"account_sessioncount" smallint NOT NULL,
-	"account_ipaddressmode" boolean NOT NULL,
-	"account_lastlogindate" timestamp,
-	"account_issystem" boolean NOT NULL,
-	"mobilephone" varchar(15) NOT NULL,
+	"account_password_set_date" timestamp NOT NULL,
+	"account_disabled_date" timestamp,
+	"account_expiration_date" timestamp,
+	"account_session_timeout" int NOT NULL,
+	"account_session_count" smallint NOT NULL,
+	"account_ip_address_mode" boolean NOT NULL,
+	"account_last_login_date" timestamp,
+	"account_is_system" boolean NOT NULL,
+	"mobile_phone" varchar(15) NOT NULL,
 	"email" varchar(50) NOT NULL,
-	"smsemail" varchar(50) NOT NULL,
-	"sendsmsviamodem" boolean NOT NULL,
-	"notifystarttime" smallint NOT NULL,
-	"notifyendtime" smallint NOT NULL,
+	"sms_email" varchar(50) NOT NULL,
+	"send_sms_via_modem" boolean NOT NULL,
+	"notify_start_time" smallint NOT NULL,
+	"notify_end_time" smallint NOT NULL,
 	"password" bytea NOT NULL,
 	"salt" bytea NOT NULL,
-	"hasallnodeaccess" boolean NOT NULL,
-	"startpage" smallint NOT NULL,
-	"tenantofficeonly" boolean NOT NULL,
-	"allowallreports" boolean NOT NULL,
-	"disablepasswordchange" boolean NOT NULL,
-	"passwordresettoken" varchar(64) NOT NULL,
-	"passwordresettokenexpiredatetime" timestamp,
-	"allowallmaps" boolean NOT NULL,
-	"reportcenterformmode" smallint NOT NULL,
-	"usesendintervalforemail" boolean NOT NULL,
-	"authenticationmodes" smallint NOT NULL,
-	"windowssid" varchar(60),
-	"divisionid" int,
-	"loginnotallowed" boolean);
+	"has_all_node_access" boolean NOT NULL,
+	"start_page" smallint NOT NULL,
+	"tenant_office_only" boolean NOT NULL,
+	"allow_all_reports" boolean NOT NULL,
+	"disable_password_change" boolean NOT NULL,
+	"password_reset_token" varchar(64) NOT NULL,
+	"password_reset_token_expire_date_time" timestamp,
+	"allow_all_maps" boolean NOT NULL,
+	"report_center_form_mode" smallint NOT NULL,
+	"use_send_interval_for_email" boolean NOT NULL,
+	"authentication_modes" smallint NOT NULL,
+	"windows_sid" varchar(60),
+	"division_id" int,
+	"login_not_allowed" boolean);
 
-CREATE TABLE "public"."accountgroup"( 
+CREATE TABLE "public"."account_group"( 
 	"id" int NOT NULL,
 	"title" varchar(100) NOT NULL,
-	"issystem" boolean NOT NULL,
-	"divisionid" int);
+	"is_system" boolean NOT NULL,
+	"division_id" int);
 
-CREATE TABLE "public"."accountgroupmembership"( 
-	"accountid" int NOT NULL,
-	"accountgroupid" int NOT NULL);
+CREATE TABLE "public"."account_group_membership"( 
+	"account_id" int NOT NULL,
+	"account_group_id" int NOT NULL);
 
-CREATE TABLE "public"."accountgrouppermissionex"( 
-	"accountgroupid" int NOT NULL,
-	"accessrightid" int NOT NULL,
-	"isdenied" boolean NOT NULL);
+CREATE TABLE "public"."account_group_permission_ex"( 
+	"account_group_id" int NOT NULL,
+	"access_right_id" int NOT NULL,
+	"is_denied" boolean NOT NULL);
 
-CREATE TABLE "public"."accountlog"( 
+CREATE TABLE "public"."account_log"( 
 	"date" timestamp NOT NULL,
-	"accountid" int NOT NULL,
+	"account_id" int NOT NULL,
 	"importance" smallint NOT NULL,
 	"message" varchar(200) NOT NULL);
 
-CREATE TABLE "public"."accountmap"( 
-	"accountid" int NOT NULL,
-	"mapid" int NOT NULL);
+CREATE TABLE "public"."account_map"( 
+	"account_id" int NOT NULL,
+	"map_id" int NOT NULL);
 
-CREATE TABLE "public"."accountmeasurepoint"( 
-	"accountid" int NOT NULL,
-	"measurepointid" int NOT NULL);
+CREATE TABLE "public"."account_measure_point"( 
+	"account_id" int NOT NULL,
+	"measure_point_id" int NOT NULL);
 
-CREATE TABLE "public"."accountnode"( 
-	"accountid" int NOT NULL,
-	"nodeid" int NOT NULL,
-	"measurepointcheckaccessmode" smallint NOT NULL,
-	"allowedsystemtypes" int NOT NULL);
+CREATE TABLE "public"."account_node"( 
+	"account_id" int NOT NULL,
+	"node_id" int NOT NULL,
+	"measure_point_check_access_mode" smallint NOT NULL,
+	"allowed_system_types" int NOT NULL);
 
-CREATE TABLE "public"."accountnodegroup"( 
-	"accountid" int NOT NULL,
-	"nodegroupid" int NOT NULL);
+CREATE TABLE "public"."account_node_group"( 
+	"account_id" int NOT NULL,
+	"node_group_id" int NOT NULL);
 
-CREATE TABLE "public"."accountnotification"( 
-	"accountid" int NOT NULL,
-	"notificationid" int NOT NULL,
-	"isread" boolean NOT NULL);
+CREATE TABLE "public"."account_notification"( 
+	"account_id" int NOT NULL,
+	"notification_id" int NOT NULL,
+	"is_read" boolean NOT NULL);
 
-CREATE TABLE "public"."accountnotificationincident"( 
-	"accountid" int NOT NULL,
-	"incidenttypeid" int NOT NULL);
+CREATE TABLE "public"."account_notification_incident"( 
+	"account_id" int NOT NULL,
+	"incident_type_id" int NOT NULL);
 
-CREATE TABLE "public"."accountnotificationmethod"( 
-	"accountid" int NOT NULL,
-	"notificationtypeid" int NOT NULL,
-	"notificationmethodmask" smallint NOT NULL);
+CREATE TABLE "public"."account_notification_method"( 
+	"account_id" int NOT NULL,
+	"notification_type_id" int NOT NULL,
+	"notification_method_mask" smallint NOT NULL);
 
-CREATE TABLE "public"."accountnotificationnode"( 
-	"accountid" int NOT NULL,
-	"notificationtypeid" int NOT NULL,
-	"nodeid" int NOT NULL);
+CREATE TABLE "public"."account_notification_node"( 
+	"account_id" int NOT NULL,
+	"notification_type_id" int NOT NULL,
+	"node_id" int NOT NULL);
 
-CREATE TABLE "public"."accountnotificationnodejobtype"( 
-	"accountid" int NOT NULL,
-	"nodejobtype" smallint NOT NULL);
+CREATE TABLE "public"."account_notification_node_job_type"( 
+	"account_id" int NOT NULL,
+	"node_job_type" smallint NOT NULL);
 
-CREATE TABLE "public"."accountpermissionex"( 
-	"accountid" int NOT NULL,
-	"accessrightid" int NOT NULL,
-	"isdenied" boolean NOT NULL);
+CREATE TABLE "public"."account_permission_ex"( 
+	"account_id" int NOT NULL,
+	"access_right_id" int NOT NULL,
+	"is_denied" boolean NOT NULL);
 
-CREATE TABLE "public"."accountpersonalaccount"( 
-	"accountid" int NOT NULL,
-	"personalaccountid" int NOT NULL);
+CREATE TABLE "public"."account_personal_account"( 
+	"account_id" int NOT NULL,
+	"personal_account_id" int NOT NULL);
 
-CREATE TABLE "public"."accountreport"( 
-	"accountid" int NOT NULL,
-	"reportid" int NOT NULL);
+CREATE TABLE "public"."account_report"( 
+	"account_id" int NOT NULL,
+	"report_id" int NOT NULL);
 
-CREATE TABLE "public"."accountservicecompany"( 
-	"accountid" int NOT NULL,
-	"servicecompanyid" int NOT NULL);
+CREATE TABLE "public"."account_service_company"( 
+	"account_id" int NOT NULL,
+	"service_company_id" int NOT NULL);
 
 CREATE TABLE "public"."adapter"( 
 	"id" int NOT NULL,
 	"title" varchar(100) NOT NULL,
 	"comment" varchar(300) NOT NULL,
-	"isaddressrequired" boolean NOT NULL);
+	"is_address_required" boolean NOT NULL);
 
-CREATE TABLE "public"."balancegroup"( 
+CREATE TABLE "public"."balance_group"( 
 	"id" int NOT NULL,
 	"title" varchar(150));
 
-CREATE TABLE "public"."balancegroupmeasurepoint"( 
-	"balancegroupid" int NOT NULL,
-	"measurepointid" int NOT NULL,
-	"ishead" boolean NOT NULL);
+CREATE TABLE "public"."balance_group_measure_point"( 
+	"balance_group_id" int NOT NULL,
+	"measure_point_id" int NOT NULL,
+	"is_head" boolean NOT NULL);
 
 CREATE TABLE "public"."cell"( 
 	"id" int NOT NULL,
 	"name" varchar(30) NOT NULL,
-	"drivercode" varchar(10) NOT NULL,
-	"devicedatatype" smallint NOT NULL,
-	"equipmentmodelid" int NOT NULL);
+	"driver_code" varchar(10) NOT NULL,
+	"device_data_type" smallint NOT NULL,
+	"equipment_model_id" int NOT NULL);
 
 CREATE TABLE "public"."complex"( 
-	"complex_responsedelay" smallint NOT NULL,
-	"complex_pollsessionid" int,
-	"protocoltypeid" int,
+	"complex_response_delay" smallint NOT NULL,
+	"complex_poll_session_id" int,
+	"protocol_type_id" int,
 	"tag" bytea,
-	"adapterid" int,
-	"adapteraddress" int NOT NULL,
-	"hardwareversion" varchar(20),
-	"firmwareversion" varchar(30),
-	"timedifference" int,
-	"batterylevel" real,
-	"equipmentid" int NOT NULL);
+	"adapter_id" int,
+	"adapter_address" int NOT NULL,
+	"hardware_version" varchar(20),
+	"firmware_version" varchar(30),
+	"time_difference" int,
+	"battery_level" real,
+	"equipment_id" int NOT NULL);
 
 CREATE TABLE "public"."contingency"( 
 	"id" int NOT NULL,
-	"measurepointid" int,
-	"nodeid" int NOT NULL,
-	"contingencytypeid" int NOT NULL,
-	"startdate" timestamp NOT NULL,
-	"enddate" timestamp NOT NULL,
-	"diagdate" timestamp NOT NULL,
+	"measure_point_id" int,
+	"node_id" int NOT NULL,
+	"contingency_type_id" int NOT NULL,
+	"start_date" timestamp NOT NULL,
+	"end_date" timestamp NOT NULL,
+	"diag_date" timestamp NOT NULL,
 	"importance" smallint NOT NULL,
-	"isclosed" boolean NOT NULL,
+	"is_closed" boolean NOT NULL,
 	"description" varchar(500),
-	"smsmessage" varchar(100),
-	"equipmentid" int,
-	"datatype" smallint NOT NULL,
+	"sms_message" varchar(100),
+	"equipment_id" int,
+	"data_type" smallint NOT NULL,
 	"distinction" bytea);
 
-CREATE TABLE "public"."contingencylog"( 
-	"contingencyid" int NOT NULL,
+CREATE TABLE "public"."contingency_log"( 
+	"contingency_id" int NOT NULL,
 	"date" timestamp NOT NULL,
 	"message" varchar(500),
-	"shortmessage" varchar(100));
+	"short_message" varchar(100));
 
-CREATE TABLE "public"."contractconsumption"( 
-	"measuredparameterid" smallint NOT NULL,
+CREATE TABLE "public"."contract_consumption"( 
+	"measured_parameter_id" smallint NOT NULL,
 	"year" smallint NOT NULL,
 	"jan" real,
 	"feb" real,
@@ -552,12 +552,12 @@ CREATE TABLE "public"."contractconsumption"(
 	"oct" real,
 	"nov" real,
 	"dec" real,
-	"measurepointid" int NOT NULL,
-	"contractconsumptiontype" smallint NOT NULL);
+	"measure_point_id" int NOT NULL,
+	"contract_consumption_type" smallint NOT NULL);
 
-CREATE TABLE "public"."contractconsumptionlimit"( 
-	"measurepointid" int NOT NULL,
-	"measuredparameterid" smallint NOT NULL,
+CREATE TABLE "public"."contract_consumption_limit"( 
+	"measure_point_id" int NOT NULL,
+	"measured_parameter_id" smallint NOT NULL,
 	"year" smallint NOT NULL,
 	"jan" real,
 	"feb" real,
@@ -571,22 +571,22 @@ CREATE TABLE "public"."contractconsumptionlimit"(
 	"oct" real,
 	"nov" real,
 	"dec" real,
-	"contractconsumptiontype" smallint NOT NULL);
+	"contract_consumption_type" smallint NOT NULL);
 
-CREATE TABLE "public"."contracttemperature"( 
-	"nodeid" int NOT NULL,
+CREATE TABLE "public"."contract_temperature"( 
+	"node_id" int NOT NULL,
 	"t_outdoor" smallint NOT NULL,
 	"t_in" real NOT NULL,
 	"t_out" real NOT NULL);
 
-CREATE TABLE "public"."countertotals"( 
-	"equipmentid" int NOT NULL,
-	"datadate" timestamp NOT NULL,
+CREATE TABLE "public"."counter_totals"( 
+	"equipment_id" int NOT NULL,
+	"data_date" timestamp NOT NULL,
 	"value1" double precision NOT NULL,
 	"value2" double precision NOT NULL,
-	"istrustedvalue" boolean NOT NULL);
+	"is_trusted_value" boolean NOT NULL);
 
-CREATE TABLE "public"."customattribute"( 
+CREATE TABLE "public"."custom_attribute"( 
 	"id" int NOT NULL,
 	"title" varchar(100) NOT NULL,
 	"code" varchar(36) NOT NULL,
@@ -596,189 +596,189 @@ CREATE TABLE "public"."customattribute"(
 CREATE TABLE "public"."customer"( 
 	"id" int NOT NULL,
 	"title" varchar(255) NOT NULL,
-	"isnaturalperson" boolean NOT NULL,
-	"vatid" varchar(12) NOT NULL);
+	"is_natural_person" boolean NOT NULL,
+	"vat_id" varchar(12) NOT NULL);
 
-CREATE TABLE "public"."datainterface"( 
-	"equipmentmodelid" int NOT NULL,
-	"portsettings" varchar(50) NOT NULL,
-	"supportedportspeeds" smallint NOT NULL,
-	"supportedflowcontrols" smallint NOT NULL,
-	"defaultpassword" varchar(50) NOT NULL,
-	"passwordregex" varchar(100) NOT NULL,
-	"passwordcomment" varchar(200) NOT NULL,
-	"maxnetworksize" smallint NOT NULL,
-	"networkaddressdefault" varchar(20) NOT NULL,
-	"networkaddressusage" smallint NOT NULL,
-	"networkaddresscomment" varchar(200) NOT NULL,
-	"networkaddressregex" varchar(100) NOT NULL,
-	"networkaddressrangemin" int NOT NULL,
-	"networkaddressrangemax" int NOT NULL,
+CREATE TABLE "public"."data_interface"( 
+	"equipment_model_id" int NOT NULL,
+	"port_settings" varchar(50) NOT NULL,
+	"supported_port_speeds" smallint NOT NULL,
+	"supported_flow_controls" smallint NOT NULL,
+	"default_password" varchar(50) NOT NULL,
+	"password_reg_ex" varchar(100) NOT NULL,
+	"password_comment" varchar(200) NOT NULL,
+	"max_network_size" smallint NOT NULL,
+	"network_address_default" varchar(20) NOT NULL,
+	"network_address_usage" smallint NOT NULL,
+	"network_address_comment" varchar(200) NOT NULL,
+	"network_address_reg_ex" varchar(100) NOT NULL,
+	"network_address_range_min" int NOT NULL,
+	"network_address_range_max" int NOT NULL,
 	"features" int NOT NULL,
-	"secondlevelpasswordcomment" varchar(200) NOT NULL);
+	"second_level_password_comment" varchar(200) NOT NULL);
 
-CREATE TABLE "public"."dataparameter"( 
+CREATE TABLE "public"."data_parameter"( 
 	"id" smallint NOT NULL,
 	"code" varchar(50) NOT NULL,
 	"title" varchar(100) NOT NULL);
 
-CREATE TABLE "public"."datastatus"( 
-	"measurepointid" int NOT NULL,
-	"devicedatatype" smallint NOT NULL,
-	"startdate" timestamp NOT NULL,
-	"enddate" timestamp NOT NULL,
-	"datastatus" smallint NOT NULL);
+CREATE TABLE "public"."data_status"( 
+	"measure_point_id" int NOT NULL,
+	"device_data_type" smallint NOT NULL,
+	"start_date" timestamp NOT NULL,
+	"end_date" timestamp NOT NULL,
+	"data_status" smallint NOT NULL);
 
-CREATE TABLE "public"."deviceaddress"( 
+CREATE TABLE "public"."device_address"( 
 	"address" int NOT NULL,
-	"measurepointid" int NOT NULL,
-	"dataparameterid" smallint NOT NULL,
-	"devicedatatype" smallint NOT NULL,
-	"unitid" smallint NOT NULL,
-	"archivedepth" smallint NOT NULL,
-	"equipmentid" int NOT NULL,
+	"measure_point_id" int NOT NULL,
+	"data_parameter_id" smallint NOT NULL,
+	"device_data_type" smallint NOT NULL,
+	"unit_id" smallint NOT NULL,
+	"archive_depth" smallint NOT NULL,
+	"equipment_id" int NOT NULL,
 	"multiplier" real NOT NULL);
 
-CREATE TABLE "public"."devicecell"( 
-	"cellid" int NOT NULL,
-	"measurepointid" int NOT NULL,
-	"dataparameterid" smallint NOT NULL,
-	"pulseratio" real NOT NULL,
-	"unitid" smallint,
-	"datatype" smallint NOT NULL,
-	"equipmentid" int NOT NULL);
+CREATE TABLE "public"."device_cell"( 
+	"cell_id" int NOT NULL,
+	"measure_point_id" int NOT NULL,
+	"data_parameter_id" smallint NOT NULL,
+	"pulse_ratio" real NOT NULL,
+	"unit_id" smallint,
+	"data_type" smallint NOT NULL,
+	"equipment_id" int NOT NULL);
 
-CREATE TABLE "public"."devicechannel"( 
-	"heatleadin" smallint NOT NULL,
-	"channelnumber" int NOT NULL,
-	"measurepointid" int NOT NULL,
-	"issupplychannel" boolean NOT NULL,
-	"equipmentid" int NOT NULL);
+CREATE TABLE "public"."device_channel"( 
+	"heat_lead_in" smallint NOT NULL,
+	"channel_number" int NOT NULL,
+	"measure_point_id" int NOT NULL,
+	"is_supply_channel" boolean NOT NULL,
+	"equipment_id" int NOT NULL);
 
-CREATE TABLE "public"."deviceconfig"( 
-	"datetime" timestamp NOT NULL,
-	"paramid" int NOT NULL,
-	"paramvalue" varchar(50) NOT NULL,
-	"equipmentid" int NOT NULL);
+CREATE TABLE "public"."device_config"( 
+	"date_time" timestamp NOT NULL,
+	"param_id" int NOT NULL,
+	"param_value" varchar(50) NOT NULL,
+	"equipment_id" int NOT NULL);
 
-CREATE TABLE "public"."deviceconfigparam"( 
+CREATE TABLE "public"."device_config_param"( 
 	"id" int NOT NULL,
 	"title" varchar(100) NOT NULL,
-	"datatype" char(1) NOT NULL,
-	"generaldeviceconfigparamid" int,
+	"data_type" char(1) NOT NULL,
+	"general_device_config_param_id" int,
 	"comment" varchar(200) NOT NULL,
-	"heatleadinnum" smallint,
-	"channelnum" smallint,
-	"readaddress" int,
-	"readdatatype" smallint,
-	"drivercode" varchar(25),
-	"equipmentmodelid" int NOT NULL);
+	"heat_lead_in_num" smallint,
+	"channel_num" smallint,
+	"read_address" int,
+	"read_data_type" smallint,
+	"driver_code" varchar(25),
+	"equipment_model_id" int NOT NULL);
 
-CREATE TABLE "public"."devicedatatype"( 
+CREATE TABLE "public"."device_data_type"( 
 	"id" smallint NOT NULL,
 	"desc" varchar(100) NOT NULL);
 
-CREATE TABLE "public"."deviceevent"( 
+CREATE TABLE "public"."device_event"( 
 	"id" int NOT NULL,
-	"startdatetime" timestamp,
-	"eventcode" int NOT NULL,
+	"start_date_time" timestamp,
+	"event_code" int NOT NULL,
 	"description" varchar(200) NOT NULL,
-	"heatleadin" smallint NOT NULL,
-	"archivetype" smallint NOT NULL,
-	"channelnumber" int NOT NULL,
-	"enddatetime" timestamp,
-	"equipmentid" int NOT NULL);
+	"heat_lead_in" smallint NOT NULL,
+	"archive_type" smallint NOT NULL,
+	"channel_number" int NOT NULL,
+	"end_date_time" timestamp,
+	"equipment_id" int NOT NULL);
 
-CREATE TABLE "public"."devicemeasurepoint"( 
-	"measurepointid" int NOT NULL,
-	"equipmentid" int NOT NULL);
+CREATE TABLE "public"."device_measure_point"( 
+	"measure_point_id" int NOT NULL,
+	"equipment_id" int NOT NULL);
 
 CREATE TABLE "public"."division"( 
 	"id" int NOT NULL,
 	"title" varchar(128) NOT NULL);
 
-CREATE TABLE "public"."driverinterface"( 
-	"equipmentmodelid" int NOT NULL,
-	"drivername" varchar(50) NOT NULL,
-	"driverstatus" smallint NOT NULL,
-	"channelcount" int NOT NULL,
-	"heatsystemcount" smallint NOT NULL,
-	"minmemoryaddress" int NOT NULL,
-	"maxmemoryaddress" int NOT NULL,
+CREATE TABLE "public"."driver_interface"( 
+	"equipment_model_id" int NOT NULL,
+	"driver_name" varchar(50) NOT NULL,
+	"driver_status" smallint NOT NULL,
+	"channel_count" int NOT NULL,
+	"heat_system_count" smallint NOT NULL,
+	"min_memory_address" int NOT NULL,
+	"max_memory_address" int NOT NULL,
 	"features" int NOT NULL,
-	"supporteddatatypes" smallint NOT NULL,
-	"totalsresetthresholdm" double precision NOT NULL,
-	"totalsresetthresholdq" double precision NOT NULL);
+	"supported_data_types" smallint NOT NULL,
+	"totals_reset_threshold_m" double precision NOT NULL,
+	"totals_reset_threshold_q" double precision NOT NULL);
 
-CREATE TABLE "public"."drycontactstate"( 
-	"datetime" timestamp NOT NULL,
+CREATE TABLE "public"."dry_contact_state"( 
+	"date_time" timestamp NOT NULL,
 	"value" int NOT NULL,
-	"equipmentid" int NOT NULL);
+	"equipment_id" int NOT NULL);
 
-CREATE TABLE "public"."eavconsumptioncurrents"( 
-	"measurepointid" int NOT NULL,
-	"datetime" timestamp NOT NULL,
-	"dataparameterid" smallint NOT NULL,
+CREATE TABLE "public"."eav_consumption_currents"( 
+	"measure_point_id" int NOT NULL,
+	"date_time" timestamp NOT NULL,
+	"data_parameter_id" smallint NOT NULL,
 	"value" double precision NOT NULL,
-	"isbad" boolean NOT NULL,
-	"iscalc" boolean NOT NULL,
-	"isinterpolated" boolean NOT NULL);
+	"is_bad" boolean NOT NULL,
+	"is_calc" boolean NOT NULL,
+	"is_interpolated" boolean NOT NULL);
 
-CREATE TABLE "public"."eavconsumptionday"( 
-	"measurepointid" int NOT NULL,
-	"datetime" timestamp NOT NULL,
-	"dataparameterid" smallint NOT NULL,
+CREATE TABLE "public"."eav_consumption_day"( 
+	"measure_point_id" int NOT NULL,
+	"date_time" timestamp NOT NULL,
+	"data_parameter_id" smallint NOT NULL,
 	"value" double precision NOT NULL,
-	"isbad" boolean NOT NULL,
-	"iscalc" boolean NOT NULL,
-	"isinterpolated" boolean NOT NULL);
+	"is_bad" boolean NOT NULL,
+	"is_calc" boolean NOT NULL,
+	"is_interpolated" boolean NOT NULL);
 
-CREATE TABLE "public"."eavconsumptionhour"( 
-	"measurepointid" int NOT NULL,
-	"datetime" timestamp NOT NULL,
-	"dataparameterid" smallint NOT NULL,
+CREATE TABLE "public"."eav_consumption_hour"( 
+	"measure_point_id" int NOT NULL,
+	"date_time" timestamp NOT NULL,
+	"data_parameter_id" smallint NOT NULL,
 	"value" double precision NOT NULL,
-	"isbad" boolean NOT NULL,
-	"iscalc" boolean NOT NULL,
-	"isinterpolated" boolean NOT NULL);
+	"is_bad" boolean NOT NULL,
+	"is_calc" boolean NOT NULL,
+	"is_interpolated" boolean NOT NULL);
 
-CREATE TABLE "public"."eavconsumptionlast"( 
-	"measurepointid" int NOT NULL,
-	"datetime" timestamp NOT NULL,
-	"datatype" smallint NOT NULL,
+CREATE TABLE "public"."eav_consumption_last"( 
+	"measure_point_id" int NOT NULL,
+	"date_time" timestamp NOT NULL,
+	"data_type" smallint NOT NULL,
 	"attributes" smallint NOT NULL);
 
-CREATE TABLE "public"."eavconsumptionlastvalue"( 
-	"measurepointid" int NOT NULL,
-	"dataparameterid" smallint NOT NULL,
+CREATE TABLE "public"."eav_consumption_last_value"( 
+	"measure_point_id" int NOT NULL,
+	"data_parameter_id" smallint NOT NULL,
 	"value" double precision NOT NULL,
-	"isbad" boolean NOT NULL,
-	"iscalc" boolean NOT NULL);
+	"is_bad" boolean NOT NULL,
+	"is_calc" boolean NOT NULL);
 
-CREATE TABLE "public"."eavconsumptionmonth"( 
-	"measurepointid" int NOT NULL,
-	"datetime" timestamp NOT NULL,
-	"dataparameterid" smallint NOT NULL,
+CREATE TABLE "public"."eav_consumption_month"( 
+	"measure_point_id" int NOT NULL,
+	"date_time" timestamp NOT NULL,
+	"data_parameter_id" smallint NOT NULL,
 	"value" double precision NOT NULL,
-	"isbad" boolean NOT NULL,
-	"iscalc" boolean NOT NULL,
-	"isinterpolated" boolean NOT NULL);
+	"is_bad" boolean NOT NULL,
+	"is_calc" boolean NOT NULL,
+	"is_interpolated" boolean NOT NULL);
 
-CREATE TABLE "public"."eavtotalslast"( 
-	"measurepointid" int NOT NULL,
-	"datetime" timestamp NOT NULL,
+CREATE TABLE "public"."eav_totals_last"( 
+	"measure_point_id" int NOT NULL,
+	"date_time" timestamp NOT NULL,
 	"attributes" smallint NOT NULL);
 
-CREATE TABLE "public"."eavtotalslastvalue"( 
-	"measurepointid" int NOT NULL,
-	"dataparameterid" smallint NOT NULL,
+CREATE TABLE "public"."eav_totals_last_value"( 
+	"measure_point_id" int NOT NULL,
+	"data_parameter_id" smallint NOT NULL,
 	"value" double precision NOT NULL,
-	"isbad" boolean NOT NULL,
-	"iscalc" boolean NOT NULL);
+	"is_bad" boolean NOT NULL,
+	"is_calc" boolean NOT NULL);
 
-CREATE TABLE "public"."electricconsumptionday"( 
-	"measurepointid" int NOT NULL,
-	"datadate" timestamp NOT NULL,
+CREATE TABLE "public"."electric_consumption_day"( 
+	"measure_point_id" int NOT NULL,
+	"data_date" timestamp NOT NULL,
 	"ap1" real,
 	"an1" real,
 	"rp1" real,
@@ -796,18 +796,18 @@ CREATE TABLE "public"."electricconsumptionday"(
 	"rp4" real,
 	"rn4" real,
 	"attributes" smallint,
-	"calculatedvalues" int,
-	"badvalues" int,
+	"calculated_values" int,
+	"bad_values" int,
 	"ap" real,
 	"an" real,
 	"rp" real,
 	"rn" real,
-	"interpolatedvalues" int,
-	"normaloperationduration" real);
+	"interpolated_values" int,
+	"normal_operation_duration" real);
 
-CREATE TABLE "public"."electricconsumptionhour"( 
-	"measurepointid" int NOT NULL,
-	"datadate" timestamp NOT NULL,
+CREATE TABLE "public"."electric_consumption_hour"( 
+	"measure_point_id" int NOT NULL,
+	"data_date" timestamp NOT NULL,
 	"ap1" real,
 	"an1" real,
 	"rp1" real,
@@ -825,18 +825,18 @@ CREATE TABLE "public"."electricconsumptionhour"(
 	"rp4" real,
 	"rn4" real,
 	"attributes" smallint,
-	"calculatedvalues" int,
-	"badvalues" int,
+	"calculated_values" int,
+	"bad_values" int,
 	"ap" real,
 	"an" real,
 	"rp" real,
 	"rn" real,
-	"interpolatedvalues" int,
-	"normaloperationduration" real);
+	"interpolated_values" int,
+	"normal_operation_duration" real);
 
-CREATE TABLE "public"."electricconsumptionmonth"( 
-	"measurepointid" int NOT NULL,
-	"datadate" timestamp NOT NULL,
+CREATE TABLE "public"."electric_consumption_month"( 
+	"measure_point_id" int NOT NULL,
+	"data_date" timestamp NOT NULL,
 	"ap1" real,
 	"an1" real,
 	"rp1" real,
@@ -854,35 +854,35 @@ CREATE TABLE "public"."electricconsumptionmonth"(
 	"rp4" real,
 	"rn4" real,
 	"attributes" smallint,
-	"calculatedvalues" int,
-	"badvalues" int,
+	"calculated_values" int,
+	"bad_values" int,
 	"ap" real,
 	"an" real,
 	"rp" real,
 	"rn" real,
-	"interpolatedvalues" int,
-	"normaloperationduration" real);
+	"interpolated_values" int,
+	"normal_operation_duration" real);
 
-CREATE TABLE "public"."electricpower"( 
-	"measurepointid" int NOT NULL,
-	"datadate" timestamp NOT NULL,
+CREATE TABLE "public"."electric_power"( 
+	"measure_point_id" int NOT NULL,
+	"data_date" timestamp NOT NULL,
 	"flags" smallint NOT NULL,
 	"interval" smallint NOT NULL,
 	"pp" double precision,
 	"pn" double precision,
 	"qp" double precision,
 	"qn" double precision,
-	"badvalues" int);
+	"bad_values" int);
 
-CREATE TABLE "public"."electricpowerquality"( 
-	"measurepointid" int NOT NULL,
-	"datadate" timestamp NOT NULL,
+CREATE TABLE "public"."electric_power_quality"( 
+	"measure_point_id" int NOT NULL,
+	"data_date" timestamp NOT NULL,
 	"pp" real,
 	"pn" real,
 	"qp" real,
 	"qn" real,
-	"calculatedvalues" bigint,
-	"badvalues" bigint,
+	"calculated_values" bigint,
+	"bad_values" bigint,
 	"s" real,
 	"sa" real,
 	"sb" real,
@@ -901,23 +901,23 @@ CREATE TABLE "public"."electricpowerquality"(
 	"ia" real,
 	"ib" real,
 	"ic" real,
-	"phiuab" real,
-	"phiuac" real,
-	"phiubc" real,
-	"phiuia" real,
-	"phiuib" real,
-	"phiuic" real,
+	"phi_uab" real,
+	"phi_uac" real,
+	"phi_ubc" real,
+	"phi_uia" real,
+	"phi_uib" real,
+	"phi_uic" real,
 	"frequency" real,
 	"p" real,
 	"q" real,
-	"cosphi" real,
-	"cosphia" real,
-	"cosphib" real,
-	"cosphic" real);
+	"cos_phi" real,
+	"cos_phi_a" real,
+	"cos_phi_b" real,
+	"cos_phi_c" real);
 
-CREATE TABLE "public"."electrictotals"( 
-	"measurepointid" int NOT NULL,
-	"datadate" timestamp NOT NULL,
+CREATE TABLE "public"."electric_totals"( 
+	"measure_point_id" int NOT NULL,
+	"data_date" timestamp NOT NULL,
 	"ap1" double precision,
 	"an1" double precision,
 	"rp1" double precision,
@@ -935,206 +935,206 @@ CREATE TABLE "public"."electrictotals"(
 	"rp4" double precision,
 	"rn4" double precision,
 	"flags" smallint NOT NULL,
-	"calculatedvalues" int,
-	"badvalues" int,
+	"calculated_values" int,
+	"bad_values" int,
 	"ap" double precision,
 	"an" double precision,
 	"rp" double precision,
 	"rn" double precision,
-	"resettedvalues" int,
-	"interpolatedvalues" int,
-	"normaloperationduration" double precision);
+	"resetted_values" int,
+	"interpolated_values" int,
+	"normal_operation_duration" double precision);
 
 CREATE TABLE "public"."equipment"( 
 	"id" int NOT NULL,
-	"equipmentmodelid" int NOT NULL,
-	"serialnumber" varchar(32) NOT NULL,
-	"lastcalibrationdate" date,
-	"scheduledcalibrationdate" date,
-	"modificationid" int,
+	"equipment_model_id" int NOT NULL,
+	"serial_number" varchar(32) NOT NULL,
+	"last_calibration_date" date,
+	"scheduled_calibration_date" date,
+	"modification_id" int,
 	"password" varchar(50) NOT NULL,
 	"comment" varchar(1000) NOT NULL,
-	"modemidentifier" varchar(32),
-	"modempollportid" int,
-	"modemimei" varchar(15),
-	"networkaddress" varchar(20),
-	"secondlevelpassword" varchar(50),
-	"isshared" boolean NOT NULL,
-	"modemenablekeepalive" boolean,
-	"divisionid" int);
+	"modem_identifier" varchar(32),
+	"modem_poll_port_id" int,
+	"modem_imei" varchar(15),
+	"network_address" varchar(20),
+	"second_level_password" varchar(50),
+	"is_shared" boolean NOT NULL,
+	"modem_enable_keep_alive" boolean,
+	"division_id" int);
 
-CREATE TABLE "public"."equipmenthistory"( 
+CREATE TABLE "public"."equipment_history"( 
 	"id" bigint NOT NULL,
-	"datetime" timestamp NOT NULL,
-	"nodeid" int NOT NULL,
-	"measurepointid" int,
+	"date_time" timestamp NOT NULL,
+	"node_id" int NOT NULL,
+	"measure_point_id" int,
 	"action" smallint NOT NULL,
-	"equipmentmodelid" int NOT NULL,
-	"serialnumber" varchar(32) NOT NULL);
+	"equipment_model_id" int NOT NULL,
+	"serial_number" varchar(32) NOT NULL);
 
-CREATE TABLE "public"."equipmentmodel"( 
+CREATE TABLE "public"."equipment_model"( 
 	"id" int NOT NULL,
-	"issystem" boolean NOT NULL,
-	"longtitle" varchar(200) NOT NULL,
+	"is_system" boolean NOT NULL,
+	"long_title" varchar(200) NOT NULL,
 	"title" varchar(100) NOT NULL,
 	"capabilities" smallint NOT NULL,
 	"comment" varchar(1000) NOT NULL,
-	"serialnumberformat" varchar(100) NOT NULL,
-	"serialnumbercomment" varchar(200) NOT NULL,
-	"stateregisternumber" varchar(30) NOT NULL,
-	"calibrationinterval" smallint NOT NULL,
-	"istemperaturesensor" boolean NOT NULL,
-	"ispressuresensor" boolean NOT NULL,
-	"isflowsensor" boolean NOT NULL,
-	"supportedsystemtypes" smallint NOT NULL,
-	"supportedcommlinks" smallint NOT NULL,
-	"supportedcalltypes" smallint NOT NULL,
-	"modemfeatures" smallint NOT NULL,
-	"drycontactcount" smallint NOT NULL,
-	"iselectricmeter" boolean NOT NULL);
+	"serial_number_format" varchar(100) NOT NULL,
+	"serial_number_comment" varchar(200) NOT NULL,
+	"state_register_number" varchar(30) NOT NULL,
+	"calibration_interval" smallint NOT NULL,
+	"is_temperature_sensor" boolean NOT NULL,
+	"is_pressure_sensor" boolean NOT NULL,
+	"is_flow_sensor" boolean NOT NULL,
+	"supported_system_types" smallint NOT NULL,
+	"supported_comm_links" smallint NOT NULL,
+	"supported_call_types" smallint NOT NULL,
+	"modem_features" smallint NOT NULL,
+	"dry_contact_count" smallint NOT NULL,
+	"is_electric_meter" boolean NOT NULL);
 
-CREATE TABLE "public"."equipmentmodeladapter"( 
-	"equipmentmodelid" int NOT NULL,
-	"adapterid" int NOT NULL);
+CREATE TABLE "public"."equipment_model_adapter"( 
+	"equipment_model_id" int NOT NULL,
+	"adapter_id" int NOT NULL);
 
-CREATE TABLE "public"."equipmentmodelmodification"( 
+CREATE TABLE "public"."equipment_model_modification"( 
 	"id" int NOT NULL,
-	"equipmentmodelid" int NOT NULL,
-	"issystem" boolean NOT NULL,
+	"equipment_model_id" int NOT NULL,
+	"is_system" boolean NOT NULL,
 	"comment" varchar(1000) NOT NULL,
-	"precisionclass" varchar(4) NOT NULL,
-	"nominaldiameter" smallint NOT NULL,
-	"relativeerror" real NOT NULL,
-	"tempsensormin" real NOT NULL,
-	"tempsensormax" real NOT NULL,
-	"presssensormin" real NOT NULL,
-	"presssensormax" real NOT NULL,
-	"flowsensormin" real NOT NULL,
-	"flowsensormax" real NOT NULL);
+	"precision_class" varchar(4) NOT NULL,
+	"nominal_diameter" smallint NOT NULL,
+	"relative_error" real NOT NULL,
+	"temp_sensor_min" real NOT NULL,
+	"temp_sensor_max" real NOT NULL,
+	"press_sensor_min" real NOT NULL,
+	"press_sensor_max" real NOT NULL,
+	"flow_sensor_min" real NOT NULL,
+	"flow_sensor_max" real NOT NULL);
 
-CREATE TABLE "public"."equipmentmodelport"( 
+CREATE TABLE "public"."equipment_model_port"( 
 	"id" int NOT NULL,
 	"title" varchar(20) NOT NULL,
-	"equipmentmodelid" int NOT NULL);
+	"equipment_model_id" int NOT NULL);
 
-CREATE TABLE "public"."equipmentmodelportsettings"( 
+CREATE TABLE "public"."equipment_model_port_settings"( 
 	"id" int NOT NULL,
 	"title" varchar(50) NOT NULL,
-	"equipmentmodelportid" int NOT NULL);
+	"equipment_model_port_id" int NOT NULL);
 
-CREATE TABLE "public"."equipmentpollconnection"( 
-	"equipmentid" int NOT NULL,
-	"nodeid" int NOT NULL,
-	"pollconnectionid" int NOT NULL);
+CREATE TABLE "public"."equipment_poll_connection"( 
+	"equipment_id" int NOT NULL,
+	"node_id" int NOT NULL,
+	"poll_connection_id" int NOT NULL);
 
-CREATE TABLE "public"."equipmentpollstatistics"( 
+CREATE TABLE "public"."equipment_poll_statistics"( 
 	"id" int NOT NULL,
-	"equipmentid" int NOT NULL,
-	"enddate" timestamp NOT NULL,
-	"pollresult" smallint NOT NULL,
-	"polltype" smallint NOT NULL,
-	"commlinktype" smallint NOT NULL,
-	"pollerrorcount" int NOT NULL);
+	"equipment_id" int NOT NULL,
+	"end_date" timestamp NOT NULL,
+	"poll_result" smallint NOT NULL,
+	"poll_type" smallint NOT NULL,
+	"comm_link_type" smallint NOT NULL,
+	"poll_error_count" int NOT NULL);
 
-CREATE TABLE "public"."gasconsumptioncurrent"( 
-	"measurepointid" int NOT NULL,
-	"datadate" timestamp NOT NULL,
+CREATE TABLE "public"."gas_consumption_current"( 
+	"measure_point_id" int NOT NULL,
+	"data_date" timestamp NOT NULL,
 	"t" real,
 	"p" real,
 	"v" real,
 	"v_std" real,
-	"calculatedvalues" int,
-	"badvalues" int,
+	"calculated_values" int,
+	"bad_values" int,
 	"t_outdoor" real,
 	"m" real,
 	"p_delta" real);
 
-CREATE TABLE "public"."gasconsumptionday"( 
-	"measurepointid" int NOT NULL,
-	"datadate" timestamp NOT NULL,
+CREATE TABLE "public"."gas_consumption_day"( 
+	"measure_point_id" int NOT NULL,
+	"data_date" timestamp NOT NULL,
 	"t" real,
 	"p" real,
 	"v" real,
 	"v_std" real,
-	"normaloperationduration" real,
+	"normal_operation_duration" real,
 	"attributes" smallint,
-	"calculatedvalues" int,
-	"badvalues" int,
+	"calculated_values" int,
+	"bad_values" int,
 	"t_outdoor" real,
-	"interpolatedvalues" int,
+	"interpolated_values" int,
 	"m" real,
 	"p_delta" real);
 
-CREATE TABLE "public"."gasconsumptionhour"( 
-	"measurepointid" int NOT NULL,
-	"datadate" timestamp NOT NULL,
+CREATE TABLE "public"."gas_consumption_hour"( 
+	"measure_point_id" int NOT NULL,
+	"data_date" timestamp NOT NULL,
 	"t" real,
 	"p" real,
 	"v" real,
 	"v_std" real,
-	"normaloperationduration" real,
+	"normal_operation_duration" real,
 	"attributes" smallint,
-	"calculatedvalues" int,
-	"badvalues" int,
+	"calculated_values" int,
+	"bad_values" int,
 	"t_outdoor" real,
-	"interpolatedvalues" int,
+	"interpolated_values" int,
 	"m" real,
 	"p_delta" real);
 
-CREATE TABLE "public"."gasconsumptionmonth"( 
-	"measurepointid" int NOT NULL,
-	"datadate" timestamp NOT NULL,
+CREATE TABLE "public"."gas_consumption_month"( 
+	"measure_point_id" int NOT NULL,
+	"data_date" timestamp NOT NULL,
 	"t" real,
 	"p" real,
 	"v" real,
 	"v_std" real,
-	"normaloperationduration" real,
+	"normal_operation_duration" real,
 	"attributes" smallint,
-	"calculatedvalues" int,
-	"badvalues" int,
+	"calculated_values" int,
+	"bad_values" int,
 	"t_outdoor" real,
-	"interpolatedvalues" int,
+	"interpolated_values" int,
 	"m" real,
 	"p_delta" real);
 
-CREATE TABLE "public"."gastotals"( 
-	"measurepointid" int NOT NULL,
-	"datadate" timestamp NOT NULL,
+CREATE TABLE "public"."gas_totals"( 
+	"measure_point_id" int NOT NULL,
+	"data_date" timestamp NOT NULL,
 	"v" double precision,
 	"v_std" double precision,
-	"normaloperationduration" double precision,
+	"normal_operation_duration" double precision,
 	"flags" smallint NOT NULL,
-	"calculatedvalues" int,
-	"badvalues" int,
-	"resettedvalues" int,
-	"interpolatedvalues" int,
+	"calculated_values" int,
+	"bad_values" int,
+	"resetted_values" int,
+	"interpolated_values" int,
 	"m" double precision);
 
-CREATE TABLE "public"."generaldeviceconfigparam"( 
+CREATE TABLE "public"."general_device_config_param"( 
 	"id" int NOT NULL,
 	"title" varchar(100) NOT NULL);
 
-CREATE TABLE "public"."gprscontrollersession"( 
+CREATE TABLE "public"."gprs_controller_session"( 
 	"id" int NOT NULL,
-	"startdatetime" timestamp NOT NULL,
-	"enddatetime" timestamp,
-	"controllerclock" timestamp,
-	"signallevel" smallint,
-	"hardwareversion" varchar(30),
-	"firmwareversion" varchar(30),
-	"remoteipaddress" varchar(15) NOT NULL,
-	"remoteport" int NOT NULL,
+	"start_date_time" timestamp NOT NULL,
+	"end_date_time" timestamp,
+	"controller_clock" timestamp,
+	"signal_level" smallint,
+	"hardware_version" varchar(30),
+	"firmware_version" varchar(30),
+	"remote_ipaddress" varchar(15) NOT NULL,
+	"remote_port" int NOT NULL,
 	"balance" real,
-	"bytessent" bigint NOT NULL,
-	"bytesreceived" bigint NOT NULL,
+	"bytes_sent" bigint NOT NULL,
+	"bytes_received" bigint NOT NULL,
 	"iccid" varchar(20),
-	"activesim" smallint,
-	"simpinenabled" boolean,
-	"equipmentid" int NOT NULL,
-	"endreason" smallint NOT NULL);
+	"active_sim" smallint,
+	"sim_pin_enabled" boolean,
+	"equipment_id" int NOT NULL,
+	"end_reason" smallint NOT NULL);
 
-CREATE TABLE "public"."heatloss"( 
-	"measurepointid" int NOT NULL,
+CREATE TABLE "public"."heat_loss"( 
+	"measure_point_id" int NOT NULL,
 	"year" smallint NOT NULL,
 	"jan" real,
 	"feb" real,
@@ -1152,11 +1152,11 @@ CREATE TABLE "public"."heatloss"(
 	"hour" real);
 
 CREATE TABLE "public"."ipaddress"( 
-	"accountid" int NOT NULL,
-	"rangestartip" bigint NOT NULL,
-	"rangeendip" bigint NOT NULL);
+	"account_id" int NOT NULL,
+	"range_start_ip" bigint NOT NULL,
+	"range_end_ip" bigint NOT NULL);
 
-CREATE TABLE "public"."incidenttype"( 
+CREATE TABLE "public"."incident_type"( 
 	"id" int NOT NULL,
 	"title" varchar(100) NOT NULL);
 
@@ -1167,10 +1167,10 @@ CREATE TABLE "public"."inspector"(
 	"phone" varchar(200) NOT NULL,
 	"email" varchar(50) NOT NULL,
 	"comment" varchar(1000) NOT NULL,
-	"supplierid" int NOT NULL);
+	"supplier_id" int NOT NULL);
 
-CREATE TABLE "public"."limittemps"( 
-	"tempin" smallint,
+CREATE TABLE "public"."limit_temps"( 
+	"temp_in" smallint,
 	"t0" smallint,
 	"t2" smallint,
 	"t4" smallint,
@@ -1189,221 +1189,221 @@ CREATE TABLE "public"."limittemps"(
 	"t30" smallint,
 	"t32" smallint);
 
-CREATE TABLE "public"."maillist"( 
-	"taskid" int NOT NULL,
-	"sendsms" boolean NOT NULL,
-	"sendemail" boolean NOT NULL,
-	"accountid" int NOT NULL);
+CREATE TABLE "public"."mail_list"( 
+	"task_id" int NOT NULL,
+	"send_sms" boolean NOT NULL,
+	"send_email" boolean NOT NULL,
+	"account_id" int NOT NULL);
 
 CREATE TABLE "public"."map"( 
 	"id" int NOT NULL,
 	"title" varchar(255) NOT NULL,
-	"ispublic" boolean NOT NULL);
+	"is_public" boolean NOT NULL);
 
-CREATE TABLE "public"."mapimage"( 
+CREATE TABLE "public"."map_image"( 
 	"checksum" int NOT NULL,
 	"image" bytea NOT NULL);
 
-CREATE TABLE "public"."mapobject"( 
+CREATE TABLE "public"."map_object"( 
 	"id" int NOT NULL,
-	"mapid" int NOT NULL,
-	"mapobjecttypeid" smallint NOT NULL,
-	"measurepointid" int,
+	"map_id" int NOT NULL,
+	"map_object_type_id" smallint NOT NULL,
+	"measure_point_id" int,
 	"x" int NOT NULL,
 	"y" int NOT NULL,
-	"dx" int NOT NULL,
-	"dy" int NOT NULL,
+	"d_x" int NOT NULL,
+	"d_y" int NOT NULL,
 	"text" varchar(100) NOT NULL,
 	"tag" varchar(1500) NOT NULL,
 	"image" int,
 	"parameter" varchar(20),
 	"locked" boolean NOT NULL,
 	"zorder" int NOT NULL,
-	"nodesignalingid" int);
+	"node_signaling_id" int);
 
-CREATE TABLE "public"."mapobjectappearance"( 
-	"mapobjectid" int NOT NULL,
-	"appearancetype" smallint NOT NULL,
-	"bordercolor" int NOT NULL,
-	"borderwidth" smallint NOT NULL,
-	"fillcolor" int NOT NULL,
-	"fontcolor" int NOT NULL,
-	"fontsize" real NOT NULL,
-	"fontfamily" varchar(50) NOT NULL,
-	"fontstyle" smallint NOT NULL,
-	"textvalignment" smallint NOT NULL,
-	"texthalignment" smallint NOT NULL,
+CREATE TABLE "public"."map_object_appearance"( 
+	"map_object_id" int NOT NULL,
+	"appearance_type" smallint NOT NULL,
+	"border_color" int NOT NULL,
+	"border_width" smallint NOT NULL,
+	"fill_color" int NOT NULL,
+	"font_color" int NOT NULL,
+	"font_size" real NOT NULL,
+	"font_family" varchar(50) NOT NULL,
+	"font_style" smallint NOT NULL,
+	"text_valignment" smallint NOT NULL,
+	"text_halignment" smallint NOT NULL,
 	"visible" boolean NOT NULL);
 
-CREATE TABLE "public"."mapobjecttype"( 
+CREATE TABLE "public"."map_object_type"( 
 	"id" smallint NOT NULL,
 	"title" varchar(20) NOT NULL);
 
-CREATE TABLE "public"."measurepoint"( 
-	"measurepoint_id" int NOT NULL,
-	"measurepoint_title" varchar(150) NOT NULL,
-	"measurepoint_servicenumber" int NOT NULL,
-	"measurepoint_comment" varchar(1000) NOT NULL,
-	"measurepoint_type" smallint NOT NULL,
-	"measurepoint_state" smallint NOT NULL,
-	"measurepoint_selectedparamslist" varchar(350) NOT NULL,
-	"measurepoint_nodeid" int,
-	"measurepoint_systemtypeid" smallint NOT NULL,
-	"autopollstartdate" timestamp,
-	"isdoublepipesystem" boolean NOT NULL,
-	"personalaccountid" int,
-	"contractheat" real NOT NULL,
-	"contractflow" real NOT NULL,
-	"currentratio" real NOT NULL,
-	"voltageratio" real NOT NULL,
-	"contractpin" real NOT NULL,
-	"contractpout" real NOT NULL,
-	"contracttin" real NOT NULL,
-	"contracttout" real NOT NULL,
-	"showcalculateddata" boolean NOT NULL,
-	"devicepressuretype" smallint NOT NULL,
-	"counterid" int,
-	"calculatemissingtotals" boolean NOT NULL,
-	"calculatemissingtotalsestimate" boolean NOT NULL,
-	"calculatemissinghourconsumption" smallint NOT NULL,
-	"calculatemissingdayconsumption" smallint NOT NULL,
-	"calculatemissingmonthconsumption" smallint NOT NULL,
-	"calculatemissingvalues" boolean NOT NULL,
-	"reportinghour" smallint NOT NULL,
-	"reportingday" smallint NOT NULL,
-	"showbadvalues" boolean NOT NULL,
-	"calculatemissingheatvalues" boolean NOT NULL,
-	"calculatedvaluesaveragingmode" smallint NOT NULL,
-	"isreversibleflow" boolean NOT NULL,
-	"reportinghourmode" smallint NOT NULL,
-	"isvirtual" boolean NOT NULL,
-	"useadvancedtotalsinterpolation" boolean NOT NULL,
-	"diagdatatypes" smallint,
-	"displaypressuretype" smallint NOT NULL,
-	"admissiondate" timestamp);
+CREATE TABLE "public"."measure_point"( 
+	"measure_point_id" int NOT NULL,
+	"measure_point_title" varchar(150) NOT NULL,
+	"measure_point_service_number" int NOT NULL,
+	"measure_point_comment" varchar(1000) NOT NULL,
+	"measure_point_type" smallint NOT NULL,
+	"measure_point_state" smallint NOT NULL,
+	"measure_point_selected_params_list" varchar(350) NOT NULL,
+	"measure_point_node_id" int,
+	"measure_point_system_type_id" smallint NOT NULL,
+	"auto_poll_start_date" timestamp,
+	"is_double_pipe_system" boolean NOT NULL,
+	"personal_account_id" int,
+	"contract_heat" real NOT NULL,
+	"contract_flow" real NOT NULL,
+	"current_ratio" real NOT NULL,
+	"voltage_ratio" real NOT NULL,
+	"contract_pin" real NOT NULL,
+	"contract_pout" real NOT NULL,
+	"contract_tin" real NOT NULL,
+	"contract_tout" real NOT NULL,
+	"show_calculated_data" boolean NOT NULL,
+	"device_pressure_type" smallint NOT NULL,
+	"counter_id" int,
+	"calculate_missing_totals" boolean NOT NULL,
+	"calculate_missing_totals_estimate" boolean NOT NULL,
+	"calculate_missing_hour_consumption" smallint NOT NULL,
+	"calculate_missing_day_consumption" smallint NOT NULL,
+	"calculate_missing_month_consumption" smallint NOT NULL,
+	"calculate_missing_values" boolean NOT NULL,
+	"reporting_hour" smallint NOT NULL,
+	"reporting_day" smallint NOT NULL,
+	"show_bad_values" boolean NOT NULL,
+	"calculate_missing_heat_values" boolean NOT NULL,
+	"calculated_values_averaging_mode" smallint NOT NULL,
+	"is_reversible_flow" boolean NOT NULL,
+	"reporting_hour_mode" smallint NOT NULL,
+	"is_virtual" boolean NOT NULL,
+	"use_advanced_totals_interpolation" boolean NOT NULL,
+	"diag_data_types" smallint,
+	"display_pressure_type" smallint NOT NULL,
+	"admission_date" timestamp);
 
-CREATE TABLE "public"."measurepointcustomattribute"( 
+CREATE TABLE "public"."measure_point_custom_attribute"( 
 	"id" int NOT NULL,
-	"customattributeid" int NOT NULL,
-	"measurepointid" int NOT NULL,
+	"custom_attribute_id" int NOT NULL,
+	"measure_point_id" int NOT NULL,
 	"value" varchar(200) NOT NULL);
 
-CREATE TABLE "public"."measurepointdatacopysettings"( 
-	"targetmeasurepointid" int NOT NULL,
-	"waterparameter" int NOT NULL,
-	"sourcemeasurepointid" int NOT NULL);
+CREATE TABLE "public"."measure_point_data_copy_settings"( 
+	"target_measure_point_id" int NOT NULL,
+	"water_parameter" int NOT NULL,
+	"source_measure_point_id" int NOT NULL);
 
-CREATE TABLE "public"."measurepointdeviceerrorday"( 
-	"measurepointid" int NOT NULL,
-	"archivetype" smallint NOT NULL,
-	"channelnumber" int NOT NULL,
-	"datetime" timestamp NOT NULL,
-	"eventcode" int NOT NULL,
+CREATE TABLE "public"."measure_point_device_error_day"( 
+	"measure_point_id" int NOT NULL,
+	"archive_type" smallint NOT NULL,
+	"channel_number" int NOT NULL,
+	"date_time" timestamp NOT NULL,
+	"event_code" int NOT NULL,
 	"description" varchar(200) NOT NULL,
 	"duration" int NOT NULL);
 
-CREATE TABLE "public"."measurepointdeviceerrorhour"( 
-	"measurepointid" int NOT NULL,
-	"archivetype" smallint NOT NULL,
-	"channelnumber" int NOT NULL,
-	"datetime" timestamp NOT NULL,
-	"eventcode" int NOT NULL,
+CREATE TABLE "public"."measure_point_device_error_hour"( 
+	"measure_point_id" int NOT NULL,
+	"archive_type" smallint NOT NULL,
+	"channel_number" int NOT NULL,
+	"date_time" timestamp NOT NULL,
+	"event_code" int NOT NULL,
 	"description" varchar(200) NOT NULL,
 	"duration" int NOT NULL);
 
-CREATE TABLE "public"."measurepointdeviceerrormonth"( 
-	"measurepointid" int NOT NULL,
-	"archivetype" smallint NOT NULL,
-	"channelnumber" int NOT NULL,
-	"datetime" timestamp NOT NULL,
-	"eventcode" int NOT NULL,
+CREATE TABLE "public"."measure_point_device_error_month"( 
+	"measure_point_id" int NOT NULL,
+	"archive_type" smallint NOT NULL,
+	"channel_number" int NOT NULL,
+	"date_time" timestamp NOT NULL,
+	"event_code" int NOT NULL,
 	"description" varchar(200) NOT NULL,
 	"duration" int NOT NULL);
 
-CREATE TABLE "public"."measurepointdiagdefaults"( 
-	"systemtypeid" smallint NOT NULL,
-	"incidenttypeid" int NOT NULL,
-	"isenabled" boolean NOT NULL,
+CREATE TABLE "public"."measure_point_diag_defaults"( 
+	"system_type_id" smallint NOT NULL,
+	"incident_type_id" int NOT NULL,
+	"is_enabled" boolean NOT NULL,
 	"value1" real NOT NULL,
 	"value2" real NOT NULL,
-	"issummermode" boolean NOT NULL);
+	"is_summer_mode" boolean NOT NULL);
 
-CREATE TABLE "public"."measurepointdiagparams"( 
-	"measurepointid" int NOT NULL,
-	"incidenttypeid" int NOT NULL,
-	"isenabled" boolean NOT NULL,
+CREATE TABLE "public"."measure_point_diag_params"( 
+	"measure_point_id" int NOT NULL,
+	"incident_type_id" int NOT NULL,
+	"is_enabled" boolean NOT NULL,
 	"value1" real NOT NULL,
 	"value2" real NOT NULL,
-	"issummermode" boolean NOT NULL);
+	"is_summer_mode" boolean NOT NULL);
 
-CREATE TABLE "public"."measurepointexpression"( 
-	"measurepointid" int NOT NULL,
-	"dataparameter" smallint NOT NULL,
+CREATE TABLE "public"."measure_point_expression"( 
+	"measure_point_id" int NOT NULL,
+	"data_parameter" smallint NOT NULL,
 	"expression" varchar(1999) NOT NULL);
 
-CREATE TABLE "public"."measurepointorder"( 
-	"measurepointid" int NOT NULL,
-	"ordernumber" smallint NOT NULL);
+CREATE TABLE "public"."measure_point_order"( 
+	"measure_point_id" int NOT NULL,
+	"order_number" smallint NOT NULL);
 
-CREATE TABLE "public"."measurepointreport"( 
-	"measurepointid" int NOT NULL,
-	"reportid" int NOT NULL,
-	"reporttemplateid" int NOT NULL);
+CREATE TABLE "public"."measure_point_report"( 
+	"measure_point_id" int NOT NULL,
+	"report_id" int NOT NULL,
+	"report_template_id" int NOT NULL);
 
-CREATE TABLE "public"."measurepointsensor"( 
-	"measurepointid" int NOT NULL,
-	"issupplychannel" boolean NOT NULL,
-	"measuredparameterid" smallint NOT NULL,
-	"equipmentid" int NOT NULL);
+CREATE TABLE "public"."measure_point_sensor"( 
+	"measure_point_id" int NOT NULL,
+	"is_supply_channel" boolean NOT NULL,
+	"measured_parameter_id" smallint NOT NULL,
+	"equipment_id" int NOT NULL);
 
-CREATE TABLE "public"."measuredparameter"( 
-	"measuredparameter_id" smallint NOT NULL,
-	"measuredparameter_title" varchar(30) NOT NULL,
-	"measuredparameter_systemunitid" smallint,
-	"measuredparameter_code" varchar(40) NOT NULL);
+CREATE TABLE "public"."measured_parameter"( 
+	"measured_parameter_id" smallint NOT NULL,
+	"measured_parameter_title" varchar(30) NOT NULL,
+	"measured_parameter_system_unit_id" smallint,
+	"measured_parameter_code" varchar(40) NOT NULL);
 
-CREATE TABLE "public"."messagelog"( 
+CREATE TABLE "public"."message_log"( 
 	"id" int NOT NULL,
 	"date" timestamp NOT NULL,
-	"senderaccountid" int,
-	"sendername" varchar(50) NOT NULL,
-	"recipientname" varchar(50) NOT NULL,
-	"recipientaddress" varchar(50) NOT NULL,
+	"sender_account_id" int,
+	"sender_name" varchar(50) NOT NULL,
+	"recipient_name" varchar(50) NOT NULL,
+	"recipient_address" varchar(50) NOT NULL,
 	"message" varchar(1999) NOT NULL,
-	"messagetype" smallint NOT NULL,
-	"sendresult" varchar(256) NOT NULL,
-	"sendstate" smallint NOT NULL,
-	"sendscheduledate" timestamp NOT NULL);
+	"message_type" smallint NOT NULL,
+	"send_result" varchar(256) NOT NULL,
+	"send_state" smallint NOT NULL,
+	"send_schedule_date" timestamp NOT NULL);
 
-CREATE TABLE "public"."modemcommand"( 
-	"modemcommand_modemtypeid" smallint NOT NULL,
-	"modemcommand_modemcommandtypeid" smallint NOT NULL,
-	"modemcommand_text" varchar(70) NOT NULL,
-	"modemcommand_terminationtype" smallint NOT NULL,
-	"modemcommand_delaybefore" int NOT NULL,
-	"modemcommand_timeout" int NOT NULL,
-	"modemcommand_badanswerlist" varchar(100) NOT NULL,
-	"modemcommand_goodanswerlist" varchar(50) NOT NULL,
-	"modemcommand_comment" varchar(250) NOT NULL);
+CREATE TABLE "public"."modem_command"( 
+	"modem_command_modem_type_id" smallint NOT NULL,
+	"modem_command_modem_command_type_id" smallint NOT NULL,
+	"modem_command_text" varchar(70) NOT NULL,
+	"modem_command_termination_type" smallint NOT NULL,
+	"modem_command_delay_before" int NOT NULL,
+	"modem_command_timeout" int NOT NULL,
+	"modem_command_bad_answer_list" varchar(100) NOT NULL,
+	"modem_command_good_answer_list" varchar(50) NOT NULL,
+	"modem_command_comment" varchar(250) NOT NULL);
 
-CREATE TABLE "public"."modemcommandtype"( 
-	"modemcommandtype_id" smallint NOT NULL,
-	"modemcommandtype_title" varchar(50) NOT NULL,
-	"modemcommandtype_code" varchar(40) NOT NULL,
-	"modemcommandtype_comment" varchar(150) NOT NULL);
+CREATE TABLE "public"."modem_command_type"( 
+	"modem_command_type_id" smallint NOT NULL,
+	"modem_command_type_title" varchar(50) NOT NULL,
+	"modem_command_type_code" varchar(40) NOT NULL,
+	"modem_command_type_comment" varchar(150) NOT NULL);
 
-CREATE TABLE "public"."modemtype"( 
-	"modemtype_id" smallint NOT NULL,
-	"modemtype_title" varchar(50) NOT NULL,
-	"modemtype_communicationlinktype" smallint NOT NULL,
-	"modemtype_datatransferdelay" int NOT NULL,
-	"modemtype_portsettings" varchar(15) NOT NULL,
-	"modemtype_maxcommandlen" smallint NOT NULL,
-	"modemtype_shieldcode" smallint);
+CREATE TABLE "public"."modem_type"( 
+	"modem_type_id" smallint NOT NULL,
+	"modem_type_title" varchar(50) NOT NULL,
+	"modem_type_communication_link_type" smallint NOT NULL,
+	"modem_type_data_transfer_delay" int NOT NULL,
+	"modem_type_port_settings" varchar(15) NOT NULL,
+	"modem_type_max_command_len" smallint NOT NULL,
+	"modem_type_shield_code" smallint);
 
-CREATE TABLE "public"."nestedbalancegroups"( 
-	"parentid" int NOT NULL,
-	"childid" int NOT NULL);
+CREATE TABLE "public"."nested_balance_groups"( 
+	"parent_id" int NOT NULL,
+	"child_id" int NOT NULL);
 
 CREATE TABLE "public"."node"( 
 	"id" int NOT NULL,
@@ -1411,456 +1411,456 @@ CREATE TABLE "public"."node"(
 	"address" varchar(100) NOT NULL,
 	"comment" varchar(1000) NOT NULL,
 	"number" int NOT NULL,
-	"customerid" int,
-	"responsiblename" varchar(100) NOT NULL,
-	"responsiblephone" varchar(25) NOT NULL,
-	"servicecompanyid" int,
+	"customer_id" int,
+	"responsible_name" varchar(100) NOT NULL,
+	"responsible_phone" varchar(25) NOT NULL,
+	"service_company_id" int,
 	"state" smallint NOT NULL,
-	"servicemanid" int,
+	"serviceman_id" int,
 	"type" smallint NOT NULL,
-	"normcoldwater" real NOT NULL,
-	"normhotwater" real NOT NULL,
-	"normheat" real NOT NULL,
-	"normelectricity" real NOT NULL,
-	"normgas" real NOT NULL,
-	"iscommunalpollenabled" boolean NOT NULL,
-	"timezoneoffset" smallint NOT NULL,
-	"coldwatertemp" real NOT NULL,
-	"licensecount" smallint NOT NULL,
-	"contractmintemp" smallint NOT NULL,
-	"contractmaxtemp" smallint NOT NULL,
-	"contractlowbreaktemp" smallint NOT NULL,
-	"contracthighbreaktemp" smallint NOT NULL,
-	"minoutdoortemp" smallint NOT NULL,
-	"temperaturecomplianceanalysistype" smallint NOT NULL,
-	"territoryid" int NOT NULL,
-	"divisionid" int);
+	"norm_cold_water" real NOT NULL,
+	"norm_hot_water" real NOT NULL,
+	"norm_heat" real NOT NULL,
+	"norm_electricity" real NOT NULL,
+	"norm_gas" real NOT NULL,
+	"is_communal_poll_enabled" boolean NOT NULL,
+	"time_zone_offset" smallint NOT NULL,
+	"cold_water_temp" real NOT NULL,
+	"license_count" smallint NOT NULL,
+	"contract_min_temp" smallint NOT NULL,
+	"contract_max_temp" smallint NOT NULL,
+	"contract_low_break_temp" smallint NOT NULL,
+	"contract_high_break_temp" smallint NOT NULL,
+	"min_outdoor_temp" smallint NOT NULL,
+	"temperature_compliance_analysis_type" smallint NOT NULL,
+	"territory_id" int NOT NULL,
+	"division_id" int);
 
-CREATE TABLE "public"."nodebalance"( 
+CREATE TABLE "public"."node_balance"( 
 	"id" int NOT NULL,
-	"nodeid" int NOT NULL,
+	"node_id" int NOT NULL,
 	"symbol" varchar(32) NOT NULL,
 	"expression" varchar(1999) NOT NULL);
 
-CREATE TABLE "public"."nodecustomattribute"( 
+CREATE TABLE "public"."node_custom_attribute"( 
 	"id" int NOT NULL,
-	"nodeid" int NOT NULL,
-	"customattributeid" int NOT NULL,
+	"node_id" int NOT NULL,
+	"custom_attribute_id" int NOT NULL,
 	"value" varchar(200) NOT NULL);
 
-CREATE TABLE "public"."nodediagdefaults"( 
-	"incidenttypeid" int NOT NULL,
-	"isenabled" boolean NOT NULL,
+CREATE TABLE "public"."node_diag_defaults"( 
+	"incident_type_id" int NOT NULL,
+	"is_enabled" boolean NOT NULL,
 	"value1" real NOT NULL,
 	"value2" real NOT NULL);
 
-CREATE TABLE "public"."nodediagparams"( 
-	"nodeid" int NOT NULL,
-	"incidenttypeid" int NOT NULL,
-	"isenabled" boolean NOT NULL,
+CREATE TABLE "public"."node_diag_params"( 
+	"node_id" int NOT NULL,
+	"incident_type_id" int NOT NULL,
+	"is_enabled" boolean NOT NULL,
 	"value1" real NOT NULL,
 	"value2" real NOT NULL);
 
-CREATE TABLE "public"."nodeequipment"( 
-	"nodeid" int NOT NULL,
-	"equipmentid" int NOT NULL);
+CREATE TABLE "public"."node_equipment"( 
+	"node_id" int NOT NULL,
+	"equipment_id" int NOT NULL);
 
-CREATE TABLE "public"."nodefile"( 
+CREATE TABLE "public"."node_file"( 
 	"id" int NOT NULL,
-	"nodeid" int NOT NULL,
-	"filename" varchar(260) NOT NULL,
-	"creationtime" timestamp NOT NULL,
-	"lastwritetime" timestamp NOT NULL,
+	"node_id" int NOT NULL,
+	"file_name" varchar(260) NOT NULL,
+	"creation_time" timestamp NOT NULL,
+	"last_write_time" timestamp NOT NULL,
 	"content" bytea NOT NULL,
 	"hash" bytea NOT NULL,
-	"publicfile" boolean NOT NULL,
+	"public_file" boolean NOT NULL,
 	"thumbnail" bytea,
 	"length" varchar);
 
-CREATE TABLE "public"."nodegeolocation"( 
-	"nodeid" int NOT NULL,
+CREATE TABLE "public"."node_geo_location"( 
+	"node_id" int NOT NULL,
 	"latitude" double precision NOT NULL,
 	"longitude" double precision NOT NULL);
 
-CREATE TABLE "public"."nodegroup"( 
+CREATE TABLE "public"."node_group"( 
 	"id" int NOT NULL,
 	"title" varchar(75) NOT NULL,
 	"comment" varchar(250) NOT NULL,
-	"divisionid" int);
+	"division_id" int);
 
-CREATE TABLE "public"."nodegroupmembership"( 
-	"nodegroupid" int NOT NULL,
-	"nodeid" int NOT NULL);
+CREATE TABLE "public"."node_group_membership"( 
+	"node_group_id" int NOT NULL,
+	"node_id" int NOT NULL);
 
-CREATE TABLE "public"."nodejob"( 
+CREATE TABLE "public"."node_job"( 
 	"id" int NOT NULL,
-	"nodeid" int NOT NULL,
-	"measurepointid" int,
-	"creatoraccountid" int,
-	"creatorname" varchar(50) NOT NULL,
-	"performeraccountid" int,
-	"performername" varchar(50) NOT NULL,
-	"startdate" date NOT NULL,
-	"scheduledenddate" date NOT NULL,
-	"factenddate" date,
+	"node_id" int NOT NULL,
+	"measure_point_id" int,
+	"creator_account_id" int,
+	"creator_name" varchar(50) NOT NULL,
+	"performer_account_id" int,
+	"performer_name" varchar(50) NOT NULL,
+	"start_date" date NOT NULL,
+	"scheduled_end_date" date NOT NULL,
+	"fact_end_date" date,
 	"title" varchar(200) NOT NULL,
 	"description" varchar(1000) NOT NULL,
 	"state" smallint NOT NULL,
 	"type" smallint NOT NULL,
-	"resolutionid" int,
-	"incidentid" int,
-	"workordernumber" varchar(20) NOT NULL);
+	"resolution_id" int,
+	"incident_id" int,
+	"work_order_number" varchar(20) NOT NULL);
 
-CREATE TABLE "public"."nodejobcomment"( 
+CREATE TABLE "public"."node_job_comment"( 
 	"id" int NOT NULL,
-	"nodejobid" int NOT NULL,
-	"datetime" timestamp NOT NULL,
-	"accountid" int,
-	"accountname" varchar(50) NOT NULL,
+	"node_job_id" int NOT NULL,
+	"date_time" timestamp NOT NULL,
+	"account_id" int,
+	"account_name" varchar(50) NOT NULL,
 	"text" varchar(1999));
 
-CREATE TABLE "public"."nodejobfile"( 
-	"nodejobid" int NOT NULL,
-	"nodefileid" int NOT NULL);
+CREATE TABLE "public"."node_job_file"( 
+	"node_job_id" int NOT NULL,
+	"node_file_id" int NOT NULL);
 
-CREATE TABLE "public"."nodejobresolution"( 
+CREATE TABLE "public"."node_job_resolution"( 
 	"id" int NOT NULL,
 	"title" varchar(128) NOT NULL);
 
-CREATE TABLE "public"."nodepollconnection"( 
-	"pollconnectionid" int NOT NULL,
-	"nodeid" int NOT NULL);
+CREATE TABLE "public"."node_poll_connection"( 
+	"poll_connection_id" int NOT NULL,
+	"node_id" int NOT NULL);
 
-CREATE TABLE "public"."nodereport"( 
-	"nodeid" int NOT NULL,
-	"reportid" int NOT NULL,
-	"reporttemplateid" int NOT NULL);
+CREATE TABLE "public"."node_report"( 
+	"node_id" int NOT NULL,
+	"report_id" int NOT NULL,
+	"report_template_id" int NOT NULL);
 
-CREATE TABLE "public"."nodeseasonhistory"( 
-	"nodeid" int NOT NULL,
-	"startdate" date NOT NULL,
-	"isheatingseason" boolean NOT NULL);
+CREATE TABLE "public"."node_season_history"( 
+	"node_id" int NOT NULL,
+	"start_date" date NOT NULL,
+	"is_heating_season" boolean NOT NULL);
 
-CREATE TABLE "public"."nodesignaling"( 
+CREATE TABLE "public"."node_signaling"( 
 	"id" int NOT NULL,
-	"nodeid" int NOT NULL,
-	"signaltitle" varchar(50) NOT NULL,
-	"drycontactnumber" smallint NOT NULL,
-	"incidentimportanceset" smallint NOT NULL,
-	"incidentmessageset" varchar(100) NOT NULL,
-	"incidentimportanceunset" smallint NOT NULL,
-	"incidentmessageunset" varchar(100) NOT NULL,
-	"currentstate" smallint NOT NULL,
-	"equipmentid" int NOT NULL);
+	"node_id" int NOT NULL,
+	"signal_title" varchar(50) NOT NULL,
+	"dry_contact_number" smallint NOT NULL,
+	"incident_importance_set" smallint NOT NULL,
+	"incident_message_set" varchar(100) NOT NULL,
+	"incident_importance_unset" smallint NOT NULL,
+	"incident_message_unset" varchar(100) NOT NULL,
+	"current_state" smallint NOT NULL,
+	"equipment_id" int NOT NULL);
 
-CREATE TABLE "public"."nodesupplier"( 
-	"nodeid" int NOT NULL,
-	"systemtype" smallint NOT NULL,
-	"supplierid" int,
-	"contractnumber" varchar(20) NOT NULL,
-	"contractdate" timestamp,
-	"inspectorid" int);
+CREATE TABLE "public"."node_supplier"( 
+	"node_id" int NOT NULL,
+	"system_type" smallint NOT NULL,
+	"supplier_id" int,
+	"contract_number" varchar(20) NOT NULL,
+	"contract_date" timestamp,
+	"inspector_id" int);
 
-CREATE TABLE "public"."nodeuserdiagparams"( 
+CREATE TABLE "public"."node_user_diag_params"( 
 	"id" int NOT NULL,
-	"nodeid" int NOT NULL,
+	"node_id" int NOT NULL,
 	"expression" varchar(1999) NOT NULL,
 	"seasons" smallint NOT NULL,
-	"datatypes" smallint NOT NULL,
+	"data_types" smallint NOT NULL,
 	"message" varchar(500) NOT NULL,
 	"enabled" boolean NOT NULL,
 	"importance" smallint NOT NULL,
-	"shortmessage" varchar(100) NOT NULL);
+	"short_message" varchar(100) NOT NULL);
 
 CREATE TABLE "public"."notification"( 
 	"id" int NOT NULL,
-	"notificationtypeid" int NOT NULL,
-	"datetime" timestamp NOT NULL,
+	"notification_type_id" int NOT NULL,
+	"date_time" timestamp NOT NULL,
 	"message" varchar(500) NOT NULL,
 	"importance" smallint NOT NULL,
-	"expireddate" date,
-	"equipmentid" int,
-	"incidentid" int,
-	"nodejobid" int,
+	"expired_date" date,
+	"equipment_id" int,
+	"incident_id" int,
+	"node_job_id" int,
 	"url" varchar(256),
-	"measurepointid" int);
+	"measure_point_id" int);
 
-CREATE TABLE "public"."notificationtype"( 
+CREATE TABLE "public"."notification_type"( 
 	"id" int NOT NULL,
 	"title" varchar(100) NOT NULL);
 
-CREATE TABLE "public"."outdoortemperature"( 
+CREATE TABLE "public"."outdoor_temperature"( 
 	"date" timestamp NOT NULL,
 	"value" real NOT NULL,
-	"territoryid" int NOT NULL);
+	"territory_id" int NOT NULL);
 
-CREATE TABLE "public"."personalaccount"( 
-	"personalaccount_id" int NOT NULL,
-	"personalaccount_number" varchar(50) NOT NULL,
-	"personalaccount_numberapartment" varchar(50) NOT NULL,
-	"personalaccount_numberresident" smallint NOT NULL,
-	"personalaccount_areaapartment" real NOT NULL,
-	"nodeid" int NOT NULL,
+CREATE TABLE "public"."personal_account"( 
+	"personal_account_id" int NOT NULL,
+	"personal_account_number" varchar(50) NOT NULL,
+	"personal_account_number_apartment" varchar(50) NOT NULL,
+	"personal_account_number_resident" smallint NOT NULL,
+	"personal_account_area_apartment" real NOT NULL,
+	"node_id" int NOT NULL,
 	"type" smallint NOT NULL,
-	"contracthotwater" real NOT NULL,
-	"contractcoldwater" real NOT NULL,
-	"contractgas" real NOT NULL,
-	"contractelectricity" real NOT NULL,
-	"contractheat" real NOT NULL,
-	"contractconsumptiontype" smallint NOT NULL,
-	"floornumber" smallint NOT NULL,
-	"roomcount" smallint NOT NULL,
-	"entrancenumber" smallint NOT NULL);
+	"contract_hot_water" real NOT NULL,
+	"contract_cold_water" real NOT NULL,
+	"contract_gas" real NOT NULL,
+	"contract_electricity" real NOT NULL,
+	"contract_heat" real NOT NULL,
+	"contract_consumption_type" smallint NOT NULL,
+	"floor_number" smallint NOT NULL,
+	"room_count" smallint NOT NULL,
+	"entrance_number" smallint NOT NULL);
 
 CREATE TABLE "public"."plugin"( 
 	"identifier" uuid NOT NULL,
-	"filename" varchar(255) NOT NULL,
-	"isdisabled" boolean NOT NULL,
+	"file_name" varchar(255) NOT NULL,
+	"is_disabled" boolean NOT NULL,
 	"settings" varchar NOT NULL);
 
-CREATE TABLE "public"."pollconnection"( 
+CREATE TABLE "public"."poll_connection"( 
 	"id" int NOT NULL,
 	"title" varchar(150) NOT NULL,
-	"commlinktype" smallint NOT NULL,
-	"pollportid" int,
-	"pollportgroupid" int,
-	"commdeviceequipmentid" int,
-	"commdeviceportid" int,
-	"commdeviceportsettingsid" int,
-	"connectiontimeout" int,
-	"dialnumber" varchar(30),
-	"commlinkprotocol" smallint NOT NULL,
-	"gprscalltype" smallint NOT NULL,
-	"gprsautodisconnect" boolean NOT NULL,
-	"internethost" varchar(50) NOT NULL,
-	"internetport" int NOT NULL,
-	"imitatemodem" boolean NOT NULL,
-	"portspeed" int NOT NULL,
-	"flowcontrol" smallint NOT NULL);
+	"comm_link_type" smallint NOT NULL,
+	"poll_port_id" int,
+	"poll_port_group_id" int,
+	"comm_device_equipment_id" int,
+	"comm_device_port_id" int,
+	"comm_device_port_settings_id" int,
+	"connection_timeout" int,
+	"dial_number" varchar(30),
+	"comm_link_protocol" smallint NOT NULL,
+	"gprs_call_type" smallint NOT NULL,
+	"gprs_auto_disconnect" boolean NOT NULL,
+	"internet_host" varchar(50) NOT NULL,
+	"internet_port" int NOT NULL,
+	"imitate_modem" boolean NOT NULL,
+	"port_speed" int NOT NULL,
+	"flow_control" smallint NOT NULL);
 
-CREATE TABLE "public"."pollport"( 
-	"pollport_id" int NOT NULL,
-	"pollport_portnumber" smallint NOT NULL,
-	"pollport_enabled" boolean NOT NULL,
-	"pollport_title" varchar(50) NOT NULL,
-	"pollport_dialprefix" varchar(10) NOT NULL,
-	"pollport_communicationlinktype" smallint NOT NULL,
-	"pollport_modemtypeid" smallint NOT NULL,
-	"gprslistenipaddress" varchar(15) NOT NULL,
-	"gprslistenport" smallint NOT NULL,
-	"maxconnectionscount" smallint NOT NULL,
-	"softwarecarriercontrol" boolean NOT NULL,
+CREATE TABLE "public"."poll_port"( 
+	"poll_port_id" int NOT NULL,
+	"poll_port_port_number" smallint NOT NULL,
+	"poll_port_enabled" boolean NOT NULL,
+	"poll_port_title" varchar(50) NOT NULL,
+	"poll_port_dial_prefix" varchar(10) NOT NULL,
+	"poll_port_communication_link_type" smallint NOT NULL,
+	"poll_port_modem_type_id" smallint NOT NULL,
+	"gprs_listen_ipaddress" varchar(15) NOT NULL,
+	"gprs_listen_port" smallint NOT NULL,
+	"max_connections_count" smallint NOT NULL,
+	"software_carrier_control" boolean NOT NULL,
 	"comment" varchar(200) NOT NULL,
-	"pollportgroupid" int,
-	"billingmodel" smallint NOT NULL,
-	"tariffplanincludedminutes" int NOT NULL,
-	"pollserviceid" int NOT NULL);
+	"poll_port_group_id" int,
+	"billing_model" smallint NOT NULL,
+	"tariff_plan_included_minutes" int NOT NULL,
+	"poll_service_id" int NOT NULL);
 
-CREATE TABLE "public"."pollportgroup"( 
+CREATE TABLE "public"."poll_port_group"( 
 	"id" int NOT NULL,
 	"title" varchar(50) NOT NULL);
 
-CREATE TABLE "public"."pollportstatistics"( 
-	"pollportid" int NOT NULL,
+CREATE TABLE "public"."poll_port_statistics"( 
+	"poll_port_id" int NOT NULL,
 	"date" date NOT NULL,
-	"callcount" int NOT NULL,
-	"totalcallsduration" int NOT NULL,
+	"call_count" int NOT NULL,
+	"total_calls_duration" int NOT NULL,
 	"traffic" bigint NOT NULL);
 
-CREATE TABLE "public"."pollservice"( 
+CREATE TABLE "public"."poll_service"( 
 	"id" int NOT NULL,
 	"title" varchar(256) NOT NULL,
-	"ipaddress" varchar(45) NOT NULL,
-	"debugenabled" boolean NOT NULL,
+	"ip_address" varchar(45) NOT NULL,
+	"debug_enabled" boolean NOT NULL,
 	"token" varchar(256));
 
-CREATE TABLE "public"."pollsession"( 
-	"pollsession_id" int NOT NULL,
-	"pollsession_clientsessionid" int NOT NULL,
-	"pollsession_taskid" int,
-	"pollsession_startdatetime" timestamp NOT NULL,
-	"pollsession_enddatetime" timestamp,
-	"pollsession_resultcode" smallint,
-	"pollsession_communicationlinktype" smallint NOT NULL,
-	"dialtime" real NOT NULL,
-	"pollportid" int,
-	"nodeid" int,
-	"phonenumber" varchar(30) NOT NULL,
-	"polltasktype" smallint NOT NULL,
-	"callduration" int NOT NULL,
-	"bytessent" bigint NOT NULL,
-	"bytesreceived" bigint NOT NULL,
-	"commequipmentid" int,
-	"pollconnectionid" int);
+CREATE TABLE "public"."poll_session"( 
+	"poll_session_id" int NOT NULL,
+	"poll_session_client_session_id" int NOT NULL,
+	"poll_session_task_id" int,
+	"poll_session_start_datetime" timestamp NOT NULL,
+	"poll_session_end_datetime" timestamp,
+	"poll_session_result_code" smallint,
+	"poll_session_communication_link_type" smallint NOT NULL,
+	"dial_time" real NOT NULL,
+	"poll_port_id" int,
+	"node_id" int,
+	"phone_number" varchar(30) NOT NULL,
+	"poll_task_type" smallint NOT NULL,
+	"call_duration" int NOT NULL,
+	"bytes_sent" bigint NOT NULL,
+	"bytes_received" bigint NOT NULL,
+	"comm_equipment_id" int,
+	"poll_connection_id" int);
 
-CREATE TABLE "public"."pollsessionlog"( 
-	"pollsessionlog_pollsessionid" int NOT NULL,
-	"pollsessionlog_datadate" timestamp NOT NULL,
-	"pollsessionlog_type" smallint NOT NULL,
-	"pollsessionlog_message" varchar(1999) NOT NULL);
+CREATE TABLE "public"."poll_session_log"( 
+	"poll_session_log_poll_session_id" int NOT NULL,
+	"poll_session_log_data_date" timestamp NOT NULL,
+	"poll_session_log_type" smallint NOT NULL,
+	"poll_session_log_message" varchar(1999) NOT NULL);
 
-CREATE TABLE "public"."polltask"( 
+CREATE TABLE "public"."poll_task"( 
 	"id" int NOT NULL,
 	"description" varchar(255) NOT NULL,
-	"startdatetime" timestamp NOT NULL,
-	"enddatetime" timestamp NOT NULL,
-	"executionstate" smallint NOT NULL,
-	"maxattempts" smallint NOT NULL,
+	"start_datetime" timestamp NOT NULL,
+	"end_datetime" timestamp NOT NULL,
+	"execution_state" smallint NOT NULL,
+	"max_attempts" smallint NOT NULL,
 	"attempt" smallint NOT NULL,
-	"lastattempttime" timestamp,
-	"lastattemptresultcode" int,
-	"nextattemptdelay" int NOT NULL,
-	"freqtype" smallint NOT NULL,
-	"freqinterval" int NOT NULL,
-	"starttime" smallint NOT NULL,
-	"retryinterval" smallint NOT NULL,
-	"endtime" smallint NOT NULL,
-	"pollintervalstartdate" timestamp,
-	"pollintervalenddate" timestamp,
-	"pollinstantinterval" int NOT NULL,
-	"remoteconsolemode" boolean NOT NULL,
-	"lastattemptendtime" timestamp,
+	"last_attempt_time" timestamp,
+	"last_attempt_result_code" int,
+	"next_attempt_delay" int NOT NULL,
+	"freq_type" smallint NOT NULL,
+	"freq_interval" int NOT NULL,
+	"start_time" smallint NOT NULL,
+	"retry_interval" smallint NOT NULL,
+	"end_time" smallint NOT NULL,
+	"poll_interval_start_date" timestamp,
+	"poll_interval_end_date" timestamp,
+	"poll_instant_interval" int NOT NULL,
+	"remote_console_mode" boolean NOT NULL,
+	"last_attempt_end_time" timestamp,
 	"priority" smallint NOT NULL,
 	"type" smallint NOT NULL,
-	"loadabsentdataonly" boolean NOT NULL,
-	"pollconnectionid" int NOT NULL);
+	"load_absent_data_only" boolean NOT NULL,
+	"poll_connection_id" int NOT NULL);
 
-CREATE TABLE "public"."polltaskmeasurepoint"( 
-	"taskid" int NOT NULL,
-	"measurepointid" int NOT NULL,
-	"performtimecorrection" boolean NOT NULL,
-	"requesteddatamask" smallint NOT NULL,
-	"backupconnectionid" int,
-	"backuplastpolldate" timestamp,
-	"backupstarttime" smallint NOT NULL);
+CREATE TABLE "public"."poll_task_measure_point"( 
+	"task_id" int NOT NULL,
+	"measure_point_id" int NOT NULL,
+	"perform_time_correction" boolean NOT NULL,
+	"requested_data_mask" smallint NOT NULL,
+	"backup_connection_id" int,
+	"backup_last_poll_date" timestamp,
+	"backup_start_time" smallint NOT NULL);
 
-CREATE TABLE "public"."preparedreport"( 
+CREATE TABLE "public"."prepared_report"( 
 	"id" int NOT NULL,
-	"generationdatetime" timestamp NOT NULL,
-	"reporttitle" varchar(100) NOT NULL,
-	"templatetitle" varchar(200) NOT NULL,
-	"reporttype" smallint NOT NULL,
-	"reportentity" smallint NOT NULL,
-	"nodeid" int,
-	"measurepointid" int,
-	"datatype" smallint NOT NULL,
-	"startdate" timestamp NOT NULL,
-	"enddate" timestamp NOT NULL,
+	"generation_date_time" timestamp NOT NULL,
+	"report_title" varchar(100) NOT NULL,
+	"template_title" varchar(200) NOT NULL,
+	"report_type" smallint NOT NULL,
+	"report_entity" smallint NOT NULL,
+	"node_id" int,
+	"measure_point_id" int,
+	"data_type" smallint NOT NULL,
+	"start_date" timestamp NOT NULL,
+	"end_date" timestamp NOT NULL,
 	"data" bytea NOT NULL,
 	"thumbnail" bytea NOT NULL,
-	"filename" varchar(200) NOT NULL);
+	"file_name" varchar(200) NOT NULL);
 
-CREATE TABLE "public"."protocoltype"( 
+CREATE TABLE "public"."protocol_type"( 
 	"id" int NOT NULL,
 	"number" smallint NOT NULL,
 	"title" varchar(50) NOT NULL,
-	"equipmentmodelid" int NOT NULL);
+	"equipment_model_id" int NOT NULL);
 
 CREATE TABLE "public"."report"( 
 	"id" int NOT NULL,
 	"title" varchar(100) NOT NULL,
-	"issystem" boolean NOT NULL,
-	"datatype" smallint NOT NULL,
-	"reporttype" smallint NOT NULL,
-	"periodstartday" smallint NOT NULL,
-	"periodstartmonth" smallint NOT NULL,
-	"periodendday" smallint NOT NULL,
-	"periodendmonth" smallint NOT NULL,
-	"periodtype" smallint NOT NULL,
-	"reportentity" smallint NOT NULL,
-	"reporttemplateid" int,
-	"filenameformat" varchar(200) NOT NULL,
-	"usereportparameter" boolean NOT NULL);
+	"is_system" boolean NOT NULL,
+	"data_type" smallint NOT NULL,
+	"report_type" smallint NOT NULL,
+	"period_start_day" smallint NOT NULL,
+	"period_start_month" smallint NOT NULL,
+	"period_end_day" smallint NOT NULL,
+	"period_end_month" smallint NOT NULL,
+	"period_type" smallint NOT NULL,
+	"report_entity" smallint NOT NULL,
+	"report_template_id" int,
+	"file_name_format" varchar(200) NOT NULL,
+	"use_report_parameter" boolean NOT NULL);
 
-CREATE TABLE "public"."reportfixednode"( 
-	"reporttemplateid" int NOT NULL,
-	"nodeid" int NOT NULL);
+CREATE TABLE "public"."report_fixed_node"( 
+	"report_template_id" int NOT NULL,
+	"node_id" int NOT NULL);
 
-CREATE TABLE "public"."reportgeneratingtasknode"( 
-	"taskid" int NOT NULL,
-	"nodeid" int NOT NULL);
+CREATE TABLE "public"."report_generating_task_node"( 
+	"task_id" int NOT NULL,
+	"node_id" int NOT NULL);
 
-CREATE TABLE "public"."reportgeneratingtasksettings"( 
-	"taskid" int NOT NULL,
-	"measurepointsystems" smallint NOT NULL,
-	"reportid" int NOT NULL,
-	"mailingfileformat" smallint NOT NULL,
-	"mailingfilesplitmode" smallint NOT NULL,
-	"mailsubject" varchar(78) NOT NULL,
-	"savereport" boolean NOT NULL,
-	"mailingenabled" boolean NOT NULL,
-	"mailmessage" varchar(500) NOT NULL,
-	"pdfexportproperties" varchar NOT NULL,
-	"reportsavedirectory" varchar(260) NOT NULL,
-	"packattachments" boolean NOT NULL);
+CREATE TABLE "public"."report_generating_task_settings"( 
+	"task_id" int NOT NULL,
+	"measure_point_systems" smallint NOT NULL,
+	"report_id" int NOT NULL,
+	"mailing_file_format" smallint NOT NULL,
+	"mailing_file_split_mode" smallint NOT NULL,
+	"mail_subject" varchar(78) NOT NULL,
+	"save_report" boolean NOT NULL,
+	"mailing_enabled" boolean NOT NULL,
+	"mail_message" varchar(500) NOT NULL,
+	"pdf_export_properties" varchar NOT NULL,
+	"report_save_directory" varchar(260) NOT NULL,
+	"pack_attachments" boolean NOT NULL);
 
-CREATE TABLE "public"."reportparameter"( 
+CREATE TABLE "public"."report_parameter"( 
 	"id" int NOT NULL,
-	"reportid" int NOT NULL,
-	"reportparameterpropertyid" int NOT NULL,
+	"report_id" int NOT NULL,
+	"report_parameter_property_id" int NOT NULL,
 	"value" varchar(100) NOT NULL);
 
-CREATE TABLE "public"."reportparameterproperty"( 
+CREATE TABLE "public"."report_parameter_property"( 
 	"id" int NOT NULL,
-	"parametername" varchar(50) NOT NULL,
-	"valuetype" smallint NOT NULL,
+	"parameter_name" varchar(50) NOT NULL,
+	"value_type" smallint NOT NULL,
 	"comment" varchar(300) NOT NULL,
-	"reporttype" smallint NOT NULL,
-	"reportentity" smallint NOT NULL,
-	"issystem" boolean NOT NULL);
+	"report_type" smallint NOT NULL,
+	"report_entity" smallint NOT NULL,
+	"is_system" boolean NOT NULL);
 
-CREATE TABLE "public"."reporttemplate"( 
+CREATE TABLE "public"."report_template"( 
 	"id" int NOT NULL,
 	"title" varchar(200) NOT NULL,
 	"comment" varchar(300) NOT NULL,
-	"isuser" boolean NOT NULL,
-	"datasourcemask" bigint NOT NULL,
+	"is_user" boolean NOT NULL,
+	"data_source_mask" bigint NOT NULL,
 	"text" varchar,
-	"reportentity" smallint NOT NULL,
-	"reporttype" smallint NOT NULL,
-	"measurepointcountheat" smallint NOT NULL,
-	"measurepointcounthotwater" smallint NOT NULL,
-	"measurepointcountcoldwater" smallint NOT NULL,
-	"measurepointcountsteam" smallint NOT NULL,
-	"measurepointcountgas" smallint NOT NULL,
-	"measurepointcountelectricity" smallint NOT NULL,
-	"buildnumber" int NOT NULL,
-	"estimationalgorithm" smallint NOT NULL,
-	"dailyaveragecalculatingperiod" smallint NOT NULL,
-	"devicemodel" int NOT NULL,
-	"measurepointcountsewage" smallint NOT NULL);
+	"report_entity" smallint NOT NULL,
+	"report_type" smallint NOT NULL,
+	"measure_point_count_heat" smallint NOT NULL,
+	"measure_point_count_hot_water" smallint NOT NULL,
+	"measure_point_count_cold_water" smallint NOT NULL,
+	"measure_point_count_steam" smallint NOT NULL,
+	"measure_point_count_gas" smallint NOT NULL,
+	"measure_point_count_electricity" smallint NOT NULL,
+	"build_number" int NOT NULL,
+	"estimation_algorithm" smallint NOT NULL,
+	"daily_average_calculating_period" smallint NOT NULL,
+	"device_model" int NOT NULL,
+	"measure_point_count_sewage" smallint NOT NULL);
 
-CREATE TABLE "public"."roomcontractconsumption"( 
-	"roomid" int NOT NULL,
-	"monthnumber" smallint NOT NULL,
-	"heatvalue" real,
-	"hotwatervalue" real,
-	"coldwatervalue" real,
-	"electricityvalue" real);
+CREATE TABLE "public"."room_contract_consumption"( 
+	"room_id" int NOT NULL,
+	"month_number" smallint NOT NULL,
+	"heat_value" real,
+	"hot_water_value" real,
+	"cold_water_value" real,
+	"electricity_value" real);
 
-CREATE TABLE "public"."roomcounter"( 
-	"equipmentid" int NOT NULL,
-	"roomid" int NOT NULL,
-	"initialtotalsvalue1" double precision NOT NULL,
-	"initialtotalsvalue2" double precision NOT NULL,
-	"initialtotalsdate" timestamp NOT NULL,
-	"installlocation" varchar(100) NOT NULL,
-	"measurepointid" int);
+CREATE TABLE "public"."room_counter"( 
+	"equipment_id" int NOT NULL,
+	"room_id" int NOT NULL,
+	"initial_totals_value1" double precision NOT NULL,
+	"initial_totals_value2" double precision NOT NULL,
+	"initial_totals_date" timestamp NOT NULL,
+	"install_location" varchar(100) NOT NULL,
+	"measure_point_id" int);
 
-CREATE TABLE "public"."scmmeasurepoints"( 
-	"measurepointid" int NOT NULL);
+CREATE TABLE "public"."scm_measure_points"( 
+	"measure_point_id" int NOT NULL);
 
-CREATE TABLE "public"."servicecompany"( 
+CREATE TABLE "public"."service_company"( 
 	"id" int NOT NULL,
 	"title" varchar(200) NOT NULL,
 	"phone" varchar(200) NOT NULL,
-	"licensenumber" varchar(100) NOT NULL,
+	"license_number" varchar(100) NOT NULL,
 	"comment" varchar(1000) NOT NULL);
 
 CREATE TABLE "public"."serviceman"( 
 	"id" int NOT NULL,
 	"name" varchar(100) NOT NULL,
-	"servicecompanyid" int,
+	"service_company_id" int,
 	"phone" varchar(40) NOT NULL,
 	"email" varchar(30) NOT NULL,
 	"comment" varchar(200) NOT NULL);
@@ -1868,129 +1868,129 @@ CREATE TABLE "public"."serviceman"(
 CREATE TABLE "public"."supplier"( 
 	"id" int NOT NULL,
 	"title" varchar(255) NOT NULL,
-	"systemtypemask" smallint NOT NULL,
+	"system_type_mask" smallint NOT NULL,
 	"contacts" varchar(500) NOT NULL,
 	"comment" varchar(1000) NOT NULL);
 
-CREATE TABLE "public"."systemlog"( 
+CREATE TABLE "public"."system_log"( 
 	"id" int NOT NULL,
-	"datetime" timestamp NOT NULL,
+	"date_time" timestamp NOT NULL,
 	"importance" smallint NOT NULL,
 	"message" varchar(500) NOT NULL);
 
-CREATE TABLE "public"."systemparameters"( 
-	"logdebugmessages" boolean NOT NULL,
-	"polllogstoragetime" smallint NOT NULL,
-	"systemlogstoragetime" smallint NOT NULL,
-	"usersessionlogstoragetime" smallint NOT NULL,
-	"accountlogstoragetime" smallint NOT NULL,
-	"emaillogstoragetime" smallint NOT NULL,
-	"isautopollenabled" boolean NOT NULL,
-	"pollloglevel" smallint NOT NULL,
-	"pollmaxduration" smallint NOT NULL,
-	"pollmaxtimediff" int NOT NULL,
-	"devicerequestretrycount" smallint NOT NULL,
-	"pollportblockerrorcount" smallint NOT NULL,
-	"pollportblocktimeout" smallint NOT NULL,
-	"timecorrectionenabled" boolean NOT NULL,
-	"timecorrectionthreshold" int NOT NULL,
-	"gsmmodemenabled" boolean NOT NULL,
-	"gsmmodemcomportnumber" smallint NOT NULL,
-	"gsmmodembaudrate" int NOT NULL,
-	"gsmmodemflowcontrol" smallint NOT NULL,
-	"defaultsupplypressure" smallint NOT NULL,
-	"defaultreturnpressure" smallint NOT NULL,
-	"defaultcoldwatertemp" real NOT NULL,
-	"pressuredisplaytype" smallint NOT NULL,
-	"storagetimecurrentdata" smallint NOT NULL,
-	"maxpartcountinmultipartsms" smallint NOT NULL,
-	"smtpserver" varchar(50) NOT NULL,
-	"smtpport" int NOT NULL,
-	"smtpsenderaddress" varchar(50) NOT NULL,
-	"smtpsenderdisplayname" varchar(50) NOT NULL,
-	"smtplogin" varchar(30) NOT NULL,
-	"smtppassword" varchar(30) NOT NULL,
-	"iscommunalenabled" boolean NOT NULL,
-	"diagenabled" boolean NOT NULL,
-	"diagdaydataenabled" boolean NOT NULL,
-	"diaghourdataenabled" boolean NOT NULL,
-	"diagcurrentdataenabled" boolean NOT NULL,
-	"storagetimemonthdata" smallint NOT NULL,
-	"storagetimedaydata" smallint NOT NULL,
-	"storagetimehourdata" smallint NOT NULL,
-	"storagetimedeviceconfig" smallint NOT NULL,
-	"storagetimedeviceevent" smallint NOT NULL,
-	"storagetimepowerdata" smallint NOT NULL,
-	"websiteaddress" varchar(50) NOT NULL,
-	"smtpenablessl" boolean NOT NULL,
-	"ignorenotalldatareaderror" boolean NOT NULL,
-	"backupdirectory" varchar(100) NOT NULL,
-	"updaterdatabasebackupmode" smallint NOT NULL,
-	"storagetimetotalsdata" smallint NOT NULL,
-	"backupcount" smallint NOT NULL,
-	"calibrationnotifydaycount" smallint NOT NULL,
-	"jobduedatenotifydaycount" smallint NOT NULL,
-	"allowsmsnotifications" boolean NOT NULL,
-	"gsmmodemmodelid" smallint NOT NULL,
-	"storagetimepreparedreports" smallint NOT NULL,
+CREATE TABLE "public"."system_parameters"( 
+	"log_debug_messages" boolean NOT NULL,
+	"poll_log_storage_time" smallint NOT NULL,
+	"system_log_storage_time" smallint NOT NULL,
+	"user_session_log_storage_time" smallint NOT NULL,
+	"account_log_storage_time" smallint NOT NULL,
+	"email_log_storage_time" smallint NOT NULL,
+	"is_auto_poll_enabled" boolean NOT NULL,
+	"poll_log_level" smallint NOT NULL,
+	"poll_max_duration" smallint NOT NULL,
+	"poll_max_time_diff" int NOT NULL,
+	"device_request_retry_count" smallint NOT NULL,
+	"poll_port_block_error_count" smallint NOT NULL,
+	"poll_port_block_timeout" smallint NOT NULL,
+	"time_correction_enabled" boolean NOT NULL,
+	"time_correction_threshold" int NOT NULL,
+	"gsm_modem_enabled" boolean NOT NULL,
+	"gsm_modem_com_port_number" smallint NOT NULL,
+	"gsm_modem_baud_rate" int NOT NULL,
+	"gsm_modem_flow_control" smallint NOT NULL,
+	"default_supply_pressure" smallint NOT NULL,
+	"default_return_pressure" smallint NOT NULL,
+	"default_cold_water_temp" real NOT NULL,
+	"pressure_display_type" smallint NOT NULL,
+	"storage_time_current_data" smallint NOT NULL,
+	"max_part_count_in_multipart_sms" smallint NOT NULL,
+	"smtp_server" varchar(50) NOT NULL,
+	"smtp_port" int NOT NULL,
+	"smtp_sender_address" varchar(50) NOT NULL,
+	"smtp_sender_display_name" varchar(50) NOT NULL,
+	"smtp_login" varchar(30) NOT NULL,
+	"smtp_password" varchar(30) NOT NULL,
+	"is_communal_enabled" boolean NOT NULL,
+	"diag_enabled" boolean NOT NULL,
+	"diag_day_data_enabled" boolean NOT NULL,
+	"diag_hour_data_enabled" boolean NOT NULL,
+	"diag_current_data_enabled" boolean NOT NULL,
+	"storage_time_month_data" smallint NOT NULL,
+	"storage_time_day_data" smallint NOT NULL,
+	"storage_time_hour_data" smallint NOT NULL,
+	"storage_time_device_config" smallint NOT NULL,
+	"storage_time_device_event" smallint NOT NULL,
+	"storage_time_power_data" smallint NOT NULL,
+	"web_site_address" varchar(50) NOT NULL,
+	"smtp_enable_ssl" boolean NOT NULL,
+	"ignore_not_all_data_read_error" boolean NOT NULL,
+	"backup_directory" varchar(100) NOT NULL,
+	"updater_data_base_backup_mode" smallint NOT NULL,
+	"storage_time_totals_data" smallint NOT NULL,
+	"backup_count" smallint NOT NULL,
+	"calibration_notify_day_count" smallint NOT NULL,
+	"job_due_date_notify_day_count" smallint NOT NULL,
+	"allow_sms_notifications" boolean NOT NULL,
+	"gsm_modem_model_id" smallint NOT NULL,
+	"storage_time_prepared_reports" smallint NOT NULL,
 	"id" int NOT NULL,
-	"storagetimeincidents" smallint NOT NULL,
-	"storagetimegprssessions" smallint NOT NULL,
-	"allowednodefileextensions" varchar(500),
-	"minimumpasswordlength" int NOT NULL,
-	"passwordmustcontainnumbers" boolean NOT NULL,
-	"passwordmustcontainuppercaseletters" boolean NOT NULL,
-	"passwordmustcontainlowercaseletters" boolean NOT NULL,
-	"passwordmustcontainspecialchars" boolean NOT NULL,
-	"gsmmodem_usesipforvoicecalls" boolean NOT NULL,
-	"gsmmodem_sipserveraddress" varchar(1999) NOT NULL,
-	"gsmmodem_siplogin" varchar(50) NOT NULL,
-	"gsmmodem_sippassword" varchar(128) NOT NULL,
-	"gsmmodem_sipfromdomain" varchar(1999) NOT NULL,
-	"savegeneratedreporttodatabase" boolean NOT NULL,
-	"log_systemlog_gprsidenterror" boolean NOT NULL,
-	"log_systemlog_gprsmodemnotfound" boolean NOT NULL,
-	"log_systemlog_timecorrected" boolean NOT NULL,
-	"log_systemlog_reportprinted" boolean NOT NULL,
-	"log_systemlog_ratiodoesntmatch" boolean NOT NULL,
-	"log_systemlog_pollerror" boolean NOT NULL,
-	"log_systemlog_messagesent" boolean NOT NULL,
-	"log_systemlog_usersessionstarted" boolean NOT NULL,
-	"log_systemlog_authenticationerror" boolean NOT NULL,
-	"log_systemlog_incidentclosed" boolean NOT NULL,
-	"notification_admissiondatenotifydaycount" smallint NOT NULL,
-	"storagetimenodeequipmenthistory" smallint NOT NULL,
-	"poll_disableporterrorcount" smallint NOT NULL,
-	"poll_rebootporterrorcount" smallint NOT NULL,
-	"storagetimenotifications" smallint NOT NULL);
+	"storage_time_incidents" smallint NOT NULL,
+	"storage_time_gprs_sessions" smallint NOT NULL,
+	"allowed_node_file_extensions" varchar(500),
+	"minimum_password_length" int NOT NULL,
+	"password_must_contain_numbers" boolean NOT NULL,
+	"password_must_contain_uppercase_letters" boolean NOT NULL,
+	"password_must_contain_lowercase_letters" boolean NOT NULL,
+	"password_must_contain_special_chars" boolean NOT NULL,
+	"gsm_modem_use_sip_for_voice_calls" boolean NOT NULL,
+	"gsm_modem_sip_server_address" varchar(1999) NOT NULL,
+	"gsm_modem_sip_login" varchar(50) NOT NULL,
+	"gsm_modem_sip_password" varchar(128) NOT NULL,
+	"gsm_modem_sip_from_domain" varchar(1999) NOT NULL,
+	"save_generated_report_to_data_base" boolean NOT NULL,
+	"log_system_log_gprs_ident_error" boolean NOT NULL,
+	"log_system_log_gprs_modem_not_found" boolean NOT NULL,
+	"log_system_log_time_corrected" boolean NOT NULL,
+	"log_system_log_report_printed" boolean NOT NULL,
+	"log_system_log_ratio_doesnt_match" boolean NOT NULL,
+	"log_system_log_poll_error" boolean NOT NULL,
+	"log_system_log_message_sent" boolean NOT NULL,
+	"log_system_log_user_session_started" boolean NOT NULL,
+	"log_system_log_authentication_error" boolean NOT NULL,
+	"log_system_log_incident_closed" boolean NOT NULL,
+	"notification_admission_date_notify_day_count" smallint NOT NULL,
+	"storage_time_node_equipment_history" smallint NOT NULL,
+	"poll_disable_port_error_count" smallint NOT NULL,
+	"poll_reboot_port_error_count" smallint NOT NULL,
+	"storage_time_notifications" smallint NOT NULL);
 
-CREATE TABLE "public"."systemtype"( 
+CREATE TABLE "public"."system_type"( 
 	"id" smallint NOT NULL,
 	"title" varchar(50) NOT NULL);
 
 CREATE TABLE "public"."task"( 
 	"id" int NOT NULL,
-	"freqtype" smallint NOT NULL,
-	"freqinterval" int NOT NULL,
-	"starttime" smallint NOT NULL,
-	"retryinterval" smallint NOT NULL,
-	"endtime" smallint NOT NULL,
+	"freq_type" smallint NOT NULL,
+	"freq_interval" int NOT NULL,
+	"start_time" smallint NOT NULL,
+	"retry_interval" smallint NOT NULL,
+	"end_time" smallint NOT NULL,
 	"title" varchar(100) NOT NULL,
 	"enabled" boolean NOT NULL,
-	"lastruntime" timestamp,
-	"lastresult" boolean,
-	"lastresulterrormessage" varchar(500) NOT NULL,
-	"startdatetime" timestamp NOT NULL,
+	"last_run_time" timestamp,
+	"last_result" boolean,
+	"last_result_error_message" varchar(500) NOT NULL,
+	"start_date_time" timestamp NOT NULL,
 	"type" smallint NOT NULL);
 
 CREATE TABLE "public"."territory"( 
 	"id" int NOT NULL,
-	"parentid" int,
+	"parent_id" int,
 	"name" varchar(128) NOT NULL,
-	"timezoneoffset" smallint NOT NULL,
-	"outdoortempsourcemeasurepointid" int);
+	"time_zone_offset" smallint NOT NULL,
+	"outdoor_temp_source_measure_point_id" int);
 
-CREATE TABLE "public"."timezone"( 
+CREATE TABLE "public"."time_zone"( 
 	"offset" smallint NOT NULL,
 	"title" varchar(100) NOT NULL);
 
@@ -1998,30 +1998,30 @@ CREATE TABLE "public"."unit"(
 	"unit_id" smallint NOT NULL,
 	"unit_title" varchar(15) NOT NULL,
 	"unit_comment" varchar(60) NOT NULL,
-	"unit_measuredparameterid" smallint NOT NULL,
+	"unit_measured_parameter_id" smallint NOT NULL,
 	"unit_code" varchar(30) NOT NULL,
-	"unit_baseunitid" smallint NOT NULL,
+	"unit_base_unit_id" smallint NOT NULL,
 	"unit_multiplier" double precision NOT NULL);
 
-CREATE TABLE "public"."usersessionlog"( 
+CREATE TABLE "public"."user_session_log"( 
 	"id" int NOT NULL,
-	"accountid" int NOT NULL,
-	"accountlogin" varchar(30) NOT NULL,
-	"accountdisplayname" varchar(50) NOT NULL,
+	"account_id" int NOT NULL,
+	"account_login" varchar(30) NOT NULL,
+	"account_display_name" varchar(50) NOT NULL,
 	"ipaddress" varchar(15) NOT NULL,
-	"startdatetime" timestamp NOT NULL,
-	"enddatetime" timestamp,
-	"exitcode" smallint NOT NULL,
+	"start_datetime" timestamp NOT NULL,
+	"end_datetime" timestamp,
+	"exit_code" smallint NOT NULL,
 	"application" varchar(100) NOT NULL);
 
-CREATE TABLE "public"."usersessionrestoretoken"( 
+CREATE TABLE "public"."user_session_restore_token"( 
 	"id" bigint NOT NULL,
-	"accountid" int NOT NULL,
-	"expiredate" timestamp NOT NULL,
-	"restoretoken" varchar(256) NOT NULL,
-	"creationdate" timestamp NOT NULL,
-	"originalipaddress" varchar(15) NOT NULL,
-	"lastactivitydate" timestamp NOT NULL,
+	"account_id" int NOT NULL,
+	"expire_date" timestamp NOT NULL,
+	"restore_token" varchar(256) NOT NULL,
+	"creation_date" timestamp NOT NULL,
+	"original_ip_address" varchar(15) NOT NULL,
+	"last_activity_date" timestamp NOT NULL,
 	"application" varchar(100) NOT NULL);
 
 CREATE TABLE "public"."version"( 
@@ -2029,11 +2029,11 @@ CREATE TABLE "public"."version"(
 	"version" varchar(50) NOT NULL,
 	"date" timestamp NOT NULL,
 	"license" bytea NOT NULL,
-	"lastmigrationbuild" int NOT NULL);
+	"last_migration_build" int NOT NULL);
 
-CREATE TABLE "public"."waterconsumptioncurrent"( 
-	"measurepointid" int NOT NULL,
-	"datadate" timestamp NOT NULL,
+CREATE TABLE "public"."water_consumption_current"( 
+	"measure_point_id" int NOT NULL,
+	"data_date" timestamp NOT NULL,
 	"t_in" real,
 	"t_out" real,
 	"t_cw" real,
@@ -2048,15 +2048,15 @@ CREATE TABLE "public"."waterconsumptioncurrent"(
 	"p_out" real,
 	"p_cw" real,
 	"h_delta" real,
-	"calculatedvalues" int,
-	"badvalues" int,
+	"calculated_values" int,
+	"bad_values" int,
 	"v_delta" real,
 	"m_delta" real,
 	"t_indoor" real);
 
-CREATE TABLE "public"."waterconsumptionday"( 
-	"measurepointid" int NOT NULL,
-	"datadate" timestamp NOT NULL,
+CREATE TABLE "public"."water_consumption_day"( 
+	"measure_point_id" int NOT NULL,
+	"data_date" timestamp NOT NULL,
 	"t_in" real,
 	"m_in" real,
 	"t_out" real,
@@ -2067,28 +2067,28 @@ CREATE TABLE "public"."waterconsumptionday"(
 	"p_out" real,
 	"v_in" real,
 	"v_out" real,
-	"normaloperationduration" real,
+	"normal_operation_duration" real,
 	"t_cw" real,
 	"t_outdoor" real,
 	"h_delta" real,
 	"attributes" smallint,
-	"calculatedvalues" int,
-	"badvalues" int,
-	"interpolatedvalues" int,
-	"stopduration" real,
-	"flowunderrunduration" real,
-	"flowoverrunduration" real,
-	"tempdifflowduration" real,
-	"nopowerduration" real,
-	"incidentduration" real,
-	"saturatedsteamduration" real,
+	"calculated_values" int,
+	"bad_values" int,
+	"interpolated_values" int,
+	"stop_duration" real,
+	"flow_underrun_duration" real,
+	"flow_overrun_duration" real,
+	"temp_diff_low_duration" real,
+	"no_power_duration" real,
+	"incident_duration" real,
+	"saturated_steam_duration" real,
 	"v_delta" real,
 	"m_delta" real,
 	"t_indoor" real);
 
-CREATE TABLE "public"."waterconsumptionhour"( 
-	"measurepointid" int NOT NULL,
-	"datadate" timestamp NOT NULL,
+CREATE TABLE "public"."water_consumption_hour"( 
+	"measure_point_id" int NOT NULL,
+	"data_date" timestamp NOT NULL,
 	"t_in" real,
 	"m_in" real,
 	"t_out" real,
@@ -2099,28 +2099,28 @@ CREATE TABLE "public"."waterconsumptionhour"(
 	"p_out" real,
 	"v_in" real,
 	"v_out" real,
-	"normaloperationduration" real,
+	"normal_operation_duration" real,
 	"t_cw" real,
 	"t_outdoor" real,
 	"h_delta" real,
 	"attributes" smallint,
-	"calculatedvalues" int,
-	"badvalues" int,
-	"interpolatedvalues" int,
-	"stopduration" real,
-	"flowunderrunduration" real,
-	"flowoverrunduration" real,
-	"tempdifflowduration" real,
-	"nopowerduration" real,
-	"incidentduration" real,
-	"saturatedsteamduration" real,
+	"calculated_values" int,
+	"bad_values" int,
+	"interpolated_values" int,
+	"stop_duration" real,
+	"flow_underrun_duration" real,
+	"flow_overrun_duration" real,
+	"temp_diff_low_duration" real,
+	"no_power_duration" real,
+	"incident_duration" real,
+	"saturated_steam_duration" real,
 	"v_delta" real,
 	"m_delta" real,
 	"t_indoor" real);
 
-CREATE TABLE "public"."waterconsumptionmonth"( 
-	"measurepointid" int NOT NULL,
-	"datadate" timestamp NOT NULL,
+CREATE TABLE "public"."water_consumption_month"( 
+	"measure_point_id" int NOT NULL,
+	"data_date" timestamp NOT NULL,
 	"t_in" real,
 	"m_in" real,
 	"t_out" real,
@@ -2131,31 +2131,31 @@ CREATE TABLE "public"."waterconsumptionmonth"(
 	"p_out" real,
 	"v_in" real,
 	"v_out" real,
-	"normaloperationduration" real,
+	"normal_operation_duration" real,
 	"t_cw" real,
 	"t_outdoor" real,
 	"h_delta" real,
 	"attributes" smallint,
-	"calculatedvalues" int,
-	"badvalues" int,
-	"interpolatedvalues" int,
-	"stopduration" real,
-	"flowunderrunduration" real,
-	"flowoverrunduration" real,
-	"tempdifflowduration" real,
-	"nopowerduration" real,
-	"incidentduration" real,
-	"saturatedsteamduration" real,
+	"calculated_values" int,
+	"bad_values" int,
+	"interpolated_values" int,
+	"stop_duration" real,
+	"flow_underrun_duration" real,
+	"flow_overrun_duration" real,
+	"temp_diff_low_duration" real,
+	"no_power_duration" real,
+	"incident_duration" real,
+	"saturated_steam_duration" real,
 	"v_delta" real,
 	"m_delta" real,
 	"t_indoor" real);
 
-CREATE TABLE "public"."waterestimatedconsumption"( 
-	"measurepointid" int NOT NULL,
-	"previousmonth" boolean NOT NULL,
-	"startdate" timestamp NOT NULL,
-	"estimationalgorithm" smallint NOT NULL,
-	"enddate" timestamp NOT NULL,
+CREATE TABLE "public"."water_estimated_consumption"( 
+	"measure_point_id" int NOT NULL,
+	"previous_month" boolean NOT NULL,
+	"start_date" timestamp NOT NULL,
+	"estimation_algorithm" smallint NOT NULL,
+	"end_date" timestamp NOT NULL,
 	"m_in" real,
 	"m_out" real,
 	"m_delta" real,
@@ -2166,9 +2166,9 @@ CREATE TABLE "public"."waterestimatedconsumption"(
 	"h_out" real,
 	"h_delta" real);
 
-CREATE TABLE "public"."watertotals"( 
-	"measurepointid" int NOT NULL,
-	"datadate" timestamp NOT NULL,
+CREATE TABLE "public"."water_totals"( 
+	"measure_point_id" int NOT NULL,
+	"data_date" timestamp NOT NULL,
 	"v_in" double precision,
 	"v_out" double precision,
 	"m_in" double precision,
@@ -2176,19 +2176,19 @@ CREATE TABLE "public"."watertotals"(
 	"h_in" double precision,
 	"h_out" double precision,
 	"h_delta" double precision,
-	"normaloperationduration" double precision,
+	"normal_operation_duration" double precision,
 	"flags" smallint NOT NULL,
-	"calculatedvalues" int,
-	"badvalues" int,
-	"resettedvalues" int,
-	"interpolatedvalues" int,
-	"stopduration" double precision,
-	"flowunderrunduration" double precision,
-	"flowoverrunduration" double precision,
-	"tempdifflowduration" double precision,
-	"nopowerduration" double precision,
-	"incidentduration" double precision,
-	"saturatedsteamduration" double precision,
+	"calculated_values" int,
+	"bad_values" int,
+	"resetted_values" int,
+	"interpolated_values" int,
+	"stop_duration" double precision,
+	"flow_underrun_duration" double precision,
+	"flow_overrun_duration" double precision,
+	"temp_diff_low_duration" double precision,
+	"no_power_duration" double precision,
+	"incident_duration" double precision,
+	"saturated_steam_duration" double precision,
 	"v_delta" double precision,
 	"m_delta" double precision);
 
