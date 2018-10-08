@@ -107,4 +107,7 @@ Postgres
 ```DROP DATABASE lers;```
 ``` CREATE DATABASE lers WITH OWNER lers ENCODING 'UTF8';```
 
-5.
+5. Выполнить скрипт создания схемы из шага 3
+```psql -d lers -f /home/dev/projects/dev01/Lers-ddl-20181009021946.sql```
+
+
