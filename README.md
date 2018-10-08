@@ -33,7 +33,7 @@
 2. Создать базу данных 
 ```
 CREATE DATABASE "LERS"
-  WITH OWNER "postgres"
+  WITH OWNER "lers"
   ENCODING 'UTF8'
   LC_COLLATE = 'en_US.UTF-8'
   LC_CTYPE = 'en_US.UTF-8';
