@@ -108,6 +108,7 @@ Postgres
 ``` CREATE DATABASE lers WITH OWNER lers ENCODING 'UTF8';```
 
 5. Выполнить скрипт создания схемы из шага 3
-```psql -d lers -f /home/dev/projects/dev01/Lers-ddl-20181009021946.sql```
+```psql -U lers -d lers -f /home/dev/projects/dev01/Lers-ddl-20181009021946.sql```
 
-
+6. Выполнтиь миграцию данных
+```sh migrate.sh DML```
