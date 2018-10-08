@@ -72,3 +72,11 @@ CREATE DATABASE "LERS"
 
 10. Выполнить запуск миграции 
 ``` sh migrate.sh DDL```
+
+Postgres
+=============================================
+* ```sudo service postgresql restart``` Перезагрузка СУБД
+* ```CREATE USER youruser WITH ENCRYPTED PASSWORD 'yourpass';``` Создание пользователя
+* ```GRANT ALL PRIVILEGES ON DATABASE yourdbname TO youruser;``` Назначение прав к БД
+* ```GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO lers; ```
+* ```vi /etc/postgresql/10/main/pg_hba.conf``` Редактирование конфигурационного файла подключений
