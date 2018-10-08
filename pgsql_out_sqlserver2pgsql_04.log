@@ -643,3 +643,13 @@ Warning: index public.IX_PollConnection_InternetHostPort contains a where clause
 Warning: index public.IX_PollPort_PollServiceId_GprsListenPort contains a where clause. It goes to unsure file
 Warning: index public.IX_PollPort_PollService_PortNumber contains a where clause. It goes to unsure file
 Warning: index public.IX_PollService_Token contains a where clause. It goes to unsure file
+Important WARNING: You have to set up KETTLE_EMPTY_STRING_DIFFERS_FROM_NULL=Y in /home/dev/.kettle/kettle.properties.
+If this file doesn't exist yet, start spoon from the kettle directory once.public/AccountGroupMembership has no PK. Cannot create an incremental transformation
+public/AccountLog has no PK. Cannot create an incremental transformation
+public/AccountNotificationIncident has no PK. Cannot create an incremental transformation
+public/AccountNotificationNode has no PK. Cannot create an incremental transformation
+public/ContingencyLog has no PK. Cannot create an incremental transformation
+public/LimitTemps has no PK. Cannot create an incremental transformation
+public/PollSessionLog has no PK. Cannot create an incremental transformation
+public/UserSessionRestoreToken has no PK. Cannot create an incremental transformation
+public/Version has no PK. Cannot create an incremental transformation
