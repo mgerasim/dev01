@@ -88,3 +88,23 @@ Postgres
 * ```GRANT ALL PRIVILEGES ON DATABASE yourdbname TO youruser;``` Назначение прав к БД
 * ```GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO lers; ```
 * ```vi /etc/postgresql/10/main/pg_hba.conf``` Редактирование конфигурационного файла подключений
+
+Пересоздать базу данных с использованием инструмента Migrate2Postgres 
+=============================================
+1. Выполнить переход под пользователем ```dev``` в рабочий каталог:
+```cd ~/projects/dev01```
+
+2. Выполнить изменение конфигурации 
+```vi MsSqlAWT2Postgres.conf```
+
+3. Выполнить создание схемы базы данных 
+```sh migrate.sh DDL```
+
+* Запомнить результирующий файл:
+```Created DDL file at /home/dev/projects/dev01/Lers-ddl-20181009013818.sql```
+
+4. Выполнить под пользователем ```postgres``` удаление и создание пустой базы данных ```lers```
+```DROP DATABASE lers;```
+``` CREATE DATABASE lers WITH OWNER lers ENCODING 'UTF8';```
+
+5.
