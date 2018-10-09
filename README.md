@@ -46,10 +46,11 @@ CREATE DATABASE "LERS"
 ```
 
 3. Импортировать скрипты 
-* ```psql -f /home/dev/projects/dev01/pgsql_out_sqlserver2pgsql_01.sql```
+* ```psql -U lers -d lers -f /home/dev/projects/dev01/pgsql_out_sqlserver2pgsql_01.sql```
 * ```sed -i -e 's/CREATE TYPE "public"."/CREATE TYPE "public"."Type/g' pgsql_out_sqlserver2pgsql_01.sql```
-* ```psql -f /home/dev/projects/dev01/pgsql_out_sqlserver2pgsql_02.sql```
-* ```psql -f /home/dev/projects/dev01/pgsql_out_sqlserver2pgsql_03.sql```
+* ``` /usr/src/data-integration/kitchen.sh -file out/migration.kjb```
+* ```psql -U lers -d lers -f /home/dev/projects/dev01/pgsql_out_sqlserver2pgsql_02.sql```
+* ```psql -U lers -d lers -f /home/dev/projects/dev01/pgsql_out_sqlserver2pgsql_03.sql```
 
 Миграция с использованием инструмента Migrate2Postgres 
 =============================================
