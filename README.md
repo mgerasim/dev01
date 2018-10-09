@@ -112,3 +112,7 @@ Postgres
 
 6. Выполнтиь миграцию данных
 ```sh migrate.sh DML```
+
+Документация Pentaho Data Integration
+=============================================
+http://134.0.117.65/pentaho/welcome/
