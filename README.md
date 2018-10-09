@@ -47,6 +47,7 @@ CREATE DATABASE "LERS"
 
 3. Импортировать скрипты 
 * ```psql -f /home/dev/projects/dev01/pgsql_out_sqlserver2pgsql_01.sql```
+* ```sed -i -e 's/CREATE TYPE "public"."/CREATE TYPE "public"."Type/g' pgsql_out_sqlserver2pgsql_01.sql```
 * ```psql -f /home/dev/projects/dev01/pgsql_out_sqlserver2pgsql_02.sql```
 * ```psql -f /home/dev/projects/dev01/pgsql_out_sqlserver2pgsql_03.sql```
 
