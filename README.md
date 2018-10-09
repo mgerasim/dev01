@@ -46,9 +46,11 @@ CREATE DATABASE "LERS"
 ```
 
 3. Импортировать скрипты 
-* ```psql -f /home/dev/projects/dev01/pgsql_out_sqlserver2pgsql_01.sql```
-* ```psql -f /home/dev/projects/dev01/pgsql_out_sqlserver2pgsql_02.sql```
-* ```psql -f /home/dev/projects/dev01/pgsql_out_sqlserver2pgsql_03.sql```
+* ```psql -U lers -d lers -f /home/dev/projects/dev01/pgsql_out_sqlserver2pgsql_01.sql```
+* ```sed -i -e 's/CREATE TYPE "public"."/CREATE TYPE "public"."Type/g' pgsql_out_sqlserver2pgsql_01.sql```
+* ``` /usr/src/data-integration/kitchen.sh -file out/migration.kjb```
+* ```psql -U lers -d lers -f /home/dev/projects/dev01/pgsql_out_sqlserver2pgsql_02.sql```
+* ```psql -U lers -d lers -f /home/dev/projects/dev01/pgsql_out_sqlserver2pgsql_03.sql```
 
 Миграция с использованием инструмента Migrate2Postgres 
 =============================================
@@ -107,4 +109,12 @@ Postgres
 ```DROP DATABASE lers;```
 ``` CREATE DATABASE lers WITH OWNER lers ENCODING 'UTF8';```
 
-5.
+5. Выполнить скрипт создания схемы из шага 3
+```psql -U lers -d lers -f /home/dev/projects/dev01/Lers-ddl-20181009021946.sql```
+
+6. Выполнтиь миграцию данных
+```sh migrate.sh DML```
+
+Документация Pentaho Data Integration
+=============================================
+http://134.0.117.65/pentaho/welcome/
