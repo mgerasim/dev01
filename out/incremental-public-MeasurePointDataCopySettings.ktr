@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -431,13 +431,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>TargetMeasurePointId</name>
-<rename>TargetMeasurePointId</rename>
+<name>SourceMeasurePointId</name>
+<rename>SourceMeasurePointId</rename>
 <update>Y</update>
 </value>
 <value>
-<name>SourceMeasurePointId</name>
-<rename>SourceMeasurePointId</rename>
+<name>TargetMeasurePointId</name>
+<rename>TargetMeasurePointId</rename>
 <update>Y</update>
 </value>
 <value>
@@ -471,8 +471,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>TargetMeasurePointId</value>
-<value>SourceMeasurePointId</value>
+      <value>SourceMeasurePointId</value>
+<value>TargetMeasurePointId</value>
 <value>WaterParameter</value>
 
     </values>

@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -405,23 +405,23 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>ModemCommandType_Title</name>
-<rename>ModemCommandType_Title</rename>
-<update>Y</update>
-</value>
-<value>
 <name>ModemCommandType_Code</name>
 <rename>ModemCommandType_Code</rename>
 <update>Y</update>
 </value>
 <value>
-<name>ModemCommandType_ID</name>
-<rename>ModemCommandType_ID</rename>
+<name>ModemCommandType_Comment</name>
+<rename>ModemCommandType_Comment</rename>
 <update>Y</update>
 </value>
 <value>
-<name>ModemCommandType_Comment</name>
-<rename>ModemCommandType_Comment</rename>
+<name>ModemCommandType_Title</name>
+<rename>ModemCommandType_Title</rename>
+<update>Y</update>
+</value>
+<value>
+<name>ModemCommandType_ID</name>
+<rename>ModemCommandType_ID</rename>
 <update>Y</update>
 </value>
 
@@ -449,10 +449,10 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>ModemCommandType_Title</value>
-<value>ModemCommandType_Code</value>
-<value>ModemCommandType_ID</value>
+      <value>ModemCommandType_Code</value>
 <value>ModemCommandType_Comment</value>
+<value>ModemCommandType_Title</value>
+<value>ModemCommandType_ID</value>
 
     </values>
 <flag_field>__changed__</flag_field>

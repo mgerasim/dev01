@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -431,6 +431,11 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
+<name>SendSMS</name>
+<rename>SendSMS</rename>
+<update>Y</update>
+</value>
+<value>
 <name>SendEmail</name>
 <rename>SendEmail</rename>
 <update>Y</update>
@@ -438,11 +443,6 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <value>
 <name>TaskID</name>
 <rename>TaskID</rename>
-<update>Y</update>
-</value>
-<value>
-<name>SendSMS</name>
-<rename>SendSMS</rename>
 <update>Y</update>
 </value>
 <value>
@@ -476,9 +476,9 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>SendEmail</value>
+      <value>SendSMS</value>
+<value>SendEmail</value>
 <value>TaskID</value>
-<value>SendSMS</value>
 <value>AccountID</value>
 
     </values>

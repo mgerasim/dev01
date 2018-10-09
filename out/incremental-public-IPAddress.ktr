@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -431,8 +431,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>RangeStartIp</name>
-<rename>RangeStartIp</rename>
+<name>RangeEndIp</name>
+<rename>RangeEndIp</rename>
 <update>Y</update>
 </value>
 <value>
@@ -441,8 +441,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>RangeEndIp</name>
-<rename>RangeEndIp</rename>
+<name>RangeStartIp</name>
+<rename>RangeStartIp</rename>
 <update>Y</update>
 </value>
 
@@ -471,9 +471,9 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>RangeStartIp</value>
+      <value>RangeEndIp</value>
 <value>AccountId</value>
-<value>RangeEndIp</value>
+<value>RangeStartIp</value>
 
     </values>
 <flag_field>__changed__</flag_field>

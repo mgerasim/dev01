@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -431,18 +431,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>Jul</name>
-<rename>Jul</rename>
-<update>Y</update>
-</value>
-<value>
-<name>Sep</name>
-<rename>Sep</rename>
-<update>Y</update>
-</value>
-<value>
-<name>Percent</name>
-<rename>Percent</rename>
+<name>May</name>
+<rename>May</rename>
 <update>Y</update>
 </value>
 <value>
@@ -451,13 +441,18 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>Nov</name>
-<rename>Nov</rename>
+<name>MeasurePointId</name>
+<rename>MeasurePointId</rename>
 <update>Y</update>
 </value>
 <value>
-<name>May</name>
-<rename>May</rename>
+<name>Percent</name>
+<rename>Percent</rename>
+<update>Y</update>
+</value>
+<value>
+<name>Nov</name>
+<rename>Nov</rename>
 <update>Y</update>
 </value>
 <value>
@@ -466,33 +461,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>MeasurePointId</name>
-<rename>MeasurePointId</rename>
-<update>Y</update>
-</value>
-<value>
-<name>Hour</name>
-<rename>Hour</rename>
-<update>Y</update>
-</value>
-<value>
-<name>Aug</name>
-<rename>Aug</rename>
-<update>Y</update>
-</value>
-<value>
-<name>Feb</name>
-<rename>Feb</rename>
-<update>Y</update>
-</value>
-<value>
 <name>Jan</name>
 <rename>Jan</rename>
 <update>Y</update>
 </value>
 <value>
-<name>Apr</name>
-<rename>Apr</rename>
+<name>Aug</name>
+<rename>Aug</rename>
 <update>Y</update>
 </value>
 <value>
@@ -503,6 +478,31 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <value>
 <name>Oct</name>
 <rename>Oct</rename>
+<update>Y</update>
+</value>
+<value>
+<name>Apr</name>
+<rename>Apr</rename>
+<update>Y</update>
+</value>
+<value>
+<name>Feb</name>
+<rename>Feb</rename>
+<update>Y</update>
+</value>
+<value>
+<name>Jul</name>
+<rename>Jul</rename>
+<update>Y</update>
+</value>
+<value>
+<name>Sep</name>
+<rename>Sep</rename>
+<update>Y</update>
+</value>
+<value>
+<name>Hour</name>
+<rename>Hour</rename>
 <update>Y</update>
 </value>
 <value>
@@ -536,21 +536,21 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>Jul</value>
-<value>Sep</value>
-<value>Percent</value>
+      <value>May</value>
 <value>Dec</value>
-<value>Nov</value>
-<value>May</value>
-<value>Year</value>
 <value>MeasurePointId</value>
-<value>Hour</value>
-<value>Aug</value>
-<value>Feb</value>
+<value>Percent</value>
+<value>Nov</value>
+<value>Year</value>
 <value>Jan</value>
-<value>Apr</value>
+<value>Aug</value>
 <value>Mar</value>
 <value>Oct</value>
+<value>Apr</value>
+<value>Feb</value>
+<value>Jul</value>
+<value>Sep</value>
+<value>Hour</value>
 <value>Jun</value>
 
     </values>

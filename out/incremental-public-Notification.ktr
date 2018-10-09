@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -405,28 +405,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>Message</name>
-<rename>Message</rename>
-<update>Y</update>
-</value>
-<value>
 <name>MeasurePointId</name>
 <rename>MeasurePointId</rename>
-<update>Y</update>
-</value>
-<value>
-<name>EquipmentId</name>
-<rename>EquipmentId</rename>
-<update>Y</update>
-</value>
-<value>
-<name>Url</name>
-<rename>Url</rename>
-<update>Y</update>
-</value>
-<value>
-<name>NotificationTypeId</name>
-<rename>NotificationTypeId</rename>
 <update>Y</update>
 </value>
 <value>
@@ -440,13 +420,28 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
+<name>EquipmentId</name>
+<rename>EquipmentId</rename>
+<update>Y</update>
+</value>
+<value>
+<name>IncidentId</name>
+<rename>IncidentId</rename>
+<update>Y</update>
+</value>
+<value>
+<name>Message</name>
+<rename>Message</rename>
+<update>Y</update>
+</value>
+<value>
 <name>DateTime</name>
 <rename>DateTime</rename>
 <update>Y</update>
 </value>
 <value>
-<name>Id</name>
-<rename>Id</rename>
+<name>NotificationTypeId</name>
+<rename>NotificationTypeId</rename>
 <update>Y</update>
 </value>
 <value>
@@ -455,8 +450,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>IncidentId</name>
-<rename>IncidentId</rename>
+<name>Url</name>
+<rename>Url</rename>
+<update>Y</update>
+</value>
+<value>
+<name>Id</name>
+<rename>Id</rename>
 <update>Y</update>
 </value>
 
@@ -484,17 +484,17 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>Message</value>
-<value>MeasurePointId</value>
-<value>EquipmentId</value>
-<value>Url</value>
-<value>NotificationTypeId</value>
+      <value>MeasurePointId</value>
 <value>Importance</value>
 <value>ExpiredDate</value>
-<value>DateTime</value>
-<value>Id</value>
-<value>NodeJobId</value>
+<value>EquipmentId</value>
 <value>IncidentId</value>
+<value>Message</value>
+<value>DateTime</value>
+<value>NotificationTypeId</value>
+<value>NodeJobId</value>
+<value>Url</value>
+<value>Id</value>
 
     </values>
 <flag_field>__changed__</flag_field>

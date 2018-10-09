@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -405,13 +405,23 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>ReportType</name>
-<rename>ReportType</rename>
+<name>GenerationDateTime</name>
+<rename>GenerationDateTime</rename>
 <update>Y</update>
 </value>
 <value>
-<name>NodeId</name>
-<rename>NodeId</rename>
+<name>DataType</name>
+<rename>DataType</rename>
+<update>Y</update>
+</value>
+<value>
+<name>FileName</name>
+<rename>FileName</rename>
+<update>Y</update>
+</value>
+<value>
+<name>ReportType</name>
+<rename>ReportType</rename>
 <update>Y</update>
 </value>
 <value>
@@ -420,13 +430,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>Thumbnail</name>
-<rename>Thumbnail</rename>
+<name>MeasurePointId</name>
+<rename>MeasurePointId</rename>
 <update>Y</update>
 </value>
 <value>
-<name>GenerationDateTime</name>
-<rename>GenerationDateTime</rename>
+<name>Thumbnail</name>
+<rename>Thumbnail</rename>
 <update>Y</update>
 </value>
 <value>
@@ -435,8 +445,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>ReportEntity</name>
-<rename>ReportEntity</rename>
+<name>EndDate</name>
+<rename>EndDate</rename>
+<update>Y</update>
+</value>
+<value>
+<name>StartDate</name>
+<rename>StartDate</rename>
 <update>Y</update>
 </value>
 <value>
@@ -450,28 +465,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>DataType</name>
-<rename>DataType</rename>
+<name>NodeId</name>
+<rename>NodeId</rename>
 <update>Y</update>
 </value>
 <value>
-<name>EndDate</name>
-<rename>EndDate</rename>
-<update>Y</update>
-</value>
-<value>
-<name>MeasurePointId</name>
-<rename>MeasurePointId</rename>
-<update>Y</update>
-</value>
-<value>
-<name>FileName</name>
-<rename>FileName</rename>
-<update>Y</update>
-</value>
-<value>
-<name>StartDate</name>
-<rename>StartDate</rename>
+<name>ReportEntity</name>
+<rename>ReportEntity</rename>
 <update>Y</update>
 </value>
 
@@ -499,20 +499,20 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>ReportType</value>
-<value>NodeId</value>
+      <value>GenerationDateTime</value>
+<value>DataType</value>
+<value>FileName</value>
+<value>ReportType</value>
 <value>Id</value>
+<value>MeasurePointId</value>
 <value>Thumbnail</value>
-<value>GenerationDateTime</value>
 <value>TemplateTitle</value>
-<value>ReportEntity</value>
+<value>EndDate</value>
+<value>StartDate</value>
 <value>Data</value>
 <value>ReportTitle</value>
-<value>DataType</value>
-<value>EndDate</value>
-<value>MeasurePointId</value>
-<value>FileName</value>
-<value>StartDate</value>
+<value>NodeId</value>
+<value>ReportEntity</value>
 
     </values>
 <flag_field>__changed__</flag_field>

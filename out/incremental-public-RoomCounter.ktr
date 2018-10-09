@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -405,6 +405,11 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
+<name>RoomId</name>
+<rename>RoomId</rename>
+<update>Y</update>
+</value>
+<value>
 <name>InitialTotalsValue1</name>
 <rename>InitialTotalsValue1</rename>
 <update>Y</update>
@@ -415,13 +420,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>InstallLocation</name>
-<rename>InstallLocation</rename>
-<update>Y</update>
-</value>
-<value>
-<name>RoomId</name>
-<rename>RoomId</rename>
+<name>MeasurePointId</name>
+<rename>MeasurePointId</rename>
 <update>Y</update>
 </value>
 <value>
@@ -430,13 +430,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>EquipmentId</name>
-<rename>EquipmentId</rename>
+<name>InstallLocation</name>
+<rename>InstallLocation</rename>
 <update>Y</update>
 </value>
 <value>
-<name>MeasurePointId</name>
-<rename>MeasurePointId</rename>
+<name>EquipmentId</name>
+<rename>EquipmentId</rename>
 <update>Y</update>
 </value>
 
@@ -464,13 +464,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>InitialTotalsValue1</value>
+      <value>RoomId</value>
+<value>InitialTotalsValue1</value>
 <value>InitialTotalsValue2</value>
-<value>InstallLocation</value>
-<value>RoomId</value>
-<value>InitialTotalsDate</value>
-<value>EquipmentId</value>
 <value>MeasurePointId</value>
+<value>InitialTotalsDate</value>
+<value>InstallLocation</value>
+<value>EquipmentId</value>
 
     </values>
 <flag_field>__changed__</flag_field>

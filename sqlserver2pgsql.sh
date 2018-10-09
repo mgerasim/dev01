@@ -3,10 +3,10 @@ perl ../sqlserver2pgsql/sqlserver2pgsql.pl 	-f SQLSERVER.dump \
 						-a pgsql_out_sqlserver2pgsql_02.sql \
 						-u pgsql_out_sqlserver2pgsql_03.sql \
                                                 -k out \
-                                                -sd localhost \
+                                                -sd LERS \
                                                 -sh localhost \
                                                 -sp 1433 \
-                                                -su su \
+                                                -su sa \
                                                 -sw ex6ectDFMJLOwbEnAIR0 \
                                                 -pd lers \
                                                 -ph localhost \

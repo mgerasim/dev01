@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -405,23 +405,23 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>Value</name>
-<rename>Value</rename>
-<update>Y</update>
-</value>
-<value>
-<name>ReportParameterPropertyId</name>
-<rename>ReportParameterPropertyId</rename>
-<update>Y</update>
-</value>
-<value>
 <name>ReportId</name>
 <rename>ReportId</rename>
 <update>Y</update>
 </value>
 <value>
+<name>Value</name>
+<rename>Value</rename>
+<update>Y</update>
+</value>
+<value>
 <name>Id</name>
 <rename>Id</rename>
+<update>Y</update>
+</value>
+<value>
+<name>ReportParameterPropertyId</name>
+<rename>ReportParameterPropertyId</rename>
 <update>Y</update>
 </value>
 
@@ -449,10 +449,10 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>Value</value>
-<value>ReportParameterPropertyId</value>
-<value>ReportId</value>
+      <value>ReportId</value>
+<value>Value</value>
 <value>Id</value>
+<value>ReportParameterPropertyId</value>
 
     </values>
 <flag_field>__changed__</flag_field>

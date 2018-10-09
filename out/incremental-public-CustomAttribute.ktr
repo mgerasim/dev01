@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -405,16 +405,6 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>Code</name>
-<rename>Code</rename>
-<update>Y</update>
-</value>
-<value>
-<name>Comment</name>
-<rename>Comment</rename>
-<update>Y</update>
-</value>
-<value>
 <name>Entities</name>
 <rename>Entities</rename>
 <update>Y</update>
@@ -427,6 +417,16 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <value>
 <name>Title</name>
 <rename>Title</rename>
+<update>Y</update>
+</value>
+<value>
+<name>Comment</name>
+<rename>Comment</rename>
+<update>Y</update>
+</value>
+<value>
+<name>Code</name>
+<rename>Code</rename>
 <update>Y</update>
 </value>
 
@@ -454,11 +454,11 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>Code</value>
-<value>Comment</value>
-<value>Entities</value>
+      <value>Entities</value>
 <value>Id</value>
 <value>Title</value>
+<value>Comment</value>
+<value>Code</value>
 
     </values>
 <flag_field>__changed__</flag_field>

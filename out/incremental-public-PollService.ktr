@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -405,13 +405,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>Id</name>
-<rename>Id</rename>
+<name>Token</name>
+<rename>Token</rename>
 <update>Y</update>
 </value>
 <value>
-<name>Token</name>
-<rename>Token</rename>
+<name>DebugEnabled</name>
+<rename>DebugEnabled</rename>
 <update>Y</update>
 </value>
 <value>
@@ -420,8 +420,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>DebugEnabled</name>
-<rename>DebugEnabled</rename>
+<name>Id</name>
+<rename>Id</rename>
 <update>Y</update>
 </value>
 <value>
@@ -454,10 +454,10 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>Id</value>
-<value>Token</value>
-<value>Title</value>
+      <value>Token</value>
 <value>DebugEnabled</value>
+<value>Title</value>
+<value>Id</value>
 <value>IpAddress</value>
 
     </values>

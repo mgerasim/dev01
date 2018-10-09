@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -410,18 +410,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>IncidentMessageUnset</name>
-<rename>IncidentMessageUnset</rename>
-<update>Y</update>
-</value>
-<value>
 <name>IncidentImportanceSet</name>
 <rename>IncidentImportanceSet</rename>
 <update>Y</update>
 </value>
 <value>
-<name>EquipmentId</name>
-<rename>EquipmentId</rename>
+<name>DryContactNumber</name>
+<rename>DryContactNumber</rename>
 <update>Y</update>
 </value>
 <value>
@@ -430,13 +425,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>NodeId</name>
-<rename>NodeId</rename>
-<update>Y</update>
-</value>
-<value>
-<name>IncidentMessageSet</name>
-<rename>IncidentMessageSet</rename>
+<name>IncidentMessageUnset</name>
+<rename>IncidentMessageUnset</rename>
 <update>Y</update>
 </value>
 <value>
@@ -450,8 +440,18 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>DryContactNumber</name>
-<rename>DryContactNumber</rename>
+<name>IncidentMessageSet</name>
+<rename>IncidentMessageSet</rename>
+<update>Y</update>
+</value>
+<value>
+<name>NodeId</name>
+<rename>NodeId</rename>
+<update>Y</update>
+</value>
+<value>
+<name>EquipmentId</name>
+<rename>EquipmentId</rename>
 <update>Y</update>
 </value>
 
@@ -480,15 +480,15 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
     </keys>
     <values>
       <value>IncidentImportanceUnset</value>
-<value>IncidentMessageUnset</value>
 <value>IncidentImportanceSet</value>
-<value>EquipmentId</value>
+<value>DryContactNumber</value>
 <value>SignalTitle</value>
-<value>NodeId</value>
-<value>IncidentMessageSet</value>
+<value>IncidentMessageUnset</value>
 <value>Id</value>
 <value>CurrentState</value>
-<value>DryContactNumber</value>
+<value>IncidentMessageSet</value>
+<value>NodeId</value>
+<value>EquipmentId</value>
 
     </values>
 <flag_field>__changed__</flag_field>

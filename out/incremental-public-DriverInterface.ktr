@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -405,28 +405,18 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>MaxMemoryAddress</name>
-<rename>MaxMemoryAddress</rename>
-<update>Y</update>
-</value>
-<value>
 <name>EquipmentModelId</name>
 <rename>EquipmentModelId</rename>
 <update>Y</update>
 </value>
 <value>
-<name>TotalsResetThresholdM</name>
-<rename>TotalsResetThresholdM</rename>
+<name>MaxMemoryAddress</name>
+<rename>MaxMemoryAddress</rename>
 <update>Y</update>
 </value>
 <value>
-<name>MinMemoryAddress</name>
-<rename>MinMemoryAddress</rename>
-<update>Y</update>
-</value>
-<value>
-<name>ChannelCount</name>
-<rename>ChannelCount</rename>
+<name>HeatSystemCount</name>
+<rename>HeatSystemCount</rename>
 <update>Y</update>
 </value>
 <value>
@@ -435,18 +425,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>DriverName</name>
-<rename>DriverName</rename>
-<update>Y</update>
-</value>
-<value>
-<name>Features</name>
-<rename>Features</rename>
-<update>Y</update>
-</value>
-<value>
-<name>SupportedDataTypes</name>
-<rename>SupportedDataTypes</rename>
+<name>MinMemoryAddress</name>
+<rename>MinMemoryAddress</rename>
 <update>Y</update>
 </value>
 <value>
@@ -455,8 +435,28 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>HeatSystemCount</name>
-<rename>HeatSystemCount</rename>
+<name>TotalsResetThresholdM</name>
+<rename>TotalsResetThresholdM</rename>
+<update>Y</update>
+</value>
+<value>
+<name>SupportedDataTypes</name>
+<rename>SupportedDataTypes</rename>
+<update>Y</update>
+</value>
+<value>
+<name>ChannelCount</name>
+<rename>ChannelCount</rename>
+<update>Y</update>
+</value>
+<value>
+<name>Features</name>
+<rename>Features</rename>
+<update>Y</update>
+</value>
+<value>
+<name>DriverName</name>
+<rename>DriverName</rename>
 <update>Y</update>
 </value>
 
@@ -484,17 +484,17 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>MaxMemoryAddress</value>
-<value>EquipmentModelId</value>
-<value>TotalsResetThresholdM</value>
-<value>MinMemoryAddress</value>
-<value>ChannelCount</value>
-<value>TotalsResetThresholdQ</value>
-<value>DriverName</value>
-<value>Features</value>
-<value>SupportedDataTypes</value>
-<value>DriverStatus</value>
+      <value>EquipmentModelId</value>
+<value>MaxMemoryAddress</value>
 <value>HeatSystemCount</value>
+<value>TotalsResetThresholdQ</value>
+<value>MinMemoryAddress</value>
+<value>DriverStatus</value>
+<value>TotalsResetThresholdM</value>
+<value>SupportedDataTypes</value>
+<value>ChannelCount</value>
+<value>Features</value>
+<value>DriverName</value>
 
     </values>
 <flag_field>__changed__</flag_field>

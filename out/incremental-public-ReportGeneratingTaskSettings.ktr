@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -405,23 +405,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>PackAttachments</name>
-<rename>PackAttachments</rename>
+<name>MailingFileFormat</name>
+<rename>MailingFileFormat</rename>
 <update>Y</update>
 </value>
 <value>
-<name>ReportSaveDirectory</name>
-<rename>ReportSaveDirectory</rename>
-<update>Y</update>
-</value>
-<value>
-<name>MailSubject</name>
-<rename>MailSubject</rename>
-<update>Y</update>
-</value>
-<value>
-<name>ReportId</name>
-<rename>ReportId</rename>
+<name>MeasurePointSystems</name>
+<rename>MeasurePointSystems</rename>
 <update>Y</update>
 </value>
 <value>
@@ -435,8 +425,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>MeasurePointSystems</name>
-<rename>MeasurePointSystems</rename>
+<name>TaskId</name>
+<rename>TaskId</rename>
+<update>Y</update>
+</value>
+<value>
+<name>PackAttachments</name>
+<rename>PackAttachments</rename>
 <update>Y</update>
 </value>
 <value>
@@ -445,13 +440,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>MailingFileFormat</name>
-<rename>MailingFileFormat</rename>
+<name>ReportId</name>
+<rename>ReportId</rename>
 <update>Y</update>
 </value>
 <value>
-<name>TaskId</name>
-<rename>TaskId</rename>
+<name>ReportSaveDirectory</name>
+<rename>ReportSaveDirectory</rename>
 <update>Y</update>
 </value>
 <value>
@@ -462,6 +457,11 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <value>
 <name>MailMessage</name>
 <rename>MailMessage</rename>
+<update>Y</update>
+</value>
+<value>
+<name>MailSubject</name>
+<rename>MailSubject</rename>
 <update>Y</update>
 </value>
 
@@ -489,18 +489,18 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>PackAttachments</value>
-<value>ReportSaveDirectory</value>
-<value>MailSubject</value>
-<value>ReportId</value>
+      <value>MailingFileFormat</value>
+<value>MeasurePointSystems</value>
 <value>MailingEnabled</value>
 <value>MailingFileSplitMode</value>
-<value>MeasurePointSystems</value>
-<value>PdfExportProperties</value>
-<value>MailingFileFormat</value>
 <value>TaskId</value>
+<value>PackAttachments</value>
+<value>PdfExportProperties</value>
+<value>ReportId</value>
+<value>ReportSaveDirectory</value>
 <value>SaveReport</value>
 <value>MailMessage</value>
+<value>MailSubject</value>
 
     </values>
 <flag_field>__changed__</flag_field>

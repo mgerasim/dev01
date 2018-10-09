@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -405,6 +405,16 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
+<name>Id</name>
+<rename>Id</rename>
+<update>Y</update>
+</value>
+<value>
+<name>EndDatetime</name>
+<rename>EndDatetime</rename>
+<update>Y</update>
+</value>
+<value>
 <name>IPAddress</name>
 <rename>IPAddress</rename>
 <update>Y</update>
@@ -415,8 +425,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>EndDatetime</name>
-<rename>EndDatetime</rename>
+<name>AccountLogin</name>
+<rename>AccountLogin</rename>
 <update>Y</update>
 </value>
 <value>
@@ -425,13 +435,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>AccountLogin</name>
-<rename>AccountLogin</rename>
-<update>Y</update>
-</value>
-<value>
-<name>StartDatetime</name>
-<rename>StartDatetime</rename>
+<name>Application</name>
+<rename>Application</rename>
 <update>Y</update>
 </value>
 <value>
@@ -440,13 +445,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>Application</name>
-<rename>Application</rename>
-<update>Y</update>
-</value>
-<value>
-<name>Id</name>
-<rename>Id</rename>
+<name>StartDatetime</name>
+<rename>StartDatetime</rename>
 <update>Y</update>
 </value>
 
@@ -474,15 +474,15 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>IPAddress</value>
-<value>AccountDisplayName</value>
+      <value>Id</value>
 <value>EndDatetime</value>
-<value>ExitCode</value>
+<value>IPAddress</value>
+<value>AccountDisplayName</value>
 <value>AccountLogin</value>
-<value>StartDatetime</value>
-<value>AccountId</value>
+<value>ExitCode</value>
 <value>Application</value>
-<value>Id</value>
+<value>AccountId</value>
+<value>StartDatetime</value>
 
     </values>
 <flag_field>__changed__</flag_field>

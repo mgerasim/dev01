@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -431,23 +431,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>ContractNumber</name>
-<rename>ContractNumber</rename>
-<update>Y</update>
-</value>
-<value>
 <name>NodeId</name>
 <rename>NodeId</rename>
-<update>Y</update>
-</value>
-<value>
-<name>SystemType</name>
-<rename>SystemType</rename>
-<update>Y</update>
-</value>
-<value>
-<name>ContractDate</name>
-<rename>ContractDate</rename>
 <update>Y</update>
 </value>
 <value>
@@ -456,8 +441,23 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
+<name>ContractDate</name>
+<rename>ContractDate</rename>
+<update>Y</update>
+</value>
+<value>
+<name>ContractNumber</name>
+<rename>ContractNumber</rename>
+<update>Y</update>
+</value>
+<value>
 <name>SupplierId</name>
 <rename>SupplierId</rename>
+<update>Y</update>
+</value>
+<value>
+<name>SystemType</name>
+<rename>SystemType</rename>
 <update>Y</update>
 </value>
 
@@ -486,12 +486,12 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>ContractNumber</value>
-<value>NodeId</value>
-<value>SystemType</value>
-<value>ContractDate</value>
+      <value>NodeId</value>
 <value>InspectorId</value>
+<value>ContractDate</value>
+<value>ContractNumber</value>
 <value>SupplierId</value>
+<value>SystemType</value>
 
     </values>
 <flag_field>__changed__</flag_field>

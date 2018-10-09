@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -410,8 +410,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>Post</name>
-<rename>Post</rename>
+<name>Phone</name>
+<rename>Phone</rename>
 <update>Y</update>
 </value>
 <value>
@@ -425,13 +425,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>Phone</name>
-<rename>Phone</rename>
+<name>Email</name>
+<rename>Email</rename>
 <update>Y</update>
 </value>
 <value>
-<name>Email</name>
-<rename>Email</rename>
+<name>Post</name>
+<rename>Post</rename>
 <update>Y</update>
 </value>
 <value>
@@ -465,11 +465,11 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
     </keys>
     <values>
       <value>Id</value>
-<value>Post</value>
+<value>Phone</value>
 <value>Name</value>
 <value>Comment</value>
-<value>Phone</value>
 <value>Email</value>
+<value>Post</value>
 <value>SupplierId</value>
 
     </values>

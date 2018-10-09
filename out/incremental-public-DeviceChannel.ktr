@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -457,18 +457,18 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>ChannelNumber</name>
-<rename>ChannelNumber</rename>
-<update>Y</update>
-</value>
-<value>
-<name>EquipmentId</name>
-<rename>EquipmentId</rename>
-<update>Y</update>
-</value>
-<value>
 <name>HeatLeadIn</name>
 <rename>HeatLeadIn</rename>
+<update>Y</update>
+</value>
+<value>
+<name>MeasurePointID</name>
+<rename>MeasurePointID</rename>
+<update>Y</update>
+</value>
+<value>
+<name>ChannelNumber</name>
+<rename>ChannelNumber</rename>
 <update>Y</update>
 </value>
 <value>
@@ -477,8 +477,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>MeasurePointID</name>
-<rename>MeasurePointID</rename>
+<name>EquipmentId</name>
+<rename>EquipmentId</rename>
 <update>Y</update>
 </value>
 
@@ -508,11 +508,11 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>ChannelNumber</value>
-<value>EquipmentId</value>
-<value>HeatLeadIn</value>
-<value>IsSupplyChannel</value>
+      <value>HeatLeadIn</value>
 <value>MeasurePointID</value>
+<value>ChannelNumber</value>
+<value>IsSupplyChannel</value>
+<value>EquipmentId</value>
 
     </values>
 <flag_field>__changed__</flag_field>

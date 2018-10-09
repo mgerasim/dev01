@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -405,48 +405,18 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>BatteryLevel</name>
-<rename>BatteryLevel</rename>
-<update>Y</update>
-</value>
-<value>
-<name>Complex_PollSessionID</name>
-<rename>Complex_PollSessionID</rename>
-<update>Y</update>
-</value>
-<value>
-<name>TimeDifference</name>
-<rename>TimeDifference</rename>
-<update>Y</update>
-</value>
-<value>
-<name>ProtocolTypeID</name>
-<rename>ProtocolTypeID</rename>
-<update>Y</update>
-</value>
-<value>
 <name>AdapterID</name>
 <rename>AdapterID</rename>
 <update>Y</update>
 </value>
 <value>
-<name>AdapterAddress</name>
-<rename>AdapterAddress</rename>
-<update>Y</update>
-</value>
-<value>
-<name>HardwareVersion</name>
-<rename>HardwareVersion</rename>
-<update>Y</update>
-</value>
-<value>
-<name>FirmwareVersion</name>
-<rename>FirmwareVersion</rename>
-<update>Y</update>
-</value>
-<value>
 <name>EquipmentId</name>
 <rename>EquipmentId</rename>
+<update>Y</update>
+</value>
+<value>
+<name>BatteryLevel</name>
+<rename>BatteryLevel</rename>
 <update>Y</update>
 </value>
 <value>
@@ -457,6 +427,36 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <value>
 <name>Tag</name>
 <rename>Tag</rename>
+<update>Y</update>
+</value>
+<value>
+<name>TimeDifference</name>
+<rename>TimeDifference</rename>
+<update>Y</update>
+</value>
+<value>
+<name>FirmwareVersion</name>
+<rename>FirmwareVersion</rename>
+<update>Y</update>
+</value>
+<value>
+<name>Complex_PollSessionID</name>
+<rename>Complex_PollSessionID</rename>
+<update>Y</update>
+</value>
+<value>
+<name>AdapterAddress</name>
+<rename>AdapterAddress</rename>
+<update>Y</update>
+</value>
+<value>
+<name>ProtocolTypeID</name>
+<rename>ProtocolTypeID</rename>
+<update>Y</update>
+</value>
+<value>
+<name>HardwareVersion</name>
+<rename>HardwareVersion</rename>
 <update>Y</update>
 </value>
 
@@ -484,17 +484,17 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>BatteryLevel</value>
-<value>Complex_PollSessionID</value>
-<value>TimeDifference</value>
-<value>ProtocolTypeID</value>
-<value>AdapterID</value>
-<value>AdapterAddress</value>
-<value>HardwareVersion</value>
-<value>FirmwareVersion</value>
+      <value>AdapterID</value>
 <value>EquipmentId</value>
+<value>BatteryLevel</value>
 <value>Complex_ResponseDelay</value>
 <value>Tag</value>
+<value>TimeDifference</value>
+<value>FirmwareVersion</value>
+<value>Complex_PollSessionID</value>
+<value>AdapterAddress</value>
+<value>ProtocolTypeID</value>
+<value>HardwareVersion</value>
 
     </values>
 <flag_field>__changed__</flag_field>

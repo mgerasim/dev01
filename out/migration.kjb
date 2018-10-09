@@ -83,10 +83,7 @@
       <name>SQL SCRIPT START</name>
       <description/>
       <type>SQL</type>
-      <sql>DROP CAST IF EXISTS &#x28;varchar as date&#x29;;
-CREATE CAST &#x28;varchar as date&#x29; with inout as implicit;
-DROP CAST IF EXISTS &#x28;varchar as uuid&#x29;;
-CREATE CAST &#x28;varchar as uuid&#x29; with inout as implicit;
+    <sql>
 ALTER TABLE "public"."AccessRight" DISABLE TRIGGER ALL;
 ALTER TABLE "public"."Account" DISABLE TRIGGER ALL;
 ALTER TABLE "public"."AccountGroup" DISABLE TRIGGER ALL;
@@ -273,8 +270,7 @@ ALTER TABLE "public"."WaterTotals" DISABLE TRIGGER ALL;
       <name>SQL SCRIPT END</name>
       <description/>
       <type>SQL</type>
-      <sql>DROP CAST &#x28;varchar as date&#x29;;
-DROP CAST &#x28;varchar as uuid&#x29;;
+      <sql>
 ALTER TABLE "public"."AccessRight" ENABLE TRIGGER ALL;
 ALTER TABLE "public"."Account" ENABLE TRIGGER ALL;
 ALTER TABLE "public"."AccountGroup" ENABLE TRIGGER ALL;
@@ -7015,7 +7011,7 @@ ALTER TABLE "public"."WaterTotals" ENABLE TRIGGER ALL;
       <evaluation>Y</evaluation>
       <unconditional>N</unconditional>
     </hop>
-    <hop>
+<hop>
       <from>public_NodeSignaling</from>
       <to>public_NodeSupplier</to>
       <from_nr>0</from_nr>

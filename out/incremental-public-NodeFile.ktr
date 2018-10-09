@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -405,23 +405,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>FileName</name>
-<rename>FileName</rename>
-<update>Y</update>
-</value>
-<value>
-<name>Hash</name>
-<rename>Hash</rename>
-<update>Y</update>
-</value>
-<value>
 <name>Content</name>
 <rename>Content</rename>
 <update>Y</update>
 </value>
 <value>
-<name>LastWriteTime</name>
-<rename>LastWriteTime</rename>
+<name>Length</name>
+<rename>Length</rename>
 <update>Y</update>
 </value>
 <value>
@@ -430,8 +420,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>Length</name>
-<rename>Length</rename>
+<name>Thumbnail</name>
+<rename>Thumbnail</rename>
 <update>Y</update>
 </value>
 <value>
@@ -445,13 +435,23 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
+<name>FileName</name>
+<rename>FileName</rename>
+<update>Y</update>
+</value>
+<value>
+<name>LastWriteTime</name>
+<rename>LastWriteTime</rename>
+<update>Y</update>
+</value>
+<value>
 <name>Id</name>
 <rename>Id</rename>
 <update>Y</update>
 </value>
 <value>
-<name>Thumbnail</name>
-<rename>Thumbnail</rename>
+<name>Hash</name>
+<rename>Hash</rename>
 <update>Y</update>
 </value>
 
@@ -479,16 +479,16 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>FileName</value>
-<value>Hash</value>
-<value>Content</value>
-<value>LastWriteTime</value>
-<value>PublicFile</value>
+      <value>Content</value>
 <value>Length</value>
+<value>PublicFile</value>
+<value>Thumbnail</value>
 <value>CreationTime</value>
 <value>NodeId</value>
+<value>FileName</value>
+<value>LastWriteTime</value>
 <value>Id</value>
-<value>Thumbnail</value>
+<value>Hash</value>
 
     </values>
 <flag_field>__changed__</flag_field>

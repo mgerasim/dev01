@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -457,13 +457,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>NodeId</name>
-<rename>NodeId</rename>
+<name>PollConnectionId</name>
+<rename>PollConnectionId</rename>
 <update>Y</update>
 </value>
 <value>
-<name>PollConnectionId</name>
-<rename>PollConnectionId</rename>
+<name>NodeId</name>
+<rename>NodeId</rename>
 <update>Y</update>
 </value>
 <value>
@@ -498,8 +498,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>NodeId</value>
-<value>PollConnectionId</value>
+      <value>PollConnectionId</value>
+<value>NodeId</value>
 <value>EquipmentId</value>
 
     </values>

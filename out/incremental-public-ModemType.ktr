@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -405,6 +405,11 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
+<name>ModemType_ID</name>
+<rename>ModemType_ID</rename>
+<update>Y</update>
+</value>
+<value>
 <name>ModemType_CommunicationLinkType</name>
 <rename>ModemType_CommunicationLinkType</rename>
 <update>Y</update>
@@ -415,18 +420,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>ModemType_DataTransferDelay</name>
-<rename>ModemType_DataTransferDelay</rename>
-<update>Y</update>
-</value>
-<value>
-<name>ModemType_Title</name>
-<rename>ModemType_Title</rename>
-<update>Y</update>
-</value>
-<value>
-<name>ModemType_ID</name>
-<rename>ModemType_ID</rename>
+<name>ModemType_ShieldCode</name>
+<rename>ModemType_ShieldCode</rename>
 <update>Y</update>
 </value>
 <value>
@@ -435,8 +430,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>ModemType_ShieldCode</name>
-<rename>ModemType_ShieldCode</rename>
+<name>ModemType_Title</name>
+<rename>ModemType_Title</rename>
+<update>Y</update>
+</value>
+<value>
+<name>ModemType_DataTransferDelay</name>
+<rename>ModemType_DataTransferDelay</rename>
 <update>Y</update>
 </value>
 
@@ -464,13 +464,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>ModemType_CommunicationLinkType</value>
+      <value>ModemType_ID</value>
+<value>ModemType_CommunicationLinkType</value>
 <value>ModemType_PortSettings</value>
-<value>ModemType_DataTransferDelay</value>
-<value>ModemType_Title</value>
-<value>ModemType_ID</value>
-<value>ModemType_MaxCommandLen</value>
 <value>ModemType_ShieldCode</value>
+<value>ModemType_MaxCommandLen</value>
+<value>ModemType_Title</value>
+<value>ModemType_DataTransferDelay</value>
 
     </values>
 <flag_field>__changed__</flag_field>

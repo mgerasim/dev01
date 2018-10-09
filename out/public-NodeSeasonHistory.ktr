@@ -72,9 +72,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -98,8 +98,8 @@
     <access>Native</access>
     <database>lers</database>
     <port>5432</port>
-    <username>lers</username>
-    <password>ILyS3L5oEfOUubJX0a2k</password>
+    <username>postgres</username>
+    <password>C6fIXHNBfB02Pzfx1Dq0</password>
     <servername/>
     <data_tablespace/>
     <index_tablespace/>
@@ -328,7 +328,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
     <table>"NodeSeasonHistory"</table>
     <commit>100</commit>
     <truncate>N</truncate>
-    <ignore_errors>N</ignore_errors>
+    <ignore_errors>Y</ignore_errors>
     <use_batch>Y</use_batch>
     <specify_fields>N</specify_fields>
     <partitioning_enabled>N</partitioning_enabled>

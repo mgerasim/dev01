@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -405,28 +405,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>Comment</name>
-<rename>Comment</rename>
-<update>Y</update>
-</value>
-<value>
-<name>IsSystem</name>
-<rename>IsSystem</rename>
-<update>Y</update>
-</value>
-<value>
-<name>ValueType</name>
-<rename>ValueType</rename>
-<update>Y</update>
-</value>
-<value>
 <name>ReportEntity</name>
 <rename>ReportEntity</rename>
-<update>Y</update>
-</value>
-<value>
-<name>ParameterName</name>
-<rename>ParameterName</rename>
 <update>Y</update>
 </value>
 <value>
@@ -435,8 +415,28 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
+<name>ValueType</name>
+<rename>ValueType</rename>
+<update>Y</update>
+</value>
+<value>
+<name>Comment</name>
+<rename>Comment</rename>
+<update>Y</update>
+</value>
+<value>
+<name>ParameterName</name>
+<rename>ParameterName</rename>
+<update>Y</update>
+</value>
+<value>
 <name>ReportType</name>
 <rename>ReportType</rename>
+<update>Y</update>
+</value>
+<value>
+<name>IsSystem</name>
+<rename>IsSystem</rename>
 <update>Y</update>
 </value>
 
@@ -464,13 +464,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>Comment</value>
-<value>IsSystem</value>
-<value>ValueType</value>
-<value>ReportEntity</value>
-<value>ParameterName</value>
+      <value>ReportEntity</value>
 <value>Id</value>
+<value>ValueType</value>
+<value>Comment</value>
+<value>ParameterName</value>
 <value>ReportType</value>
+<value>IsSystem</value>
 
     </values>
 <flag_field>__changed__</flag_field>

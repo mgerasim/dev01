@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -405,8 +405,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>Id</name>
-<rename>Id</rename>
+<name>Name</name>
+<rename>Name</rename>
 <update>Y</update>
 </value>
 <value>
@@ -415,18 +415,18 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>ParentId</name>
-<rename>ParentId</rename>
-<update>Y</update>
-</value>
-<value>
-<name>Name</name>
-<rename>Name</rename>
-<update>Y</update>
-</value>
-<value>
 <name>OutdoorTempSourceMeasurePointId</name>
 <rename>OutdoorTempSourceMeasurePointId</rename>
+<update>Y</update>
+</value>
+<value>
+<name>Id</name>
+<rename>Id</rename>
+<update>Y</update>
+</value>
+<value>
+<name>ParentId</name>
+<rename>ParentId</rename>
 <update>Y</update>
 </value>
 
@@ -454,11 +454,11 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>Id</value>
+      <value>Name</value>
 <value>TimeZoneOffset</value>
-<value>ParentId</value>
-<value>Name</value>
 <value>OutdoorTempSourceMeasurePointId</value>
+<value>Id</value>
+<value>ParentId</value>
 
     </values>
 <flag_field>__changed__</flag_field>

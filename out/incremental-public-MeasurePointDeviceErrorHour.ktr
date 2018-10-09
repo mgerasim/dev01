@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -509,28 +509,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>DateTime</name>
-<rename>DateTime</rename>
-<update>Y</update>
-</value>
-<value>
-<name>Description</name>
-<rename>Description</rename>
-<update>Y</update>
-</value>
-<value>
-<name>ArchiveType</name>
-<rename>ArchiveType</rename>
-<update>Y</update>
-</value>
-<value>
-<name>ChannelNumber</name>
-<rename>ChannelNumber</rename>
-<update>Y</update>
-</value>
-<value>
-<name>EventCode</name>
-<rename>EventCode</rename>
+<name>Duration</name>
+<rename>Duration</rename>
 <update>Y</update>
 </value>
 <value>
@@ -539,8 +519,28 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>Duration</name>
-<rename>Duration</rename>
+<name>EventCode</name>
+<rename>EventCode</rename>
+<update>Y</update>
+</value>
+<value>
+<name>ArchiveType</name>
+<rename>ArchiveType</rename>
+<update>Y</update>
+</value>
+<value>
+<name>Description</name>
+<rename>Description</rename>
+<update>Y</update>
+</value>
+<value>
+<name>ChannelNumber</name>
+<rename>ChannelNumber</rename>
+<update>Y</update>
+</value>
+<value>
+<name>DateTime</name>
+<rename>DateTime</rename>
 <update>Y</update>
 </value>
 
@@ -572,13 +572,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>DateTime</value>
-<value>Description</value>
-<value>ArchiveType</value>
-<value>ChannelNumber</value>
-<value>EventCode</value>
+      <value>Duration</value>
 <value>MeasurePointId</value>
-<value>Duration</value>
+<value>EventCode</value>
+<value>ArchiveType</value>
+<value>Description</value>
+<value>ChannelNumber</value>
+<value>DateTime</value>
 
     </values>
 <flag_field>__changed__</flag_field>

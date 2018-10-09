@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -405,13 +405,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>DriverCode</name>
-<rename>DriverCode</rename>
+<name>Name</name>
+<rename>Name</rename>
 <update>Y</update>
 </value>
 <value>
-<name>Name</name>
-<rename>Name</rename>
+<name>EquipmentModelId</name>
+<rename>EquipmentModelId</rename>
 <update>Y</update>
 </value>
 <value>
@@ -420,8 +420,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>EquipmentModelId</name>
-<rename>EquipmentModelId</rename>
+<name>DriverCode</name>
+<rename>DriverCode</rename>
 <update>Y</update>
 </value>
 <value>
@@ -454,10 +454,10 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>DriverCode</value>
-<value>Name</value>
-<value>DeviceDataType</value>
+      <value>Name</value>
 <value>EquipmentModelId</value>
+<value>DeviceDataType</value>
+<value>DriverCode</value>
 <value>ID</value>
 
     </values>

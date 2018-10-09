@@ -97,9 +97,9 @@
     <server>localhost</server>
     <type>MSSQL</type>
     <access>Native</access>
-    <database>localhost</database>
+    <database>LERS</database>
     <port>1433</port>
-    <username>su</username>
+    <username>sa</username>
     <password>ex6ectDFMJLOwbEnAIR0</password>
     <servername/>
     <data_tablespace/>
@@ -405,13 +405,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>AccountId</name>
-<rename>AccountId</rename>
-<update>Y</update>
-</value>
-<value>
-<name>NodeJobId</name>
-<rename>NodeJobId</rename>
+<name>DateTime</name>
+<rename>DateTime</rename>
 <update>Y</update>
 </value>
 <value>
@@ -425,13 +420,18 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>DateTime</name>
-<rename>DateTime</rename>
+<name>NodeJobId</name>
+<rename>NodeJobId</rename>
 <update>Y</update>
 </value>
 <value>
 <name>Id</name>
 <rename>Id</rename>
+<update>Y</update>
+</value>
+<value>
+<name>AccountId</name>
+<rename>AccountId</rename>
 <update>Y</update>
 </value>
 
@@ -459,12 +459,12 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>AccountId</value>
-<value>NodeJobId</value>
+      <value>DateTime</value>
 <value>Text</value>
 <value>AccountName</value>
-<value>DateTime</value>
+<value>NodeJobId</value>
 <value>Id</value>
+<value>AccountId</value>
 
     </values>
 <flag_field>__changed__</flag_field>
