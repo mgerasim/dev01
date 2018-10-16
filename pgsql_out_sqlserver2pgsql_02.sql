@@ -2,8 +2,8 @@
 \set ECHO all
 BEGIN;
 \set ECHO all
---CREATE SEQUENCE "public"."account_account_id_seq" INCREMENT BY 1 MINVALUE 100 START WITH 100 OWNED BY "public"."Account"."Account_ID";
---CREATE SEQUENCE "public"."accountgroup_id_seq" INCREMENT BY 1 MINVALUE 100 START WITH 100 OWNED BY "public"."AccountGroup"."ID";
+CREATE SEQUENCE "public"."account_account_id_seq" INCREMENT BY 1 MINVALUE 100 START WITH 100 OWNED BY "public"."Account"."Account_ID";
+CREATE SEQUENCE "public"."accountgroup_id_seq" INCREMENT BY 1 MINVALUE 100 START WITH 100 OWNED BY "public"."AccountGroup"."ID";
 CREATE SEQUENCE "public"."balancegroup_id_seq" INCREMENT BY 1 MINVALUE 1 START WITH 1 OWNED BY "public"."BalanceGroup"."Id";
 CREATE SEQUENCE "public"."contingency_id_seq" INCREMENT BY 1 MINVALUE 1 START WITH 1 OWNED BY "public"."Contingency"."ID";
 CREATE SEQUENCE "public"."customattribute_id_seq" INCREMENT BY 1 MINVALUE 1 START WITH 1 OWNED BY "public"."CustomAttribute"."Id";
@@ -666,7 +666,7 @@ ALTER TABLE "public"."Territory" ALTER COLUMN "Id" SET DEFAULT nextval('"public"
 ALTER TABLE "public"."UserSessionLog" ALTER COLUMN "Id" SET DEFAULT nextval('"public"."usersessionlog_id_seq"');
 ALTER TABLE "public"."UserSessionRestoreToken" ALTER COLUMN "Id" SET DEFAULT nextval('"public"."usersessionrestoretoken_id_seq"');
 ALTER TABLE "public"."WaterEstimatedConsumption" ALTER COLUMN "EstimationAlgorithm" SET DEFAULT 1;
-select setval('"public"."account_account_id_seq"',(select max("Account_ID") from "public"."Account")::bigint);
+--select setval('"public"."account_account_id_seq"',(select max("Account_ID") from "public"."Account")::bigint);
 select setval('"public"."accountgroup_id_seq"',(select max("ID") from "public"."AccountGroup")::bigint);
 select setval('"public"."balancegroup_id_seq"',(select max("Id") from "public"."BalanceGroup")::bigint);
 select setval('"public"."contingency_id_seq"',(select max("ID") from "public"."Contingency")::bigint);
