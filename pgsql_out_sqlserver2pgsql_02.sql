@@ -708,7 +708,7 @@ select setval('"public"."polltask_id_seq"',(select max("ID") from "public"."Poll
 select setval('"public"."preparedreport_id_seq"',(select max("Id") from "public"."PreparedReport")::bigint);
 select setval('"public"."report_id_seq"',(select max("Id") from "public"."Report")::bigint);
 select setval('"public"."reportparameter_id_seq"',(select max("Id") from "public"."ReportParameter")::bigint);
-select setval('"public"."reportparameterproperty_id_seq"',(select max("Id") from "public"."ReportParameterProperty")::bigint);
+--select setval('"public"."reportparameterproperty_id_seq"',(select max("Id") from "public"."ReportParameterProperty")::bigint);
 select setval('"public"."reporttemplate_id_seq"',(select max("Id") from "public"."ReportTemplate")::bigint);
 select setval('"public"."servicecompany_id_seq"',(select max("ID") from "public"."ServiceCompany")::bigint);
 select setval('"public"."serviceman_id_seq"',(select max("ID") from "public"."Serviceman")::bigint);
