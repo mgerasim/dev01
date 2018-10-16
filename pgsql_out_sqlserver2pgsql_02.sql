@@ -676,7 +676,7 @@ select setval('"public"."deviceevent_id_seq"',(select max("Id") from "public"."D
 select setval('"public"."division_id_seq"',(select max("Id") from "public"."Division")::bigint);
 select setval('"public"."equipment_id_seq"',(select max("Id") from "public"."Equipment")::bigint);
 select setval('"public"."equipmenthistory_id_seq"',(select max("Id") from "public"."EquipmentHistory")::bigint);
-select setval('"public"."equipmentmodel_id_seq"',(select max("Id") from "public"."EquipmentModel")::bigint);
+--select setval('"public"."equipmentmodel_id_seq"',(select max("Id") from "public"."EquipmentModel")::bigint);
 select setval('"public"."equipmentmodelmodification_id_seq"',(select max("Id") from "public"."EquipmentModelModification")::bigint);
 select setval('"public"."equipmentpollstatistics_id_seq"',(select max("Id") from "public"."EquipmentPollStatistics")::bigint);
 select setval('"public"."gprscontrollersession_id_seq"',(select max("Id") from "public"."GprsControllerSession")::bigint);
