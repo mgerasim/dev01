@@ -2,8 +2,8 @@
 \set ECHO all
 BEGIN;
 \set ECHO all
-#CREATE SEQUENCE "public"."account_account_id_seq" INCREMENT BY 1 MINVALUE 100 START WITH 100 OWNED BY "public"."Account"."Account_ID";
-#CREATE SEQUENCE "public"."accountgroup_id_seq" INCREMENT BY 1 MINVALUE 100 START WITH 100 OWNED BY "public"."AccountGroup"."ID";
+--CREATE SEQUENCE "public"."account_account_id_seq" INCREMENT BY 1 MINVALUE 100 START WITH 100 OWNED BY "public"."Account"."Account_ID";
+--CREATE SEQUENCE "public"."accountgroup_id_seq" INCREMENT BY 1 MINVALUE 100 START WITH 100 OWNED BY "public"."AccountGroup"."ID";
 CREATE SEQUENCE "public"."balancegroup_id_seq" INCREMENT BY 1 MINVALUE 1 START WITH 1 OWNED BY "public"."BalanceGroup"."Id";
 CREATE SEQUENCE "public"."contingency_id_seq" INCREMENT BY 1 MINVALUE 1 START WITH 1 OWNED BY "public"."Contingency"."ID";
 CREATE SEQUENCE "public"."customattribute_id_seq" INCREMENT BY 1 MINVALUE 1 START WITH 1 OWNED BY "public"."CustomAttribute"."Id";
