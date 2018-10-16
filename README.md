@@ -41,13 +41,12 @@ apt-get install libpostgresql-jdbc-java
 =============================================
 1. Выполнить под пользователем ```postgres``` команду ```psql```
 
-2. Создать базу данных 
+2. Пересоздать базу данных 
 ```
-CREATE DATABASE "LERS"
-  WITH OWNER "lers"
-  ENCODING 'UTF8'
-  LC_COLLATE = 'en_US.UTF-8'
-  LC_CTYPE = 'en_US.UTF-8';
+postgres=# DROP DATABASE lers;
+DROP DATABASE
+postgres=# CREATE DATABASE lers WITH OWNER lers ENCODING 'UTF8';
+CREATE DATABASE
 ```
 
 3. Импортировать скрипты 
