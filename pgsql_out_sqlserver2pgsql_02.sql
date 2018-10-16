@@ -686,7 +686,7 @@ select setval('"public"."mapobject_id_seq"',(select max("ID") from "public"."Map
 select setval('"public"."measurepoint_measurepoint_id_seq"',(select max("MeasurePoint_ID") from "public"."MeasurePoint")::bigint);
 select setval('"public"."measurepointcustomattribute_id_seq"',(select max("Id") from "public"."MeasurePointCustomAttribute")::bigint);
 select setval('"public"."messagelog_id_seq"',(select max("Id") from "public"."MessageLog")::bigint);
-select setval('"public"."modemtype_modemtype_id_seq"',(select max("ModemType_ID") from "public"."ModemType")::bigint);
+--select setval('"public"."modemtype_modemtype_id_seq"',(select max("ModemType_ID") from "public"."ModemType")::bigint);
 select setval('"public"."node_id_seq"',(select max("ID") from "public"."Node")::bigint);
 select setval('"public"."nodebalance_id_seq"',(select max("ID") from "public"."NodeBalance")::bigint);
 select setval('"public"."nodecustomattribute_id_seq"',(select max("Id") from "public"."NodeCustomAttribute")::bigint);
