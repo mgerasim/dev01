@@ -709,13 +709,13 @@ select setval('"public"."preparedreport_id_seq"',(select max("Id") from "public"
 select setval('"public"."report_id_seq"',(select max("Id") from "public"."Report")::bigint);
 select setval('"public"."reportparameter_id_seq"',(select max("Id") from "public"."ReportParameter")::bigint);
 --select setval('"public"."reportparameterproperty_id_seq"',(select max("Id") from "public"."ReportParameterProperty")::bigint);
-select setval('"public"."reporttemplate_id_seq"',(select max("Id") from "public"."ReportTemplate")::bigint);
+--select setval('"public"."reporttemplate_id_seq"',(select max("Id") from "public"."ReportTemplate")::bigint);
 select setval('"public"."servicecompany_id_seq"',(select max("ID") from "public"."ServiceCompany")::bigint);
 select setval('"public"."serviceman_id_seq"',(select max("ID") from "public"."Serviceman")::bigint);
 select setval('"public"."supplier_id_seq"',(select max("Id") from "public"."Supplier")::bigint);
 select setval('"public"."systemlog_id_seq"',(select max("Id") from "public"."SystemLog")::bigint);
 select setval('"public"."systemparameters_id_seq"',(select max("Id") from "public"."SystemParameters")::bigint);
-select setval('"public"."task_id_seq"',(select max("ID") from "public"."Task")::bigint);
+--select setval('"public"."task_id_seq"',(select max("ID") from "public"."Task")::bigint);
 select setval('"public"."territory_id_seq"',(select max("Id") from "public"."Territory")::bigint);
 select setval('"public"."usersessionlog_id_seq"',(select max("Id") from "public"."UserSessionLog")::bigint);
 select setval('"public"."usersessionrestoretoken_id_seq"',(select max("Id") from "public"."UserSessionRestoreToken")::bigint);
