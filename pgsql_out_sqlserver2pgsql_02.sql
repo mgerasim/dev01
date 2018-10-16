@@ -667,7 +667,7 @@ ALTER TABLE "public"."UserSessionLog" ALTER COLUMN "Id" SET DEFAULT nextval('"pu
 ALTER TABLE "public"."UserSessionRestoreToken" ALTER COLUMN "Id" SET DEFAULT nextval('"public"."usersessionrestoretoken_id_seq"');
 ALTER TABLE "public"."WaterEstimatedConsumption" ALTER COLUMN "EstimationAlgorithm" SET DEFAULT 1;
 --select setval('"public"."account_account_id_seq"',(select max("Account_ID") from "public"."Account")::bigint);
-select setval('"public"."accountgroup_id_seq"',(select max("ID") from "public"."AccountGroup")::bigint);
+--select setval('"public"."accountgroup_id_seq"',(select max("ID") from "public"."AccountGroup")::bigint);
 select setval('"public"."balancegroup_id_seq"',(select max("Id") from "public"."BalanceGroup")::bigint);
 select setval('"public"."contingency_id_seq"',(select max("ID") from "public"."Contingency")::bigint);
 select setval('"public"."customattribute_id_seq"',(select max("Id") from "public"."CustomAttribute")::bigint);
