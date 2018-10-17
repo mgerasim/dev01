@@ -1,3 +1,8 @@
+Репозитории
+=============================================
+* ``` svn checkout svn+ssh://dev@dev01:~/repos```
+
+
 Подготовка сервера
 =============================================
 ```
@@ -36,18 +41,17 @@ apt-get install libpostgresql-jdbc-java
 =============================================
 1. Выполнить под пользователем ```postgres``` команду ```psql```
 
-2. Создать базу данных 
+2. Пересоздать базу данных 
 ```
-CREATE DATABASE "LERS"
-  WITH OWNER "lers"
-  ENCODING 'UTF8'
-  LC_COLLATE = 'en_US.UTF-8'
-  LC_CTYPE = 'en_US.UTF-8';
+postgres=# DROP DATABASE lers;
+DROP DATABASE
+postgres=# CREATE DATABASE lers WITH OWNER lers ENCODING 'UTF8';
+CREATE DATABASE
 ```
 
 3. Импортировать скрипты 
-* ```psql -U lers -d lers -f /home/dev/projects/dev01/pgsql_out_sqlserver2pgsql_01.sql```
 * ```sed -i -e 's/CREATE TYPE "public"."/CREATE TYPE "public"."Type/g' pgsql_out_sqlserver2pgsql_01.sql```
+* ```psql -U lers -d lers -f /home/dev/projects/dev01/pgsql_out_sqlserver2pgsql_01.sql```
 * ``` /usr/src/data-integration/kitchen.sh -file out/migration.kjb```
 * ```psql -U lers -d lers -f /home/dev/projects/dev01/pgsql_out_sqlserver2pgsql_02.sql```
 * ```psql -U lers -d lers -f /home/dev/projects/dev01/pgsql_out_sqlserver2pgsql_03.sql```
