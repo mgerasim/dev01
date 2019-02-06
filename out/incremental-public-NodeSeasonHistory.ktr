@@ -431,8 +431,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>IsHeatingSeason</name>
-<rename>IsHeatingSeason</rename>
+<name>NodeId</name>
+<rename>NodeId</rename>
 <update>Y</update>
 </value>
 <value>
@@ -441,8 +441,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>NodeId</name>
-<rename>NodeId</rename>
+<name>IsHeatingSeason</name>
+<rename>IsHeatingSeason</rename>
 <update>Y</update>
 </value>
 
@@ -471,9 +471,9 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>IsHeatingSeason</value>
+      <value>NodeId</value>
 <value>StartDate</value>
-<value>NodeId</value>
+<value>IsHeatingSeason</value>
 
     </values>
 <flag_field>__changed__</flag_field>

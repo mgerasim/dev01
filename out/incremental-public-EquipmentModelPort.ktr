@@ -405,11 +405,6 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>EquipmentModelId</name>
-<rename>EquipmentModelId</rename>
-<update>Y</update>
-</value>
-<value>
 <name>Id</name>
 <rename>Id</rename>
 <update>Y</update>
@@ -417,6 +412,11 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <value>
 <name>Title</name>
 <rename>Title</rename>
+<update>Y</update>
+</value>
+<value>
+<name>EquipmentModelId</name>
+<rename>EquipmentModelId</rename>
 <update>Y</update>
 </value>
 
@@ -444,9 +444,9 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>EquipmentModelId</value>
-<value>Id</value>
+      <value>Id</value>
 <value>Title</value>
+<value>EquipmentModelId</value>
 
     </values>
 <flag_field>__changed__</flag_field>

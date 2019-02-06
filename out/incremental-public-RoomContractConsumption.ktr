@@ -431,6 +431,16 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
+<name>HotWaterValue</name>
+<rename>HotWaterValue</rename>
+<update>Y</update>
+</value>
+<value>
+<name>ElectricityValue</name>
+<rename>ElectricityValue</rename>
+<update>Y</update>
+</value>
+<value>
 <name>HeatValue</name>
 <rename>HeatValue</rename>
 <update>Y</update>
@@ -448,16 +458,6 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <value>
 <name>RoomId</name>
 <rename>RoomId</rename>
-<update>Y</update>
-</value>
-<value>
-<name>ElectricityValue</name>
-<rename>ElectricityValue</rename>
-<update>Y</update>
-</value>
-<value>
-<name>HotWaterValue</name>
-<rename>HotWaterValue</rename>
 <update>Y</update>
 </value>
 
@@ -486,12 +486,12 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>HeatValue</value>
+      <value>HotWaterValue</value>
+<value>ElectricityValue</value>
+<value>HeatValue</value>
 <value>ColdWaterValue</value>
 <value>MonthNumber</value>
 <value>RoomId</value>
-<value>ElectricityValue</value>
-<value>HotWaterValue</value>
 
     </values>
 <flag_field>__changed__</flag_field>

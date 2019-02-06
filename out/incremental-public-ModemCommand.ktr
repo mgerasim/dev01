@@ -431,8 +431,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>ModemCommand_DelayBefore</name>
-<rename>ModemCommand_DelayBefore</rename>
+<name>ModemCommand_ModemTypeID</name>
+<rename>ModemCommand_ModemTypeID</rename>
 <update>Y</update>
 </value>
 <value>
@@ -441,13 +441,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>ModemCommand_BadAnswerList</name>
-<rename>ModemCommand_BadAnswerList</rename>
+<name>ModemCommand_DelayBefore</name>
+<rename>ModemCommand_DelayBefore</rename>
 <update>Y</update>
 </value>
 <value>
-<name>ModemCommand_ModemTypeID</name>
-<rename>ModemCommand_ModemTypeID</rename>
+<name>ModemCommand_ModemCommandTypeID</name>
+<rename>ModemCommand_ModemCommandTypeID</rename>
 <update>Y</update>
 </value>
 <value>
@@ -456,8 +456,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>ModemCommand_ModemCommandTypeID</name>
-<rename>ModemCommand_ModemCommandTypeID</rename>
+<name>ModemCommand_GoodAnswerList</name>
+<rename>ModemCommand_GoodAnswerList</rename>
 <update>Y</update>
 </value>
 <value>
@@ -471,8 +471,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>ModemCommand_GoodAnswerList</name>
-<rename>ModemCommand_GoodAnswerList</rename>
+<name>ModemCommand_BadAnswerList</name>
+<rename>ModemCommand_BadAnswerList</rename>
 <update>Y</update>
 </value>
 
@@ -501,15 +501,15 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>ModemCommand_DelayBefore</value>
+      <value>ModemCommand_ModemTypeID</value>
 <value>ModemCommand_Text</value>
-<value>ModemCommand_BadAnswerList</value>
-<value>ModemCommand_ModemTypeID</value>
-<value>ModemCommand_Comment</value>
+<value>ModemCommand_DelayBefore</value>
 <value>ModemCommand_ModemCommandTypeID</value>
+<value>ModemCommand_Comment</value>
+<value>ModemCommand_GoodAnswerList</value>
 <value>ModemCommand_Timeout</value>
 <value>ModemCommand_TerminationType</value>
-<value>ModemCommand_GoodAnswerList</value>
+<value>ModemCommand_BadAnswerList</value>
 
     </values>
 <flag_field>__changed__</flag_field>

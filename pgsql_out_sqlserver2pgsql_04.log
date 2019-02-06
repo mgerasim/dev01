@@ -1,31 +1,88 @@
 WARNING: the source database is set as ARITHABORT OFF.
          It means that for SQL Server, 10/0 = NULL.
          You'll probably have problems porting that to PostgreSQL.
-Warning: TABLE type in SQL Server, input line 77, ignored a primary key constraint
-Warning: TABLE type in SQL Server, input line 93, ignored a primary key constraint
-Warning: TABLE type in SQL Server, input line 110, ignored a primary key constraint
-Warning: TABLE type in SQL Server, input line 134, ignored a primary key constraint
-Warning: TABLE type in SQL Server, input line 148, ignored a primary key constraint
-Warning: TABLE type in SQL Server, input line 163, ignored a primary key constraint
-Warning: TABLE type in SQL Server, input line 215, ignored a primary key constraint
-Warning: TABLE type in SQL Server, input line 231, ignored a primary key constraint
-Warning: TABLE type in SQL Server, input line 266, ignored a primary key constraint
+Warning: TABLE type in SQL Server, input line 98, ignored a primary key constraint
+Warning: TABLE type in SQL Server, input line 114, ignored a primary key constraint
+Warning: TABLE type in SQL Server, input line 131, ignored a primary key constraint
+Warning: TABLE type in SQL Server, input line 155, ignored a primary key constraint
+Warning: TABLE type in SQL Server, input line 169, ignored a primary key constraint
+Warning: TABLE type in SQL Server, input line 184, ignored a primary key constraint
+Warning: TABLE type in SQL Server, input line 236, ignored a primary key constraint
+Warning: TABLE type in SQL Server, input line 252, ignored a primary key constraint
 Warning: TABLE type in SQL Server, input line 287, ignored a primary key constraint
-Warning: TABLE type in SQL Server, input line 305, ignored a primary key constraint
-Warning: TABLE type in SQL Server, input line 328, ignored a primary key constraint
-Warning: TABLE type in SQL Server, input line 337, ignored a primary key constraint
-Warning: TABLE type in SQL Server, input line 357, ignored a primary key constraint
-Warning: TABLE type in SQL Server, input line 368, ignored a primary key constraint
-Warning: TABLE type in SQL Server, input line 399, ignored a primary key constraint
-Warning: TABLE type in SQL Server, input line 411, ignored a primary key constraint
-Warning: TABLE type in SQL Server, input line 436, ignored a primary key constraint
-Warning: TABLE type in SQL Server, input line 467, ignored a primary key constraint
-Warning: TABLE type in SQL Server, input line 477, ignored a primary key constraint
-Warning: TABLE type in SQL Server, input line 487, ignored a primary key constraint
-Warning: TABLE type in SQL Server, input line 511, ignored a primary key constraint
-Warning: TABLE type in SQL Server, input line 524, ignored a primary key constraint
-Warning: TABLE type in SQL Server, input line 576, ignored a primary key constraint
-Warning: TABLE type in SQL Server, input line 607, ignored a primary key constraint
+Warning: TABLE type in SQL Server, input line 308, ignored a primary key constraint
+Warning: TABLE type in SQL Server, input line 326, ignored a primary key constraint
+Warning: TABLE type in SQL Server, input line 349, ignored a primary key constraint
+Warning: TABLE type in SQL Server, input line 358, ignored a primary key constraint
+Warning: TABLE type in SQL Server, input line 378, ignored a primary key constraint
+Warning: TABLE type in SQL Server, input line 389, ignored a primary key constraint
+Warning: TABLE type in SQL Server, input line 420, ignored a primary key constraint
+Warning: TABLE type in SQL Server, input line 432, ignored a primary key constraint
+Warning: TABLE type in SQL Server, input line 457, ignored a primary key constraint
+Warning: TABLE type in SQL Server, input line 473, ignored a primary key constraint
+Warning: TABLE type in SQL Server, input line 483, ignored a primary key constraint
+Warning: TABLE type in SQL Server, input line 493, ignored a primary key constraint
+Warning: TABLE type in SQL Server, input line 517, ignored a primary key constraint
+Warning: TABLE type in SQL Server, input line 530, ignored a primary key constraint
+Warning: TABLE type in SQL Server, input line 577, ignored a primary key constraint
+Warning: TABLE type in SQL Server, input line 608, ignored a primary key constraint
+Warning: Function fn_CheckMeasurePointAccess ignored
+Warning: Function fn_CheckNodeAccess ignored
+Warning: Function fn_CheckRoomAccess ignored
+Warning: Function fn_DiffValues ignored
+Warning: Function fn_FormatArchiveTimemark ignored
+Warning: Function fn_GetAccountMeasurePoints ignored
+Warning: Function fn_GetAccountNodeGroups ignored
+Warning: Function fn_GetAccountNodes ignored
+Warning: Function fn_GetAccountReports ignored
+Warning: Function fn_GetAccountRooms ignored
+Warning: Function fn_GetAccountTrusteeIdList ignored
+Warning: Function fn_GetContractLoad ignored
+Warning: Function fn_GetDaysInMonth ignored
+Warning: Function fn_GetLimitLoad ignored
+Warning: Function fn_GetMeasurePoint ignored
+Warning: Function fn_GetNodeReportCountByReportId ignored
+Warning: Function fn_GetPollTask ignored
+Warning: Function fn_GetPollTaskTitle ignored
+Warning: Function fn_GetReportCountByReportTemplateId ignored
+Warning: Function fn_GetResourceLoss ignored
+Warning: Function fn_IsAccountHasAllNodeAccess ignored
+Warning: Function fn_IsAdminAccount ignored
+Warning: Function fn_IsListedIpAddress ignored
+Warning: Function fn_IsTwoChannelMeasurePoint ignored
+Warning: Function fn_ValidateAccountGroupProperties ignored
+Warning: Function fn_ValidateBalanceGroupProperties ignored
+Warning: Function fn_ValidateCustomAttributeProperties ignored
+Warning: Function fn_ValidateCustomerProperties ignored
+Warning: Function fn_ValidateEquipmentModelProperties ignored
+Warning: Function fn_ValidateEquipmentProperties ignored
+Warning: Function fn_ValidateInspectorProperties ignored
+Warning: Function fn_ValidateMapProperties ignored
+Warning: Function fn_ValidateMeasurePointProperties ignored
+Warning: Function fn_ValidateNodeGroupProperties ignored
+Warning: Function fn_ValidateNodeProperties ignored
+Warning: Function fn_ValidatePersonalAccountProperties ignored
+Warning: Function fn_ValidatePollConnectionProperties ignored
+Warning: Function fn_ValidatePollPortGroupProperties ignored
+Warning: Function fn_ValidatePollPortProperties ignored
+Warning: Function fn_ValidateReportTemplateProperties ignored
+Warning: Function fn_ValidateRoomCounters ignored
+Warning: Function fn_ValidateServiceCompanyProperties ignored
+Warning: Function fn_ValidateSupplierProperties ignored
+Warning: Function fn_ValidateTaskProperties ignored
+Warning: Function IsSupportedAdapter ignored
+Warning: There is a calculated column: public.NodeFile.Length. This isn't done the same way in PG at all
+	For now it has been declared as a varchar in PG, so that the values can be copied
+	You should change its type manually in the dump (sorry for that),
+	A trigger has been written in the unsure file. It probably won't work as is.
+	Please review it.
+Warning: Function fn_GetEquipment ignored
+Warning: This index (public.Contingency.IX_Contingency_StartDate_EndDate) has some include columns. This isn't supported in PostgreSQL.
+	The columns in the INCLUDE clause have been ignored.
+Warning: This index (public.GprsControllerSession.IX_GprsControllerSession_StartDateTime) has some include columns. This isn't supported in PostgreSQL.
+	The columns in the INCLUDE clause have been ignored.
+Warning: This index (public.MeasurePoint.IX_MeasurePoint_PresonalAccountId_SystemTypeId) has some include columns. This isn't supported in PostgreSQL.
+	The columns in the INCLUDE clause have been ignored.
 Warning: Procedure sp_AddPlugin ignored
 Warning: Procedure sp_ChangeNodeType ignored
 Warning: Procedure sp_CheckEquipmentUsageAsCommDevice ignored
@@ -41,20 +98,14 @@ Warning: Procedure sp_CreateNodeFile ignored
 Warning: Procedure sp_DelAccount ignored
 Warning: Procedure sp_DelAccountGroup ignored
 Warning: Procedure sp_DelAccountGroupMembership ignored
-Warning: Procedure sp_DelAccountMap ignored
-Warning: Procedure sp_DelAccountMapByMap ignored
-Warning: Procedure sp_DelAccountNodeGroup ignored
 Warning: Procedure sp_DelAccountNotification ignored
 Warning: Procedure sp_DelAccountNotificationByType ignored
 Warning: Procedure sp_DelContingency ignored
 Warning: Procedure sp_DelCounterTotals ignored
-Warning: Procedure sp_DelCustomAttribute ignored
-Warning: Procedure sp_DelCustomer ignored
 Warning: Procedure sp_DelDeviceEvent ignored
 Warning: Procedure sp_DelDeviceMeasurePoint ignored
 Warning: Procedure sp_DelEquipment ignored
 Warning: Procedure sp_DelEquipmentModel ignored
-Warning: Procedure sp_DelEquipmentModelModification ignored
 Warning: Procedure sp_DelEquipmentPollConnection ignored
 Warning: Procedure sp_DeleteUnusedMapImages ignored
 Warning: Procedure sp_DelInspector ignored
@@ -86,7 +137,6 @@ Warning: Procedure sp_DelOutdoorTemperature ignored
 Warning: Procedure sp_DelPersonalAccount ignored
 Warning: Procedure sp_DelPlugin ignored
 Warning: Procedure sp_DelPollConnection ignored
-Warning: Procedure sp_DelPollPortGroup ignored
 Warning: Procedure sp_DelPollTask ignored
 Warning: Procedure sp_DelPreparedReport ignored
 Warning: Procedure sp_DelReport ignored
@@ -115,18 +165,15 @@ Warning: Procedure sp_FindPrevGoodTotalsWaterRecord ignored
 Warning: Procedure sp_FindPrevTotalsElectricRecord ignored
 Warning: Procedure sp_FindPrevTotalsGasRecord ignored
 Warning: Procedure sp_FindPrevTotalsWaterRecord ignored
-Warning: Procedure sp_GetAccessRight ignored
 Warning: Procedure sp_GetAccount ignored
 Warning: Procedure sp_GetAccountGrantedPermissions ignored
 Warning: Procedure sp_GetAccountGroup ignored
 Warning: Procedure sp_GetAccountGroupListByAccount ignored
 Warning: Procedure sp_GetAccountGroupMembership ignored
-Warning: Procedure sp_GetAccountGroupPermissionEx ignored
 Warning: Procedure sp_GetAccountIdByLogin ignored
 Warning: Procedure sp_GetAccountListByNode ignored
 Warning: Procedure sp_GetAccountListByTask ignored
 Warning: Procedure sp_GetAccountLog ignored
-Warning: Procedure sp_GetAccountMap ignored
 Warning: Procedure sp_GetAccountMeasurePoint ignored
 Warning: Procedure sp_GetAccountNode ignored
 Warning: Procedure sp_GetAccountNotification ignored
@@ -135,14 +182,11 @@ Warning: Procedure sp_GetAccountNotificationJobTypes ignored
 Warning: Procedure sp_GetAccountNotificationMethod ignored
 Warning: Procedure sp_GetAccountNotificationNode ignored
 Warning: Procedure sp_GetAccountNotifications ignored
-Warning: Procedure sp_GetAccountPermissionEx ignored
 Warning: Procedure sp_GetAccountPersonalAccount ignored
-Warning: Procedure sp_GetAccountReport ignored
 Warning: Procedure sp_GetAccountsAllowedForMeasurePoint ignored
 Warning: Procedure sp_GetAccountsAllowedForNode ignored
 Warning: Procedure sp_GetAccountSecretKey ignored
 Warning: Procedure sp_GetBalanceGroupMeasurePoint ignored
-Warning: Procedure sp_GetCell ignored
 Warning: Procedure sp_GetColdWaterConsumptionByRoomsForHouse ignored
 Warning: Procedure sp_GetCommDeviceGprsPollConnections ignored
 Warning: Procedure sp_GetContingency ignored
@@ -156,8 +200,6 @@ Warning: Procedure sp_GetContractTemperatureValues ignored
 Warning: Procedure sp_GetControllerById ignored
 Warning: Procedure sp_GetCounterTotalsForReportingMonth ignored
 Warning: Procedure sp_GetCounterTotalsLast ignored
-Warning: Procedure sp_GetCustomAttribute ignored
-Warning: Procedure sp_GetCustomAttributeList ignored
 Warning: Procedure sp_GetCustomAttributesByMeasurePointIdList ignored
 Warning: Procedure sp_GetCustomer ignored
 Warning: Procedure sp_GetCustomerListWithAccessCheck ignored
@@ -172,7 +214,6 @@ Warning: Procedure sp_GetDeviceAddress ignored
 Warning: Procedure sp_GetDeviceCell ignored
 Warning: Procedure sp_GetDeviceChannel ignored
 Warning: Procedure sp_GetDeviceConfig ignored
-Warning: Procedure sp_GetDeviceConfigParam ignored
 Warning: Procedure sp_GetDeviceEvents ignored
 Warning: Procedure sp_GetDeviceTag ignored
 Warning: Procedure sp_GetDriverInterface ignored
@@ -185,16 +226,11 @@ Warning: Procedure sp_GetElectricSummaryConsumptionForHouse ignored
 Warning: Procedure sp_GetElectricTotals ignored
 Warning: Procedure sp_GetEquipmentById ignored
 Warning: Procedure sp_GetEquipmentCountByModel ignored
-Warning: Procedure sp_GetEquipmentList ignored
 Warning: Procedure sp_GetEquipmentListByNodeId ignored
 Warning: Procedure sp_GetEquipmentListByPollConnectionId ignored
 Warning: Procedure sp_GetEquipmentListByRoom ignored
 Warning: Procedure sp_GetEquipmentListWithAccessCheck ignored
 Warning: Procedure sp_GetEquipmentModelAdapter ignored
-Warning: Procedure sp_GetEquipmentModelList ignored
-Warning: Procedure sp_GetEquipmentModelModificationList ignored
-Warning: Procedure sp_GetEquipmentModelPort ignored
-Warning: Procedure sp_GetEquipmentModelPortSettings ignored
 Warning: Procedure sp_GetEquipmentPollConnection ignored
 Warning: Procedure sp_GetEquipmentPollStatistics ignored
 Warning: Procedure sp_GetEquipmentRelatedMeasurePoints ignored
@@ -239,7 +275,6 @@ Warning: Procedure sp_GetMeasurePointByNodeWithAccessCheck ignored
 Warning: Procedure sp_GetMeasurePointByNumber ignored
 Warning: Procedure sp_GetMeasurePointByRoomWithAccessCheck ignored
 Warning: Procedure sp_GetMeasurePointCustomAttributes ignored
-Warning: Procedure sp_GetMeasurePointCustomAttributesList ignored
 Warning: Procedure sp_GetMeasurePointDataCopySettings ignored
 Warning: Procedure sp_GetMeasurePointDataCopySettingsAny ignored
 Warning: Procedure sp_GetMeasurePointDataRecordCount ignored
@@ -264,7 +299,6 @@ Warning: Procedure sp_GetMeasurePointReportTemplateId ignored
 Warning: Procedure sp_GetMeasurePointsByBalanceGroup ignored
 Warning: Procedure sp_GetMeasurePointStateSummaryByHouse ignored
 Warning: Procedure sp_GetMeasurePointsThatUsesEquipmentModelAsSensor ignored
-Warning: Procedure sp_GetMeasurePointSupplier ignored
 Warning: Procedure sp_GetMeasurePointWithAccessCheck ignored
 Warning: Procedure sp_GetModemCommand ignored
 Warning: Procedure sp_GetModemType ignored
@@ -278,7 +312,6 @@ Warning: Procedure sp_GetNodeEquipment ignored
 Warning: Procedure sp_GetNodeFile ignored
 Warning: Procedure sp_GetNodeFileCount ignored
 Warning: Procedure sp_GetNodeFileList ignored
-Warning: Procedure sp_GetNodeGroupAssignedForAccount ignored
 Warning: Procedure sp_GetNodeGroupList ignored
 Warning: Procedure sp_GetNodeGroupMembership ignored
 Warning: Procedure sp_GetNodeIsHeatingSeasonNow ignored
@@ -313,7 +346,6 @@ Warning: Procedure sp_GetPollDeviceAddress ignored
 Warning: Procedure sp_GetPollDeviceCell ignored
 Warning: Procedure sp_GetPollDeviceChannel ignored
 Warning: Procedure sp_GetPollDeviceConfigParam ignored
-Warning: Procedure sp_GetPollPortGroupList ignored
 Warning: Procedure sp_GetPollPortPollSessions ignored
 Warning: Procedure sp_GetPollPortStatistics ignored
 Warning: Procedure sp_GetPollPortSummaryStatistics ignored
@@ -328,7 +360,6 @@ Warning: Procedure sp_GetPollTaskPollInterval ignored
 Warning: Procedure sp_GetPreparedReportById ignored
 Warning: Procedure sp_GetPreparedReports ignored
 Warning: Procedure sp_GetPreparedReportThumbnail ignored
-Warning: Procedure sp_GetProtocolType ignored
 Warning: Procedure sp_GetReport ignored
 Warning: Procedure sp_GetReportGeneratingTasksByReport ignored
 Warning: Procedure sp_GetReportGeneratingTaskSettings ignored
@@ -364,8 +395,10 @@ Warning: Procedure sp_GetTask ignored
 Warning: Procedure sp_GetTaskList ignored
 Warning: Procedure sp_GetTenantRooms ignored
 Warning: Procedure sp_GetTimeZone ignored
-Warning: Procedure sp_GetUserSessionLog ignored
-Warning: Procedure sp_GetUserSessionLogRecord ignored
+Warning: Procedure sp_GetTrusteeDiagrams ignored
+Warning: Procedure sp_GetTrusteeNodeGroups ignored
+Warning: Procedure sp_GetTrusteePermissions ignored
+Warning: Procedure sp_GetTrusteeReport ignored
 Warning: Procedure sp_GetWaterConsumption ignored
 Warning: Procedure sp_GetWaterConsumptionInfo ignored
 Warning: Procedure sp_GetWaterEstimatedConsumption ignored
@@ -374,10 +407,6 @@ Warning: Procedure sp_InsAccount ignored
 Warning: Procedure sp_InsAccountGroup ignored
 Warning: Procedure sp_InsAccountGroupMembership ignored
 Warning: Procedure sp_InsAccountLog ignored
-Warning: Procedure sp_InsAccountMap ignored
-Warning: Procedure sp_InsAccountNodeGroups ignored
-Warning: Procedure sp_InsCustomAttribute ignored
-Warning: Procedure sp_InsCustomer ignored
 Warning: Procedure sp_InsDataStatus ignored
 Warning: Procedure sp_InsDeviceAddress ignored
 Warning: Procedure sp_InsDeviceCell ignored
@@ -406,7 +435,6 @@ Warning: Procedure sp_InsNodeSeasonHistory ignored
 Warning: Procedure sp_InsNotification ignored
 Warning: Procedure sp_InsPersonalAccount ignored
 Warning: Procedure sp_InsPollConnection ignored
-Warning: Procedure sp_InsPollPortGroup ignored
 Warning: Procedure sp_InsPollSessionLog ignored
 Warning: Procedure sp_InsPollTask ignored
 Warning: Procedure sp_InsPollTaskMeasurePoint ignored
@@ -423,7 +451,6 @@ Warning: Procedure sp_InsServiceCompany ignored
 Warning: Procedure sp_InsSupplier ignored
 Warning: Procedure sp_InsSystemLog ignored
 Warning: Procedure sp_InsTask ignored
-Warning: Procedure sp_InsUserSessionLog ignored
 Warning: Procedure sp_MoveMeasurePointToNode ignored
 Warning: Procedure sp_OpenPollSession ignored
 Warning: Procedure sp_ReadMapImage ignored
@@ -434,7 +461,6 @@ Warning: Procedure sp_ResetPollQueue ignored
 Warning: Procedure sp_RevokeMeasurePointExplicitAccess ignored
 Warning: Procedure sp_SaveTaskState ignored
 Warning: Procedure sp_SaveThumbnailForNodeFile ignored
-Warning: Procedure sp_SetAccountGroupPermissionEx ignored
 Warning: Procedure sp_SetAccountIpAddressMode ignored
 Warning: Procedure sp_SetAccountMeasurePoint ignored
 Warning: Procedure sp_SetAccountNode ignored
@@ -444,8 +470,6 @@ Warning: Procedure sp_SetAccountNotificationJobType ignored
 Warning: Procedure sp_SetAccountNotificationMethod ignored
 Warning: Procedure sp_SetAccountNotificationNode ignored
 Warning: Procedure sp_SetAccountPassword ignored
-Warning: Procedure sp_SetAccountPermissionEx ignored
-Warning: Procedure sp_SetAccountReports ignored
 Warning: Procedure sp_SetAccountRoom ignored
 Warning: Procedure sp_SetAccountsForAccountGroup ignored
 Warning: Procedure sp_SetBalanceGroupMeasurePoints ignored
@@ -455,6 +479,7 @@ Warning: Procedure sp_SetContractTemperatureValues ignored
 Warning: Procedure sp_SetCounterTotals ignored
 Warning: Procedure sp_SetDeviceConfig ignored
 Warning: Procedure sp_SetDeviceTag ignored
+Warning: Procedure sp_SetDivisionMembers ignored
 Warning: Procedure sp_SetDryContactsState ignored
 Warning: Procedure sp_SetEavConsumption ignored
 Warning: Procedure sp_SetElectricConsumption ignored
@@ -512,6 +537,10 @@ Warning: Procedure sp_SetRoomContractConsumption ignored
 Warning: Procedure sp_SetScmParameters ignored
 Warning: Procedure sp_SetTaskSchedule ignored
 Warning: Procedure sp_SetTotalsResettedValues ignored
+Warning: Procedure sp_SetTrusteeDiagrams ignored
+Warning: Procedure sp_SetTrusteeNodeGroups ignored
+Warning: Procedure sp_SetTrusteePermissions ignored
+Warning: Procedure sp_SetTrusteeReports ignored
 Warning: Procedure sp_SetWaterConsumption ignored
 Warning: Procedure sp_SetWaterConsumptionCurrent ignored
 Warning: Procedure sp_SetWaterEstimatedConsumption ignored
@@ -521,8 +550,6 @@ Warning: Procedure sp_UpdAccountGroup ignored
 Warning: Procedure sp_UpdateAccountLastLoginTime ignored
 Warning: Procedure sp_UpdateContractTemperatureParameters ignored
 Warning: Procedure sp_UpdatePollPortStatistics ignored
-Warning: Procedure sp_UpdCustomAttribute ignored
-Warning: Procedure sp_UpdCustomer ignored
 Warning: Procedure sp_UpdDeviceBatteryLevel ignored
 Warning: Procedure sp_UpdDeviceTimeDifference ignored
 Warning: Procedure sp_UpdDeviceVersionInfo ignored
@@ -543,7 +570,6 @@ Warning: Procedure sp_UpdNodeSeasonHistory ignored
 Warning: Procedure sp_UpdNotification ignored
 Warning: Procedure sp_UpdPersonalAccount ignored
 Warning: Procedure sp_UpdPollConnection ignored
-Warning: Procedure sp_UpdPollPortGroup ignored
 Warning: Procedure sp_UpdPollTask ignored
 Warning: Procedure sp_UpdPollTaskSchedule ignored
 Warning: Procedure sp_UpdReport ignored
@@ -554,7 +580,6 @@ Warning: Procedure sp_UpdReportTemplateTitleAndComment ignored
 Warning: Procedure sp_UpdServiceCompany ignored
 Warning: Procedure sp_UpdSupplier ignored
 Warning: Procedure sp_UpdTask ignored
-Warning: Procedure sp_UpdUserSessionLog ignored
 Warning: Procedure sp_ValidateReport ignored
 Warning: Procedure sp_ValidateReportParameterProperty ignored
 Warning: Procedure sp_ValidateServicemanProperties ignored
@@ -572,62 +597,6 @@ Warning: Procedure ssp_GetPollTaskById ignored
 Warning: Procedure ssp_GetSystemLogLastRecords ignored
 Warning: Procedure ssp_MergeDataStatusIntervals ignored
 Warning: Procedure ssp_SystemMaintenanceDaily ignored
-Warning: Function fn_CheckMeasurePointAccess ignored
-Warning: Function fn_CheckNodeAccess ignored
-Warning: Function fn_CheckRoomAccess ignored
-Warning: Function fn_ConvertIntIpToString ignored
-Warning: Function fn_ConvertStringIPToInt ignored
-Warning: Function fn_DiffValues ignored
-Warning: Function fn_FormatArchiveTimemark ignored
-Warning: Function fn_GetAccountMeasurePoints ignored
-Warning: Function fn_GetAccountNodes ignored
-Warning: Function fn_GetAccountRooms ignored
-Warning: Function fn_GetContractLoad ignored
-Warning: Function fn_GetDaysInMonth ignored
-Warning: Function fn_GetLimitLoad ignored
-Warning: Function fn_GetMeasurePoint ignored
-Warning: Function fn_GetNodeReportCountByReportId ignored
-Warning: Function fn_GetPollTask ignored
-Warning: Function fn_GetPollTaskTitle ignored
-Warning: Function fn_GetReportCountByReportTemplateId ignored
-Warning: Function fn_GetResourceLoss ignored
-Warning: Function fn_IsAccountHasAllNodeAccess ignored
-Warning: Function fn_IsAdminAccount ignored
-Warning: Function fn_IsListedIpAddress ignored
-Warning: Function fn_IsTwoChannelMeasurePoint ignored
-Warning: Function fn_ValidateAccountGroupProperties ignored
-Warning: Function fn_ValidateBalanceGroupProperties ignored
-Warning: Function fn_ValidateCustomAttributeProperties ignored
-Warning: Function fn_ValidateCustomerProperties ignored
-Warning: Function fn_ValidateEquipmentModelProperties ignored
-Warning: Function fn_ValidateEquipmentProperties ignored
-Warning: Function fn_ValidateInspectorProperties ignored
-Warning: Function fn_ValidateMapProperties ignored
-Warning: Function fn_ValidateMeasurePointProperties ignored
-Warning: Function fn_ValidateNodeGroupProperties ignored
-Warning: Function fn_ValidateNodeProperties ignored
-Warning: Function fn_ValidatePersonalAccountProperties ignored
-Warning: Function fn_ValidatePollConnectionProperties ignored
-Warning: Function fn_ValidatePollPortGroupProperties ignored
-Warning: Function fn_ValidatePollPortProperties ignored
-Warning: Function fn_ValidateReportTemplateProperties ignored
-Warning: Function fn_ValidateRoomCounters ignored
-Warning: Function fn_ValidateServiceCompanyProperties ignored
-Warning: Function fn_ValidateSupplierProperties ignored
-Warning: Function fn_ValidateTaskProperties ignored
-Warning: Function IsSupportedAdapter ignored
-Warning: There is a calculated column: public.NodeFile.Length. This isn't done the same way in PG at all
-	For now it has been declared as a varchar in PG, so that the values can be copied
-	You should change its type manually in the dump (sorry for that),
-	A trigger has been written in the unsure file. It probably won't work as is.
-	Please review it.
-Warning: Function fn_GetEquipment ignored
-Warning: This index (public.Contingency.IX_Contingency_StartDate_EndDate) has some include columns. This isn't supported in PostgreSQL.
-	The columns in the INCLUDE clause have been ignored.
-Warning: This index (public.GprsControllerSession.IX_GprsControllerSession_StartDateTime) has some include columns. This isn't supported in PostgreSQL.
-	The columns in the INCLUDE clause have been ignored.
-Warning: This index (public.MeasurePoint.IX_MeasurePoint_PresonalAccountId_SystemTypeId) has some include columns. This isn't supported in PostgreSQL.
-	The columns in the INCLUDE clause have been ignored.
 Could not parse <EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'PersonalAccount', @level2type=N'COLUMN',@level2name=N'PersonalAccount_ID'
 >. Ignored.
 Warning: index public.Idx_Account_WindowsSid contains a where clause. It goes to unsure file
@@ -643,8 +612,7 @@ Warning: index public.IX_PollConnection_InternetHostPort contains a where clause
 Warning: index public.IX_PollPort_PollServiceId_GprsListenPort contains a where clause. It goes to unsure file
 Warning: index public.IX_PollPort_PollService_PortNumber contains a where clause. It goes to unsure file
 Warning: index public.IX_PollService_Token contains a where clause. It goes to unsure file
-Important WARNING: You have to set up KETTLE_EMPTY_STRING_DIFFERS_FROM_NULL=Y in /home/dev/.kettle/kettle.properties.
-If this file doesn't exist yet, start spoon from the kettle directory once.public/AccountGroupMembership has no PK. Cannot create an incremental transformation
+public/AccountGroupMembership has no PK. Cannot create an incremental transformation
 public/AccountLog has no PK. Cannot create an incremental transformation
 public/AccountNotificationIncident has no PK. Cannot create an incremental transformation
 public/AccountNotificationNode has no PK. Cannot create an incremental transformation
@@ -653,3 +621,4 @@ public/LimitTemps has no PK. Cannot create an incremental transformation
 public/PollSessionLog has no PK. Cannot create an incremental transformation
 public/UserSessionRestoreToken has no PK. Cannot create an incremental transformation
 public/Version has no PK. Cannot create an incremental transformation
+public/Version_Old has no PK. Cannot create an incremental transformation

@@ -431,13 +431,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>NotificationMethodMask</name>
-<rename>NotificationMethodMask</rename>
+<name>NotificationTypeId</name>
+<rename>NotificationTypeId</rename>
 <update>Y</update>
 </value>
 <value>
-<name>NotificationTypeId</name>
-<rename>NotificationTypeId</rename>
+<name>NotificationMethodMask</name>
+<rename>NotificationMethodMask</rename>
 <update>Y</update>
 </value>
 <value>
@@ -471,8 +471,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>NotificationMethodMask</value>
-<value>NotificationTypeId</value>
+      <value>NotificationTypeId</value>
+<value>NotificationMethodMask</value>
 <value>AccountId</value>
 
     </values>

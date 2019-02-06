@@ -130,7 +130,7 @@
            <schema_name/>
            </partitioning>
     <connection>__sqlserver_db__</connection>
-    <sql>SELECT [TaskId] AS "TaskId",[MeasurePointSystems] AS "MeasurePointSystems",[ReportId] AS "ReportId",[MailingFileFormat] AS "MailingFileFormat",[MailingFileSplitMode] AS "MailingFileSplitMode",[MailSubject] AS "MailSubject",[SaveReport] AS "SaveReport",[MailingEnabled] AS "MailingEnabled",[MailMessage] AS "MailMessage",[PdfExportProperties] AS "PdfExportProperties",[ReportSaveDirectory] AS "ReportSaveDirectory",[PackAttachments] AS "PackAttachments" FROM [dbo].[ReportGeneratingTaskSettings] WITH(NOLOCK)</sql>
+    <sql>SELECT [TaskId] AS "TaskId",[MeasurePointSystems] AS "MeasurePointSystems",[ReportId] AS "ReportId",[MailingFileFormat] AS "MailingFileFormat",[MailingFileSplitMode] AS "MailingFileSplitMode",[MailSubject] AS "MailSubject",[SaveReport] AS "SaveReport",[MailingEnabled] AS "MailingEnabled",[MailMessage] AS "MailMessage",[ExportOptions] AS "ExportOptions",[ReportSaveDirectory] AS "ReportSaveDirectory",[PackAttachments] AS "PackAttachments",[OverwriteExistingFiles] AS "OverwriteExistingFiles",[NodeGroupId] AS "NodeGroupId" FROM [dbo].[ReportGeneratingTaskSettings] WITH(NOLOCK)</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -242,7 +242,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
            <schema_name/>
            </partitioning>
     <connection>__postgres_db__</connection>
-    <sql>SELECT "TaskId" AS "TaskId","MeasurePointSystems" AS "MeasurePointSystems","ReportId" AS "ReportId","MailingFileFormat" AS "MailingFileFormat","MailingFileSplitMode" AS "MailingFileSplitMode","MailSubject" AS "MailSubject","SaveReport" AS "SaveReport","MailingEnabled" AS "MailingEnabled","MailMessage" AS "MailMessage","PdfExportProperties" AS "PdfExportProperties","ReportSaveDirectory" AS "ReportSaveDirectory","PackAttachments" AS "PackAttachments" FROM "public"."ReportGeneratingTaskSettings"</sql>
+    <sql>SELECT "TaskId" AS "TaskId","MeasurePointSystems" AS "MeasurePointSystems","ReportId" AS "ReportId","MailingFileFormat" AS "MailingFileFormat","MailingFileSplitMode" AS "MailingFileSplitMode","MailSubject" AS "MailSubject","SaveReport" AS "SaveReport","MailingEnabled" AS "MailingEnabled","MailMessage" AS "MailMessage","ExportOptions" AS "ExportOptions","ReportSaveDirectory" AS "ReportSaveDirectory","PackAttachments" AS "PackAttachments","OverwriteExistingFiles" AS "OverwriteExistingFiles","NodeGroupId" AS "NodeGroupId" FROM "public"."ReportGeneratingTaskSettings"</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -405,8 +405,18 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>MailingFileFormat</name>
-<rename>MailingFileFormat</rename>
+<name>SaveReport</name>
+<rename>SaveReport</rename>
+<update>Y</update>
+</value>
+<value>
+<name>PackAttachments</name>
+<rename>PackAttachments</rename>
+<update>Y</update>
+</value>
+<value>
+<name>ReportSaveDirectory</name>
+<rename>ReportSaveDirectory</rename>
 <update>Y</update>
 </value>
 <value>
@@ -415,8 +425,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>MailingEnabled</name>
-<rename>MailingEnabled</rename>
+<name>OverwriteExistingFiles</name>
+<rename>OverwriteExistingFiles</rename>
 <update>Y</update>
 </value>
 <value>
@@ -430,28 +440,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>PackAttachments</name>
-<rename>PackAttachments</rename>
+<name>ExportOptions</name>
+<rename>ExportOptions</rename>
 <update>Y</update>
 </value>
 <value>
-<name>PdfExportProperties</name>
-<rename>PdfExportProperties</rename>
-<update>Y</update>
-</value>
-<value>
-<name>ReportId</name>
-<rename>ReportId</rename>
-<update>Y</update>
-</value>
-<value>
-<name>ReportSaveDirectory</name>
-<rename>ReportSaveDirectory</rename>
-<update>Y</update>
-</value>
-<value>
-<name>SaveReport</name>
-<rename>SaveReport</rename>
+<name>MailingFileFormat</name>
+<rename>MailingFileFormat</rename>
 <update>Y</update>
 </value>
 <value>
@@ -460,8 +455,23 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
+<name>NodeGroupId</name>
+<rename>NodeGroupId</rename>
+<update>Y</update>
+</value>
+<value>
 <name>MailSubject</name>
 <rename>MailSubject</rename>
+<update>Y</update>
+</value>
+<value>
+<name>ReportId</name>
+<rename>ReportId</rename>
+<update>Y</update>
+</value>
+<value>
+<name>MailingEnabled</name>
+<rename>MailingEnabled</rename>
 <update>Y</update>
 </value>
 
@@ -489,18 +499,20 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>MailingFileFormat</value>
+      <value>SaveReport</value>
+<value>PackAttachments</value>
+<value>ReportSaveDirectory</value>
 <value>MeasurePointSystems</value>
-<value>MailingEnabled</value>
+<value>OverwriteExistingFiles</value>
 <value>MailingFileSplitMode</value>
 <value>TaskId</value>
-<value>PackAttachments</value>
-<value>PdfExportProperties</value>
-<value>ReportId</value>
-<value>ReportSaveDirectory</value>
-<value>SaveReport</value>
+<value>ExportOptions</value>
+<value>MailingFileFormat</value>
 <value>MailMessage</value>
+<value>NodeGroupId</value>
 <value>MailSubject</value>
+<value>ReportId</value>
+<value>MailingEnabled</value>
 
     </values>
 <flag_field>__changed__</flag_field>

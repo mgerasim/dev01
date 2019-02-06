@@ -462,13 +462,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>IncidentTypeId</name>
-<rename>IncidentTypeId</rename>
+<name>Value1</name>
+<rename>Value1</rename>
 <update>Y</update>
 </value>
 <value>
-<name>Value1</name>
-<rename>Value1</rename>
+<name>Value2</name>
+<rename>Value2</rename>
 <update>Y</update>
 </value>
 <value>
@@ -477,13 +477,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>IsSummerMode</name>
-<rename>IsSummerMode</rename>
+<name>IncidentTypeId</name>
+<rename>IncidentTypeId</rename>
 <update>Y</update>
 </value>
 <value>
-<name>Value2</name>
-<rename>Value2</rename>
+<name>IsSummerMode</name>
+<rename>IsSummerMode</rename>
 <update>Y</update>
 </value>
 
@@ -514,11 +514,11 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
     </keys>
     <values>
       <value>IsEnabled</value>
-<value>IncidentTypeId</value>
 <value>Value1</value>
-<value>MeasurePointID</value>
-<value>IsSummerMode</value>
 <value>Value2</value>
+<value>MeasurePointID</value>
+<value>IncidentTypeId</value>
+<value>IsSummerMode</value>
 
     </values>
 <flag_field>__changed__</flag_field>

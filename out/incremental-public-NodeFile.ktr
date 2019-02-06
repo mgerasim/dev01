@@ -405,13 +405,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>Content</name>
-<rename>Content</rename>
-<update>Y</update>
-</value>
-<value>
-<name>Length</name>
-<rename>Length</rename>
+<name>Thumbnail</name>
+<rename>Thumbnail</rename>
 <update>Y</update>
 </value>
 <value>
@@ -420,13 +415,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>Thumbnail</name>
-<rename>Thumbnail</rename>
-<update>Y</update>
-</value>
-<value>
-<name>CreationTime</name>
-<rename>CreationTime</rename>
+<name>Id</name>
+<rename>Id</rename>
 <update>Y</update>
 </value>
 <value>
@@ -435,8 +425,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>FileName</name>
-<rename>FileName</rename>
+<name>CreationTime</name>
+<rename>CreationTime</rename>
 <update>Y</update>
 </value>
 <value>
@@ -445,13 +435,23 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>Id</name>
-<rename>Id</rename>
+<name>Length</name>
+<rename>Length</rename>
+<update>Y</update>
+</value>
+<value>
+<name>Content</name>
+<rename>Content</rename>
 <update>Y</update>
 </value>
 <value>
 <name>Hash</name>
 <rename>Hash</rename>
+<update>Y</update>
+</value>
+<value>
+<name>FileName</name>
+<rename>FileName</rename>
 <update>Y</update>
 </value>
 
@@ -479,16 +479,16 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>Content</value>
-<value>Length</value>
+      <value>Thumbnail</value>
 <value>PublicFile</value>
-<value>Thumbnail</value>
-<value>CreationTime</value>
-<value>NodeId</value>
-<value>FileName</value>
-<value>LastWriteTime</value>
 <value>Id</value>
+<value>NodeId</value>
+<value>CreationTime</value>
+<value>LastWriteTime</value>
+<value>Length</value>
+<value>Content</value>
 <value>Hash</value>
+<value>FileName</value>
 
     </values>
 <flag_field>__changed__</flag_field>

@@ -299,7 +299,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
            <schema_name/>
            </partitioning>
     <connection>__sqlserver_db__</connection>
-    <sql>SELECT [Id] AS "Id",[EquipmentModelId] AS "EquipmentModelId",[IsSystem] AS "IsSystem",[Comment] AS "Comment",[PrecisionClass] AS "PrecisionClass",[NominalDiameter] AS "NominalDiameter",[RelativeError] AS "RelativeError",[TempSensorMin] AS "TempSensorMin",[TempSensorMax] AS "TempSensorMax",[PressSensorMin] AS "PressSensorMin",[PressSensorMax] AS "PressSensorMax",[FlowSensorMin] AS "FlowSensorMin",[FlowSensorMax] AS "FlowSensorMax" FROM [dbo].[EquipmentModelModification] WITH(NOLOCK)</sql>
+    <sql>SELECT [Id] AS "Id",[EquipmentModelId] AS "EquipmentModelId",[IsSystem] AS "IsSystem",[Comment] AS "Comment",[PrecisionClass] AS "PrecisionClass",[NominalDiameter] AS "NominalDiameter",[RelativeError] AS "RelativeError",[TempSensorMin] AS "TempSensorMin",[TempSensorMax] AS "TempSensorMax",[PressSensorMin] AS "PressSensorMin",[PressSensorMax] AS "PressSensorMax",[FlowSensorMin] AS "FlowSensorMin",[FlowSensorMax] AS "FlowSensorMax",[MeasureLength] AS "MeasureLength",[NominalStaticCharacteristic] AS "NominalStaticCharacteristic" FROM [dbo].[EquipmentModelModification] WITH(NOLOCK)</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>

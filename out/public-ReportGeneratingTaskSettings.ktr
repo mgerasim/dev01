@@ -299,7 +299,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
            <schema_name/>
            </partitioning>
     <connection>__sqlserver_db__</connection>
-    <sql>SELECT [TaskId] AS "TaskId",[MeasurePointSystems] AS "MeasurePointSystems",[ReportId] AS "ReportId",[MailingFileFormat] AS "MailingFileFormat",[MailingFileSplitMode] AS "MailingFileSplitMode",[MailSubject] AS "MailSubject",[SaveReport] AS "SaveReport",[MailingEnabled] AS "MailingEnabled",[MailMessage] AS "MailMessage",[PdfExportProperties] AS "PdfExportProperties",[ReportSaveDirectory] AS "ReportSaveDirectory",[PackAttachments] AS "PackAttachments" FROM [dbo].[ReportGeneratingTaskSettings] WITH(NOLOCK)</sql>
+    <sql>SELECT [TaskId] AS "TaskId",[MeasurePointSystems] AS "MeasurePointSystems",[ReportId] AS "ReportId",[MailingFileFormat] AS "MailingFileFormat",[MailingFileSplitMode] AS "MailingFileSplitMode",[MailSubject] AS "MailSubject",[SaveReport] AS "SaveReport",[MailingEnabled] AS "MailingEnabled",[MailMessage] AS "MailMessage",[ExportOptions] AS "ExportOptions",[ReportSaveDirectory] AS "ReportSaveDirectory",[PackAttachments] AS "PackAttachments",[OverwriteExistingFiles] AS "OverwriteExistingFiles",[NodeGroupId] AS "NodeGroupId" FROM [dbo].[ReportGeneratingTaskSettings] WITH(NOLOCK)</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>

@@ -431,23 +431,33 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
+<name>M</name>
+<rename>M</rename>
+<update>Y</update>
+</value>
+<value>
+<name>P_delta</name>
+<rename>P_delta</rename>
+<update>Y</update>
+</value>
+<value>
+<name>DataDate</name>
+<rename>DataDate</rename>
+<update>Y</update>
+</value>
+<value>
 <name>BadValues</name>
 <rename>BadValues</rename>
 <update>Y</update>
 </value>
 <value>
-<name>MeasurePointID</name>
-<rename>MeasurePointID</rename>
+<name>V_std</name>
+<rename>V_std</rename>
 <update>Y</update>
 </value>
 <value>
-<name>V</name>
-<rename>V</rename>
-<update>Y</update>
-</value>
-<value>
-<name>M</name>
-<rename>M</rename>
+<name>P</name>
+<rename>P</rename>
 <update>Y</update>
 </value>
 <value>
@@ -461,13 +471,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>V_std</name>
-<rename>V_std</rename>
-<update>Y</update>
-</value>
-<value>
-<name>P_delta</name>
-<rename>P_delta</rename>
+<name>MeasurePointID</name>
+<rename>MeasurePointID</rename>
 <update>Y</update>
 </value>
 <value>
@@ -476,13 +481,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>DataDate</name>
-<rename>DataDate</rename>
-<update>Y</update>
-</value>
-<value>
-<name>P</name>
-<rename>P</rename>
+<name>V</name>
+<rename>V</rename>
 <update>Y</update>
 </value>
 
@@ -511,17 +511,17 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>BadValues</value>
-<value>MeasurePointID</value>
-<value>V</value>
-<value>M</value>
+      <value>M</value>
+<value>P_delta</value>
+<value>DataDate</value>
+<value>BadValues</value>
+<value>V_std</value>
+<value>P</value>
 <value>T_outdoor</value>
 <value>T</value>
-<value>V_std</value>
-<value>P_delta</value>
+<value>MeasurePointID</value>
 <value>CalculatedValues</value>
-<value>DataDate</value>
-<value>P</value>
+<value>V</value>
 
     </values>
 <flag_field>__changed__</flag_field>

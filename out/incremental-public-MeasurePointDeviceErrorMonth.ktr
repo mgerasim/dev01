@@ -509,13 +509,18 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
+<name>DateTime</name>
+<rename>DateTime</rename>
+<update>Y</update>
+</value>
+<value>
 <name>MeasurePointId</name>
 <rename>MeasurePointId</rename>
 <update>Y</update>
 </value>
 <value>
-<name>EventCode</name>
-<rename>EventCode</rename>
+<name>ArchiveType</name>
+<rename>ArchiveType</rename>
 <update>Y</update>
 </value>
 <value>
@@ -529,13 +534,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>DateTime</name>
-<rename>DateTime</rename>
-<update>Y</update>
-</value>
-<value>
-<name>ArchiveType</name>
-<rename>ArchiveType</rename>
+<name>EventCode</name>
+<rename>EventCode</rename>
 <update>Y</update>
 </value>
 <value>
@@ -572,12 +572,12 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>MeasurePointId</value>
-<value>EventCode</value>
+      <value>DateTime</value>
+<value>MeasurePointId</value>
+<value>ArchiveType</value>
 <value>Duration</value>
 <value>ChannelNumber</value>
-<value>DateTime</value>
-<value>ArchiveType</value>
+<value>EventCode</value>
 <value>Description</value>
 
     </values>

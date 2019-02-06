@@ -405,18 +405,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>Token</name>
-<rename>Token</rename>
-<update>Y</update>
-</value>
-<value>
-<name>DebugEnabled</name>
-<rename>DebugEnabled</rename>
-<update>Y</update>
-</value>
-<value>
 <name>Title</name>
 <rename>Title</rename>
+<update>Y</update>
+</value>
+<value>
+<name>IpAddress</name>
+<rename>IpAddress</rename>
 <update>Y</update>
 </value>
 <value>
@@ -425,8 +420,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>IpAddress</name>
-<rename>IpAddress</rename>
+<name>Token</name>
+<rename>Token</rename>
+<update>Y</update>
+</value>
+<value>
+<name>DebugEnabled</name>
+<rename>DebugEnabled</rename>
 <update>Y</update>
 </value>
 
@@ -454,11 +454,11 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>Token</value>
-<value>DebugEnabled</value>
-<value>Title</value>
-<value>Id</value>
+      <value>Title</value>
 <value>IpAddress</value>
+<value>Id</value>
+<value>Token</value>
+<value>DebugEnabled</value>
 
     </values>
 <flag_field>__changed__</flag_field>

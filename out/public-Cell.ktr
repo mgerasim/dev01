@@ -299,7 +299,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
            <schema_name/>
            </partitioning>
     <connection>__sqlserver_db__</connection>
-    <sql>SELECT [ID] AS "ID",[Name] AS "Name",[DriverCode] AS "DriverCode",[DeviceDataType] AS "DeviceDataType",[EquipmentModelId] AS "EquipmentModelId" FROM [dbo].[Cell] WITH(NOLOCK)</sql>
+    <sql>SELECT [ID] AS "ID",[Name] AS "Name",[DriverCode] AS "DriverCode",[DataType] AS "DataType",[EquipmentModelId] AS "EquipmentModelId" FROM [dbo].[Cell] WITH(NOLOCK)</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>

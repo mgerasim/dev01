@@ -299,7 +299,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
            <schema_name/>
            </partitioning>
     <connection>__sqlserver_db__</connection>
-    <sql>SELECT [Id] AS "Id",[ParentId] AS "ParentId",[Name] AS "Name",[TimeZoneOffset] AS "TimeZoneOffset",[OutdoorTempSourceMeasurePointId] AS "OutdoorTempSourceMeasurePointId" FROM [dbo].[Territory] WITH(NOLOCK)</sql>
+    <sql>SELECT [Id] AS "Id",[ParentId] AS "ParentId",[Name] AS "Name",[TimeZoneOffset] AS "TimeZoneOffset",[CopyMeasurePointId] AS "CopyMeasurePointId" FROM [dbo].[Territory] WITH(NOLOCK)</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>

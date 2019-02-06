@@ -457,13 +457,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>EquipmentId</name>
-<rename>EquipmentId</rename>
-<update>Y</update>
-</value>
-<value>
-<name>UnitID</name>
-<rename>UnitID</rename>
+<name>DataParameterID</name>
+<rename>DataParameterID</rename>
 <update>Y</update>
 </value>
 <value>
@@ -472,13 +467,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>DataParameterID</name>
-<rename>DataParameterID</rename>
+<name>DeviceDataType</name>
+<rename>DeviceDataType</rename>
 <update>Y</update>
 </value>
 <value>
-<name>DeviceDataType</name>
-<rename>DeviceDataType</rename>
+<name>UnitID</name>
+<rename>UnitID</rename>
 <update>Y</update>
 </value>
 <value>
@@ -487,13 +482,18 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>Address</name>
-<rename>Address</rename>
+<name>EquipmentId</name>
+<rename>EquipmentId</rename>
 <update>Y</update>
 </value>
 <value>
 <name>ArchiveDepth</name>
 <rename>ArchiveDepth</rename>
+<update>Y</update>
+</value>
+<value>
+<name>Address</name>
+<rename>Address</rename>
 <update>Y</update>
 </value>
 
@@ -523,14 +523,14 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>EquipmentId</value>
-<value>UnitID</value>
+      <value>DataParameterID</value>
 <value>Multiplier</value>
-<value>DataParameterID</value>
 <value>DeviceDataType</value>
+<value>UnitID</value>
 <value>MeasurePointID</value>
-<value>Address</value>
+<value>EquipmentId</value>
 <value>ArchiveDepth</value>
+<value>Address</value>
 
     </values>
 <flag_field>__changed__</flag_field>

@@ -457,28 +457,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>IsCalc</name>
-<rename>IsCalc</rename>
-<update>Y</update>
-</value>
-<value>
-<name>DateTime</name>
-<rename>DateTime</rename>
-<update>Y</update>
-</value>
-<value>
-<name>Value</name>
-<rename>Value</rename>
-<update>Y</update>
-</value>
-<value>
 <name>MeasurePointId</name>
 <rename>MeasurePointId</rename>
 <update>Y</update>
 </value>
 <value>
-<name>IsInterpolated</name>
-<rename>IsInterpolated</rename>
+<name>DateTime</name>
+<rename>DateTime</rename>
 <update>Y</update>
 </value>
 <value>
@@ -489,6 +474,21 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <value>
 <name>IsBad</name>
 <rename>IsBad</rename>
+<update>Y</update>
+</value>
+<value>
+<name>IsCalc</name>
+<rename>IsCalc</rename>
+<update>Y</update>
+</value>
+<value>
+<name>IsInterpolated</name>
+<rename>IsInterpolated</rename>
+<update>Y</update>
+</value>
+<value>
+<name>Value</name>
+<rename>Value</rename>
 <update>Y</update>
 </value>
 
@@ -518,13 +518,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>IsCalc</value>
+      <value>MeasurePointId</value>
 <value>DateTime</value>
-<value>Value</value>
-<value>MeasurePointId</value>
-<value>IsInterpolated</value>
 <value>DataParameterId</value>
 <value>IsBad</value>
+<value>IsCalc</value>
+<value>IsInterpolated</value>
+<value>Value</value>
 
     </values>
 <flag_field>__changed__</flag_field>

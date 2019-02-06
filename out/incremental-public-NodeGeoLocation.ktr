@@ -405,6 +405,11 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
+<name>Latitude</name>
+<rename>Latitude</rename>
+<update>Y</update>
+</value>
+<value>
 <name>Longitude</name>
 <rename>Longitude</rename>
 <update>Y</update>
@@ -412,11 +417,6 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <value>
 <name>NodeId</name>
 <rename>NodeId</rename>
-<update>Y</update>
-</value>
-<value>
-<name>Latitude</name>
-<rename>Latitude</rename>
 <update>Y</update>
 </value>
 
@@ -444,9 +444,9 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>Longitude</value>
+      <value>Latitude</value>
+<value>Longitude</value>
 <value>NodeId</value>
-<value>Latitude</value>
 
     </values>
 <flag_field>__changed__</flag_field>

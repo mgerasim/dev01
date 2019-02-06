@@ -130,7 +130,7 @@
            <schema_name/>
            </partitioning>
     <connection>__sqlserver_db__</connection>
-    <sql>SELECT [Id] AS "Id",[ParentId] AS "ParentId",[Name] AS "Name",[TimeZoneOffset] AS "TimeZoneOffset",[OutdoorTempSourceMeasurePointId] AS "OutdoorTempSourceMeasurePointId" FROM [dbo].[Territory] WITH(NOLOCK)</sql>
+    <sql>SELECT [Id] AS "Id",[ParentId] AS "ParentId",[Name] AS "Name",[TimeZoneOffset] AS "TimeZoneOffset",[CopyMeasurePointId] AS "CopyMeasurePointId" FROM [dbo].[Territory] WITH(NOLOCK)</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -242,7 +242,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
            <schema_name/>
            </partitioning>
     <connection>__postgres_db__</connection>
-    <sql>SELECT "Id" AS "Id","ParentId" AS "ParentId","Name" AS "Name","TimeZoneOffset" AS "TimeZoneOffset","OutdoorTempSourceMeasurePointId" AS "OutdoorTempSourceMeasurePointId" FROM "public"."Territory"</sql>
+    <sql>SELECT "Id" AS "Id","ParentId" AS "ParentId","Name" AS "Name","TimeZoneOffset" AS "TimeZoneOffset","CopyMeasurePointId" AS "CopyMeasurePointId" FROM "public"."Territory"</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -405,18 +405,18 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>Name</name>
-<rename>Name</rename>
-<update>Y</update>
-</value>
-<value>
 <name>TimeZoneOffset</name>
 <rename>TimeZoneOffset</rename>
 <update>Y</update>
 </value>
 <value>
-<name>OutdoorTempSourceMeasurePointId</name>
-<rename>OutdoorTempSourceMeasurePointId</rename>
+<name>CopyMeasurePointId</name>
+<rename>CopyMeasurePointId</rename>
+<update>Y</update>
+</value>
+<value>
+<name>ParentId</name>
+<rename>ParentId</rename>
 <update>Y</update>
 </value>
 <value>
@@ -425,8 +425,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>ParentId</name>
-<rename>ParentId</rename>
+<name>Name</name>
+<rename>Name</rename>
 <update>Y</update>
 </value>
 
@@ -454,11 +454,11 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>Name</value>
-<value>TimeZoneOffset</value>
-<value>OutdoorTempSourceMeasurePointId</value>
-<value>Id</value>
+      <value>TimeZoneOffset</value>
+<value>CopyMeasurePointId</value>
 <value>ParentId</value>
+<value>Id</value>
+<value>Name</value>
 
     </values>
 <flag_field>__changed__</flag_field>

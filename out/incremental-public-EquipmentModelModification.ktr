@@ -130,7 +130,7 @@
            <schema_name/>
            </partitioning>
     <connection>__sqlserver_db__</connection>
-    <sql>SELECT [Id] AS "Id",[EquipmentModelId] AS "EquipmentModelId",[IsSystem] AS "IsSystem",[Comment] AS "Comment",[PrecisionClass] AS "PrecisionClass",[NominalDiameter] AS "NominalDiameter",[RelativeError] AS "RelativeError",[TempSensorMin] AS "TempSensorMin",[TempSensorMax] AS "TempSensorMax",[PressSensorMin] AS "PressSensorMin",[PressSensorMax] AS "PressSensorMax",[FlowSensorMin] AS "FlowSensorMin",[FlowSensorMax] AS "FlowSensorMax" FROM [dbo].[EquipmentModelModification] WITH(NOLOCK)</sql>
+    <sql>SELECT [Id] AS "Id",[EquipmentModelId] AS "EquipmentModelId",[IsSystem] AS "IsSystem",[Comment] AS "Comment",[PrecisionClass] AS "PrecisionClass",[NominalDiameter] AS "NominalDiameter",[RelativeError] AS "RelativeError",[TempSensorMin] AS "TempSensorMin",[TempSensorMax] AS "TempSensorMax",[PressSensorMin] AS "PressSensorMin",[PressSensorMax] AS "PressSensorMax",[FlowSensorMin] AS "FlowSensorMin",[FlowSensorMax] AS "FlowSensorMax",[MeasureLength] AS "MeasureLength",[NominalStaticCharacteristic] AS "NominalStaticCharacteristic" FROM [dbo].[EquipmentModelModification] WITH(NOLOCK)</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -242,7 +242,7 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
            <schema_name/>
            </partitioning>
     <connection>__postgres_db__</connection>
-    <sql>SELECT "Id" AS "Id","EquipmentModelId" AS "EquipmentModelId","IsSystem" AS "IsSystem","Comment" AS "Comment","PrecisionClass" AS "PrecisionClass","NominalDiameter" AS "NominalDiameter","RelativeError" AS "RelativeError","TempSensorMin" AS "TempSensorMin","TempSensorMax" AS "TempSensorMax","PressSensorMin" AS "PressSensorMin","PressSensorMax" AS "PressSensorMax","FlowSensorMin" AS "FlowSensorMin","FlowSensorMax" AS "FlowSensorMax" FROM "public"."EquipmentModelModification"</sql>
+    <sql>SELECT "Id" AS "Id","EquipmentModelId" AS "EquipmentModelId","IsSystem" AS "IsSystem","Comment" AS "Comment","PrecisionClass" AS "PrecisionClass","NominalDiameter" AS "NominalDiameter","RelativeError" AS "RelativeError","TempSensorMin" AS "TempSensorMin","TempSensorMax" AS "TempSensorMax","PressSensorMin" AS "PressSensorMin","PressSensorMax" AS "PressSensorMax","FlowSensorMin" AS "FlowSensorMin","FlowSensorMax" AS "FlowSensorMax","MeasureLength" AS "MeasureLength","NominalStaticCharacteristic" AS "NominalStaticCharacteristic" FROM "public"."EquipmentModelModification"</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -405,13 +405,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>PressSensorMax</name>
-<rename>PressSensorMax</rename>
+<name>FlowSensorMin</name>
+<rename>FlowSensorMin</rename>
 <update>Y</update>
 </value>
 <value>
-<name>PrecisionClass</name>
-<rename>PrecisionClass</rename>
+<name>EquipmentModelId</name>
+<rename>EquipmentModelId</rename>
 <update>Y</update>
 </value>
 <value>
@@ -420,8 +420,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>FlowSensorMin</name>
-<rename>FlowSensorMin</rename>
+<name>PrecisionClass</name>
+<rename>PrecisionClass</rename>
+<update>Y</update>
+</value>
+<value>
+<name>MeasureLength</name>
+<rename>MeasureLength</rename>
 <update>Y</update>
 </value>
 <value>
@@ -430,13 +435,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>PressSensorMin</name>
-<rename>PressSensorMin</rename>
+<name>NominalStaticCharacteristic</name>
+<rename>NominalStaticCharacteristic</rename>
 <update>Y</update>
 </value>
 <value>
-<name>RelativeError</name>
-<rename>RelativeError</rename>
+<name>FlowSensorMax</name>
+<rename>FlowSensorMax</rename>
 <update>Y</update>
 </value>
 <value>
@@ -445,8 +450,23 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>EquipmentModelId</name>
-<rename>EquipmentModelId</rename>
+<name>IsSystem</name>
+<rename>IsSystem</rename>
+<update>Y</update>
+</value>
+<value>
+<name>RelativeError</name>
+<rename>RelativeError</rename>
+<update>Y</update>
+</value>
+<value>
+<name>PressSensorMin</name>
+<rename>PressSensorMin</rename>
+<update>Y</update>
+</value>
+<value>
+<name>PressSensorMax</name>
+<rename>PressSensorMax</rename>
 <update>Y</update>
 </value>
 <value>
@@ -457,16 +477,6 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <value>
 <name>TempSensorMin</name>
 <rename>TempSensorMin</rename>
-<update>Y</update>
-</value>
-<value>
-<name>IsSystem</name>
-<rename>IsSystem</rename>
-<update>Y</update>
-</value>
-<value>
-<name>FlowSensorMax</name>
-<rename>FlowSensorMax</rename>
 <update>Y</update>
 </value>
 
@@ -494,19 +504,21 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>PressSensorMax</value>
-<value>PrecisionClass</value>
-<value>NominalDiameter</value>
-<value>FlowSensorMin</value>
-<value>Id</value>
-<value>PressSensorMin</value>
-<value>RelativeError</value>
-<value>TempSensorMax</value>
+      <value>FlowSensorMin</value>
 <value>EquipmentModelId</value>
+<value>NominalDiameter</value>
+<value>PrecisionClass</value>
+<value>MeasureLength</value>
+<value>Id</value>
+<value>NominalStaticCharacteristic</value>
+<value>FlowSensorMax</value>
+<value>TempSensorMax</value>
+<value>IsSystem</value>
+<value>RelativeError</value>
+<value>PressSensorMin</value>
+<value>PressSensorMax</value>
 <value>Comment</value>
 <value>TempSensorMin</value>
-<value>IsSystem</value>
-<value>FlowSensorMax</value>
 
     </values>
 <flag_field>__changed__</flag_field>

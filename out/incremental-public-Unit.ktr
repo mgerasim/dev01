@@ -410,11 +410,6 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>Unit_Code</name>
-<rename>Unit_Code</rename>
-<update>Y</update>
-</value>
-<value>
 <name>Unit_Comment</name>
 <rename>Unit_Comment</rename>
 <update>Y</update>
@@ -422,6 +417,11 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <value>
 <name>Unit_Title</name>
 <rename>Unit_Title</rename>
+<update>Y</update>
+</value>
+<value>
+<name>Unit_MeasuredParameterID</name>
+<rename>Unit_MeasuredParameterID</rename>
 <update>Y</update>
 </value>
 <value>
@@ -435,8 +435,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>Unit_MeasuredParameterID</name>
-<rename>Unit_MeasuredParameterID</rename>
+<name>Unit_Code</name>
+<rename>Unit_Code</rename>
 <update>Y</update>
 </value>
 
@@ -465,12 +465,12 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
     </keys>
     <values>
       <value>Unit_ID</value>
-<value>Unit_Code</value>
 <value>Unit_Comment</value>
 <value>Unit_Title</value>
+<value>Unit_MeasuredParameterID</value>
 <value>Unit_Multiplier</value>
 <value>Unit_BaseUnitID</value>
-<value>Unit_MeasuredParameterID</value>
+<value>Unit_Code</value>
 
     </values>
 <flag_field>__changed__</flag_field>

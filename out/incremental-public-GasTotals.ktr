@@ -431,8 +431,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>CalculatedValues</name>
-<rename>CalculatedValues</rename>
+<name>M</name>
+<rename>M</rename>
 <update>Y</update>
 </value>
 <value>
@@ -441,18 +441,28 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>NormalOperationDuration</name>
-<rename>NormalOperationDuration</rename>
-<update>Y</update>
-</value>
-<value>
-<name>Flags</name>
-<rename>Flags</rename>
+<name>InterpolatedValues</name>
+<rename>InterpolatedValues</rename>
 <update>Y</update>
 </value>
 <value>
 <name>V_std</name>
 <rename>V_std</rename>
+<update>Y</update>
+</value>
+<value>
+<name>BadValues</name>
+<rename>BadValues</rename>
+<update>Y</update>
+</value>
+<value>
+<name>NormalOperationDuration</name>
+<rename>NormalOperationDuration</rename>
+<update>Y</update>
+</value>
+<value>
+<name>ResettedValues</name>
+<rename>ResettedValues</rename>
 <update>Y</update>
 </value>
 <value>
@@ -466,23 +476,13 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>M</name>
-<rename>M</rename>
+<name>CalculatedValues</name>
+<rename>CalculatedValues</rename>
 <update>Y</update>
 </value>
 <value>
-<name>InterpolatedValues</name>
-<rename>InterpolatedValues</rename>
-<update>Y</update>
-</value>
-<value>
-<name>ResettedValues</name>
-<rename>ResettedValues</rename>
-<update>Y</update>
-</value>
-<value>
-<name>BadValues</name>
-<rename>BadValues</rename>
+<name>Flags</name>
+<rename>Flags</rename>
 <update>Y</update>
 </value>
 
@@ -511,17 +511,17 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>CalculatedValues</value>
+      <value>M</value>
 <value>DataDate</value>
-<value>NormalOperationDuration</value>
-<value>Flags</value>
+<value>InterpolatedValues</value>
 <value>V_std</value>
+<value>BadValues</value>
+<value>NormalOperationDuration</value>
+<value>ResettedValues</value>
 <value>MeasurePointId</value>
 <value>V</value>
-<value>M</value>
-<value>InterpolatedValues</value>
-<value>ResettedValues</value>
-<value>BadValues</value>
+<value>CalculatedValues</value>
+<value>Flags</value>
 
     </values>
 <flag_field>__changed__</flag_field>

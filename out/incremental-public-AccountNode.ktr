@@ -431,11 +431,6 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>AllowedSystemTypes</name>
-<rename>AllowedSystemTypes</rename>
-<update>Y</update>
-</value>
-<value>
 <name>MeasurePointCheckAccessMode</name>
 <rename>MeasurePointCheckAccessMode</rename>
 <update>Y</update>
@@ -448,6 +443,11 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <value>
 <name>AccountId</name>
 <rename>AccountId</rename>
+<update>Y</update>
+</value>
+<value>
+<name>AllowedSystemTypes</name>
+<rename>AllowedSystemTypes</rename>
 <update>Y</update>
 </value>
 
@@ -476,10 +476,10 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>AllowedSystemTypes</value>
-<value>MeasurePointCheckAccessMode</value>
+      <value>MeasurePointCheckAccessMode</value>
 <value>NodeId</value>
 <value>AccountId</value>
+<value>AllowedSystemTypes</value>
 
     </values>
 <flag_field>__changed__</flag_field>

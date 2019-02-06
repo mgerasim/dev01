@@ -405,8 +405,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 </key>
 
       <value>
-<name>ChannelNumber</name>
-<rename>ChannelNumber</rename>
+<name>EquipmentId</name>
+<rename>EquipmentId</rename>
 <update>Y</update>
 </value>
 <value>
@@ -415,8 +415,23 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>Description</name>
-<rename>Description</rename>
+<name>EndDateTime</name>
+<rename>EndDateTime</rename>
+<update>Y</update>
+</value>
+<value>
+<name>EventCode</name>
+<rename>EventCode</rename>
+<update>Y</update>
+</value>
+<value>
+<name>ArchiveType</name>
+<rename>ArchiveType</rename>
+<update>Y</update>
+</value>
+<value>
+<name>ChannelNumber</name>
+<rename>ChannelNumber</rename>
 <update>Y</update>
 </value>
 <value>
@@ -430,23 +445,8 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 <update>Y</update>
 </value>
 <value>
-<name>EquipmentId</name>
-<rename>EquipmentId</rename>
-<update>Y</update>
-</value>
-<value>
-<name>ArchiveType</name>
-<rename>ArchiveType</rename>
-<update>Y</update>
-</value>
-<value>
-<name>EndDateTime</name>
-<rename>EndDateTime</rename>
-<update>Y</update>
-</value>
-<value>
-<name>EventCode</name>
-<rename>EventCode</rename>
+<name>Description</name>
+<rename>Description</rename>
 <update>Y</update>
 </value>
 
@@ -474,15 +474,15 @@ public boolean processRow(StepMetaInterface smi, StepDataInterface sdi) throws K
 
     </keys>
     <values>
-      <value>ChannelNumber</value>
+      <value>EquipmentId</value>
 <value>Id</value>
-<value>Description</value>
-<value>HeatLeadIn</value>
-<value>StartDateTime</value>
-<value>EquipmentId</value>
-<value>ArchiveType</value>
 <value>EndDateTime</value>
 <value>EventCode</value>
+<value>ArchiveType</value>
+<value>ChannelNumber</value>
+<value>HeatLeadIn</value>
+<value>StartDateTime</value>
+<value>Description</value>
 
     </values>
 <flag_field>__changed__</flag_field>
