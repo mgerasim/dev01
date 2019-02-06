@@ -716,8 +716,8 @@ select setval('"public"."deviceevent_id_seq"',(select max("Id") from "public"."D
 select setval('"public"."division_id_seq"',(select max("Id") from "public"."Division")::bigint);
 select setval('"public"."equipment_id_seq"',(select max("Id") from "public"."Equipment")::bigint);
 select setval('"public"."equipmenthistory_id_seq"',(select max("Id") from "public"."EquipmentHistory")::bigint);
-select setval('"public"."equipmentmodel_id_seq"',(select max("Id") from "public"."EquipmentModel")::bigint);
-select setval('"public"."equipmentmodelmodification_id_seq"',(select max("Id") from "public"."EquipmentModelModification")::bigint);
+select setval('"public"."equipmentmodel_id_seq"', 10001::bigint);
+select setval('"public"."equipmentmodelmodification_id_seq"', 100001::bigint);
 select setval('"public"."equipmentpollstatistics_id_seq"',(select max("Id") from "public"."EquipmentPollStatistics")::bigint);
 select setval('"public"."gprscontrollersession_id_seq"',(select max("Id") from "public"."GprsControllerSession")::bigint);
 select setval('"public"."inspector_id_seq"',(select max("Id") from "public"."Inspector")::bigint);
@@ -726,7 +726,7 @@ select setval('"public"."mapobject_id_seq"',(select max("ID") from "public"."Map
 select setval('"public"."measurepoint_measurepoint_id_seq"',(select max("MeasurePoint_ID") from "public"."MeasurePoint")::bigint);
 select setval('"public"."measurepointcustomattribute_id_seq"',(select max("Id") from "public"."MeasurePointCustomAttribute")::bigint);
 select setval('"public"."messagelog_id_seq"',(select max("Id") from "public"."MessageLog")::bigint);
-select setval('"public"."modemtype_modemtype_id_seq"',(select max("ModemType_ID") from "public"."ModemType")::bigint);
+select setval('"public"."modemtype_modemtype_id_seq"',100::bigint);
 select setval('"public"."node_id_seq"',(select max("ID") from "public"."Node")::bigint);
 select setval('"public"."nodebalance_id_seq"',(select max("ID") from "public"."NodeBalance")::bigint);
 select setval('"public"."nodecustomattribute_id_seq"',(select max("Id") from "public"."NodeCustomAttribute")::bigint);
@@ -750,8 +750,8 @@ select setval('"public"."preparedreport_id_seq"',(select max("Id") from "public"
 select setval('"public"."report_id_seq"',(select max("Id") from "public"."Report")::bigint);
 select setval('"public"."reportmetadata_id_seq"',(select max("Id") from "public"."ReportMetadata")::bigint);
 select setval('"public"."reportparameter_id_seq"',(select max("Id") from "public"."ReportParameter")::bigint);
-select setval('"public"."reportparameterproperty_id_seq"',(select max("Id") from "public"."ReportParameterProperty")::bigint);
-select setval('"public"."reporttemplate_id_seq"',(select max("Id") from "public"."ReportTemplate")::bigint);
+select setval('"public"."reportparameterproperty_id_seq"',1000::bigint);
+select setval('"public"."reporttemplate_id_seq"',100::bigint);
 select setval('"public"."servicecompany_id_seq"',(select max("ID") from "public"."ServiceCompany")::bigint);
 select setval('"public"."serviceman_id_seq"',(select max("ID") from "public"."Serviceman")::bigint);
 select setval('"public"."servicingstatus_id_seq"',(select max("Id") from "public"."ServicingStatus")::bigint);
@@ -760,7 +760,7 @@ select setval('"public"."systemlog_id_seq"',(select max("Id") from "public"."Sys
 select setval('"public"."systemparameters_id_seq"',(select max("Id") from "public"."SystemParameters")::bigint);
 select setval('"public"."task_id_seq"',(select max("ID") from "public"."Task")::bigint);
 select setval('"public"."territory_id_seq"',(select max("Id") from "public"."Territory")::bigint);
-select setval('"public"."trustee_id_seq"',(select max("Id") from "public"."Trustee")::bigint);
+select setval('"public"."trustee_id_seq"',1000::bigint);
 select setval('"public"."usersessionlog_id_seq"',(select max("Id") from "public"."UserSessionLog")::bigint);
 select setval('"public"."usersessionrestoretoken_id_seq"',(select max("Id") from "public"."UserSessionRestoreToken")::bigint);
 COMMENT ON COLUMN "public"."AccessRight"."ConstName" IS 'Константа для перечисления';
