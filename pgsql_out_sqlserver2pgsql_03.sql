@@ -1,5 +1,4 @@
-\set ON_ERROR_STOP
-BEGIN;
+
 CREATE UNIQUE INDEX "Idx_Account_WindowsSid" ON "public"."Account" ("WindowsSid" ASC)
 WHERE (("WindowsSid" IS NOT NULL));
 CREATE UNIQUE INDEX "UQ_Customer_VatId" ON "public"."Customer" ("VatId" ASC)
@@ -32,7 +31,6 @@ ALTER TABLE "public"."AccountLog" ADD CONSTRAINT "CK_AccountLog_Importance" CHEC
 ALTER TABLE "public"."AccountNode" ADD CONSTRAINT "CK_AccountNode_MeasurePointCheckAccessMode" CHECK (("MeasurePointCheckAccessMode"=(1) OR "MeasurePointCheckAccessMode"=(0)));
 ALTER TABLE "public"."Adapter" ADD CONSTRAINT "CK_Adapter" CHECK (char_length("Title")>(0));
 ALTER TABLE "public"."Cell" ADD CONSTRAINT "CK_Cell_DataType" CHECK (("DataType"=(128) OR ("DataType"=(64) OR ("DataType"=(32) OR ("DataType"=(4) OR "DataType"=(0))))));
-ALTER TABLE "public"."Complex" ADD CONSTRAINT "CK_Complex_Adapter" CHECK (("AdapterID" IS NULL OR "dbo"."IsSupportedAdapter"("EquipmentId","AdapterID")=(1)));
 ALTER TABLE "public"."Contingency" ADD CONSTRAINT "CK_Contingency_NodeID_MeasurePointID" CHECK ((NOT ("NodeID" IS NULL AND "MeasurePointID" IS NULL)));
 ALTER TABLE "public"."Contingency" ADD CONSTRAINT "CK_Contingency_StartDateEndDate" CHECK ("StartDate"<="EndDate");
 ALTER TABLE "public"."ContractConsumption" ADD CONSTRAINT "CK_ResourceLoad_Year" CHECK (((1998)<"Year" AND "Year"<(2050)));
@@ -41,9 +39,7 @@ ALTER TABLE "public"."ContractTemperature" ADD CONSTRAINT "CK_ContractTemperatur
 ALTER TABLE "public"."ContractTemperature" ADD CONSTRAINT "CK_ContractTemperature_T_out" CHECK (("T_out">=(19) AND "T_out"<=(70)));
 ALTER TABLE "public"."ContractTemperature" ADD CONSTRAINT "CK_ContractTemperature_T_outdoor" CHECK (("T_outdoor">=(-60) AND "T_outdoor"<=(19)));
 ALTER TABLE "public"."CustomAttribute" ADD CONSTRAINT "CK_CustomAttribute_Entities" CHECK (("Entities"=(1) OR ("Entities"=(2) OR "Entities"=(3))));
-ALTER TABLE "public"."Customer" ADD CONSTRAINT "CK_Customer_VatId" CHECK ((char_length("VatId")=(0) OR ("IsNaturalPerson"=(0) AND (char_length("VatId")=(10) OR ("IsNaturalPerson"=(1) AND len("VatId")=(12))))));
 ALTER TABLE "public"."DataInterface" ADD CONSTRAINT "CK_DataInterface_MaxNetworkSize" CHECK ("MaxNetworkSize">=(0));
-ALTER TABLE "public"."DataInterface" ADD CONSTRAINT "CK_DataInterface_NetworkAddressRange" CHECK (("NetworkAddressRangeMin"=(0) AND ("NetworkAddressRangeMax"=(0) OR "NetworkAddressRangeMin"<"NetworkAddressRangeMax")));
 ALTER TABLE "public"."DataInterface" ADD CONSTRAINT "CK_DataInterface_NetworkAddressUsage" CHECK (("NetworkAddressUsage">=(0) AND "NetworkAddressUsage"<=(4)));
 ALTER TABLE "public"."DataInterface" ADD CONSTRAINT "CK_DataInterface_SupportedPortSpeeds" CHECK ("SupportedPortSpeeds">=(0));
 ALTER TABLE "public"."DataStatus" ADD CONSTRAINT "CK_DataStatus_DataStatus" CHECK (("DataStatus"=(4) OR ("DataStatus"=(3) OR ("DataStatus"=(2) OR ("DataStatus"=(1) OR "DataStatus"=(0))))));
@@ -58,13 +54,11 @@ ALTER TABLE "public"."DriverInterface" ADD CONSTRAINT "CK_DriverInterface_Channe
 ALTER TABLE "public"."DriverInterface" ADD CONSTRAINT "CK_DriverInterface_DriverName" CHECK (char_length("DriverName")>(0));
 ALTER TABLE "public"."DriverInterface" ADD CONSTRAINT "CK_DriverInterface_DriverStatus" CHECK (("DriverStatus">=(0) AND "DriverStatus"<=(2)));
 ALTER TABLE "public"."DriverInterface" ADD CONSTRAINT "CK_DriverInterface_Features" CHECK ("Features">=(0));
-ALTER TABLE "public"."DriverInterface" ADD CONSTRAINT "CK_DriverInterface_MemoryAddress" CHECK (("MinMemoryAddress"=(0) AND ("MaxMemoryAddress"=(0) OR "MinMemoryAddress"<"MaxMemoryAddress")));
 ALTER TABLE "public"."DriverInterface" ADD CONSTRAINT "CK_DriverInterface_SupportedDataTypes" CHECK ("SupportedDataTypes">=(0));
 ALTER TABLE "public"."DriverInterface" ADD CONSTRAINT "CK_DriverInterface_TotalsResetThreshold" CHECK (("TotalsResetThresholdM">=(0) AND "TotalsResetThresholdQ">=(0)));
 ALTER TABLE "public"."ElectricPower" ADD CONSTRAINT "CK_MeasurePointPower_Interval" CHECK ("Interval">(0));
 ALTER TABLE "public"."Equipment" ADD CONSTRAINT "CK_Equipment_SerialNumber" CHECK (char_length("SerialNumber")>(0));
 ALTER TABLE "public"."EquipmentHistory" ADD CONSTRAINT "CK_EquipmentHistory_Action" CHECK (("Action"=(1) OR ("Action"=(2) OR ("Action"=(3) OR ("Action"=(4) OR "Action"=(5))))));
-ALTER TABLE "public"."EquipmentModelModification" ADD CONSTRAINT "CK_EquipmentModelModification_FlowSensor" CHECK (("FlowSensorMin"=(0) AND ("FlowSensorMax"=(0) OR "FlowSensorMin"<"FlowSensorMax")));
 ALTER TABLE "public"."EquipmentModelModification" ADD CONSTRAINT "CK_EquipmentModelModification_NominalDiameter" CHECK ("NominalDiameter">=(0));
 ALTER TABLE "public"."EquipmentModelModification" ADD CONSTRAINT "CK_EquipmentModelModification_PressSensor" CHECK (("PressSensorMin"=(0) AND ("PressSensorMax"=(0) OR "PressSensorMin"<"PressSensorMax")));
 ALTER TABLE "public"."EquipmentModelModification" ADD CONSTRAINT "CK_EquipmentModelModification_RelativeError" CHECK ("RelativeError">=(0));
