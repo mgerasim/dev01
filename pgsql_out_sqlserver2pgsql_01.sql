@@ -18,7 +18,7 @@ CREATE TYPE "public"."BalanceGroupMeasurePointType" AS (
 "MeasurePointId" int,
 "IsHead" boolean
 );
-CREATE TYPE "public"."ContractTemperature" AS (
+CREATE TYPE "public"."ContractTemperatureType" AS (
 "T_outdoor" smallint,
 "T_in" real,
 "T_out" real
@@ -93,7 +93,7 @@ CREATE TYPE "public"."ElectricConsumption" AS (
 "BadValues" int,
 "InterpolatedValues" int
 );
-CREATE TYPE "public"."ElectricPower" AS (
+CREATE TYPE "public"."ElectricPowerType" AS (
 "DateTime" timestamp,
 "Flags" smallint,
 "Interval" smallint,
@@ -103,7 +103,7 @@ CREATE TYPE "public"."ElectricPower" AS (
 "Qn" double precision,
 "BadValues" int
 );
-CREATE TYPE "public"."ElectricTotals" AS (
+CREATE TYPE "public"."ElectricTotalsType" AS (
 "DateTime" timestamp,
 "Ap1" double precision,
 "An1" double precision,
@@ -132,7 +132,7 @@ CREATE TYPE "public"."ElectricTotals" AS (
 "ResettedValues" int,
 "InterpolatedValues" int
 );
-CREATE TYPE "public"."GasConsumption" AS (
+CREATE TYPE "public"."GasConsumptionType" AS (
 "DateTime" timestamp,
 "T" real,
 "T_outdoor" real,
@@ -147,7 +147,7 @@ CREATE TYPE "public"."GasConsumption" AS (
 "BadValues" int,
 "InterpolatedValues" int
 );
-CREATE TYPE "public"."GasTotals" AS (
+CREATE TYPE "public"."GasTotalsType" AS (
 "DateTime" timestamp,
 "V" double precision,
 "V_std" double precision,
@@ -159,7 +159,7 @@ CREATE TYPE "public"."GasTotals" AS (
 "ResettedValues" int,
 "InterpolatedValues" int
 );
-CREATE TYPE "public"."HeatLoss" AS (
+CREATE TYPE "public"."HeatLossType" AS (
 "Year" int,
 "Jan" real,
 "Feb" real,
@@ -179,7 +179,7 @@ CREATE TYPE "public"."HeatLoss" AS (
 CREATE TYPE "public"."IdList" AS (
 "Id" int
 );
-CREATE TYPE "public"."MapObjectAppearance" AS (
+CREATE TYPE "public"."MapObjectAppearanceType" AS (
 "MapObjectId" int,
 "AppearanceType" smallint,
 "BorderColor" int,
@@ -193,7 +193,7 @@ CREATE TYPE "public"."MapObjectAppearance" AS (
 "TextHAlignment" smallint,
 "Visible" boolean
 );
-CREATE TYPE "public"."MeasurePointExpression" AS (
+CREATE TYPE "public"."MeasurePointExpressionType" AS (
 "DataParameter" smallint,
 "Expression" varchar(500)
 );
@@ -220,11 +220,11 @@ CREATE TYPE "public"."MonthContractConsumption" AS (
 "Dec" real,
 "ContractConsumptionType" smallint
 );
-CREATE TYPE "public"."NodeCustomAttribute" AS (
+CREATE TYPE "public"."NodeCustomAttributeType" AS (
 "Code" varchar(36),
 "Attribute" varchar(200)
 );
-CREATE TYPE "public"."NodeSignaling" AS (
+CREATE TYPE "public"."NodeSignalingType" AS (
 "Id" int,
 "SignalTitle" varchar(50),
 "ControllerId" int,
@@ -234,7 +234,7 @@ CREATE TYPE "public"."NodeSignaling" AS (
 "IncidentImportanceUnset" smallint,
 "IncidentMessageUnset" varchar(100)
 );
-CREATE TYPE "public"."NodeSupplier" AS (
+CREATE TYPE "public"."NodeSupplierType" AS (
 "SystemType" smallint,
 "SupplierId" int,
 "ContractNumber" varchar(20),
@@ -245,7 +245,7 @@ CREATE TYPE "public"."NotificationMethod" AS (
 "NotificationTypeId" int,
 "NotificationMethodMask" smallint
 );
-CREATE TYPE "public"."OutdoorTemperature" AS (
+CREATE TYPE "public"."OutdoorTemperatureType" AS (
 "Date" timestamp,
 "Value" real
 );
@@ -273,14 +273,14 @@ CREATE TYPE "public"."PollTaskState" AS (
 "LastAttemptEndTime" timestamp,
 "LastAttemptResultCode" int
 );
-CREATE TYPE "public"."RoomContractConsumption" AS (
+CREATE TYPE "public"."RoomContractConsumptionType" AS (
 "MonthNumber" smallint,
 "HeatValue" real,
 "HotWaterValue" real,
 "ColdWaterValue" real,
 "ElectricityValue" real
 );
-CREATE TYPE "public"."RoomCounter" AS (
+CREATE TYPE "public"."RoomCounterType" AS (
 "RoomId" int,
 "EquipmentId" int,
 "InstallLocation" varchar(100),
@@ -319,7 +319,7 @@ CREATE TYPE "public"."WaterConsumption" AS (
 "BadValues" int,
 "InterpolatedValues" int
 );
-CREATE TYPE "public"."WaterTotals" AS (
+CREATE TYPE "public"."WaterTotalsType" AS (
 "DateTime" timestamp,
 "M_in" double precision,
 "M_out" double precision,
