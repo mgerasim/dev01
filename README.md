@@ -1,6 +1,6 @@
 MS SQL Server
 =============================================
-* ``` sudo ufw allow 22/tcp ```
+* ``` sudo ufw allow 1433/tcp ```
 
 
 Репозитории
