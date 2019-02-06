@@ -1,7 +1,7 @@
 \set ON_ERROR_STOP
 \set ECHO all
 BEGIN;
-CREATE TYPE "public"."AccountNode" AS (
+CREATE TYPE "public"."AccountNodeType" AS (
 "NodeId" int,
 "MeasurePointCheckAccessMode" smallint,
 "AllowedSystemTypes" int
