@@ -279,8 +279,7 @@ ALTER TABLE "public"."WaterTotals" DISABLE TRIGGER ALL;
       <name>SQL SCRIPT END</name>
       <description/>
       <type>SQL</type>
-      <sql>DROP CAST &#x28;varchar as uuid&#x29;;
-DROP CAST &#x28;varchar as date&#x29;;
+      <sql>
 ALTER TABLE "public"."AccessRight" ENABLE TRIGGER ALL;
 ALTER TABLE "public"."Account" ENABLE TRIGGER ALL;
 ALTER TABLE "public"."AccountGroup" ENABLE TRIGGER ALL;
