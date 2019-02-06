@@ -132,3 +132,4 @@ http://134.0.117.65/pentaho/welcome/
 Создание итогового дампа
 =============================================
 ufw allow 5432/tcp
+C:\Program Files\PostgreSQL\10\bin>pg_dump.exe -U lers -h 134.0.117.65 lers > C:\dump
