@@ -754,7 +754,7 @@ select setval('"public"."reportparameterproperty_id_seq"',1000::bigint);
 select setval('"public"."reporttemplate_id_seq"',100::bigint);
 select setval('"public"."servicecompany_id_seq"',(select max("ID") from "public"."ServiceCompany")::bigint);
 select setval('"public"."serviceman_id_seq"',(select max("ID") from "public"."Serviceman")::bigint);
-select setval('"public"."servicingstatus_id_seq"',(select max("Id") from "public"."ServicingStatus")::bigint);
+select setval('"public"."servicingstatus_id_seq"',1001::bigint);
 select setval('"public"."supplier_id_seq"',(select max("Id") from "public"."Supplier")::bigint);
 select setval('"public"."systemlog_id_seq"',(select max("Id") from "public"."SystemLog")::bigint);
 select setval('"public"."systemparameters_id_seq"',(select max("Id") from "public"."SystemParameters")::bigint);
