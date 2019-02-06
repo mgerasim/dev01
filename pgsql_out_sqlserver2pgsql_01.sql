@@ -14,7 +14,7 @@ CREATE TYPE "public"."AttributeValue" AS (
 "CustomAttributeId" int,
 "Value" varchar(200)
 );
-CREATE TYPE "public"."BalanceGroupMeasurePoint" AS (
+CREATE TYPE "public"."BalanceGroupMeasurePointType" AS (
 "MeasurePointId" int,
 "IsHead" boolean
 );
